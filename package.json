@@ -7,7 +7,9 @@
     "webpack:dev": "node_modules\\.bin\\webpack --mode=development",
     "webpack:prod": "node_modules\\.bin\\webpack --mode=production",
     "watch": "node_modules\\.bin\\webpack --mode=development --watch",
-    "serve": "node_modules\\.bin\\http-server dist/ -g -o"
+    "serve": "node_modules\\.bin\\http-server dist/ -g -o",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base dist",
+    "starter": "node_modules\\.bin\\webpack-dev-server --mode=development --content-base dist"
   },
   "author": "Deriv Diggs, thoughtrender.com",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "http-server": "^0.12.1",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
+    "script-loader": "^0.7.2",
     "source-map": "^0.7.3",
     "style-loader": "^0.22.1",
     "ts-loader": "^4.4.2",
@@ -31,14 +34,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dimselab/Webpack-template.git"
+    "url": "git+https://github.com/hidmantra/webpack-ts-template.git"
   },
   "bugs": {
-    "url": "https://github.com/dimselab/Webpack-template/issues"
+    "url": "https://github.com/hidmantra/webpack-ts-template/issues"
   },
-  "homepage": "https://github.com/dimselab/Webpack-template#readme",
+  "homepage": "https://github.com/hidmantra/webpack-ts-template#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.149",
     "jquery": "^3.4.1",
-    "script-loader": "^0.7.2"
+    "lodash": "^4.17.15"
   }
 }

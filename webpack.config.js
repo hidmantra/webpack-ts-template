@@ -1,15 +1,9 @@
-/*
-  A webpack configuration file designed
-  for webdevelopment with typescript and scss
-  by Ebbe Vang, evang.dk
-*/
-
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
  
 module.exports = {
   // which files should webpack watch and transpile
-  entry: ['./src/index.html', './src/scss/styles.scss', './src/scripts/index.ts'],
+  entry: ['./src/index.html', './src/scss/styles.scss', './src/scripts/main.ts'],
   module: {
     // rules webpack should follow when watching...
     rules: [
