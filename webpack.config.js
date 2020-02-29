@@ -5,22 +5,22 @@
 */
 
 const path = require('path');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
  
 module.exports = {
   // which files should webpack watch and transpile
-  entry: ['./src/index.htm', './src/scss/styles.scss', './src/js/index.ts'],
+  entry: ['./src/index.html', './src/scss/styles.scss', './src/scripts/index.ts'],
   module: {
     // rules webpack should follow when watching...
     rules: [
     {
-        //TypeScipt files will be handles (transpiled) by the typescript-loader
+        //TypeScipt files will be handled (transpiled) by the typescript-loader
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
     },
     {
-        //(s)css files wil be handled by the scss-loader and then send to the css-loader and fuinally saved as a bundle
+        //(s)css files wil be handled by the scss-loader and then send to the css-loader and finally saved as a bundle
         test:/\.(s*)css$/,
         use:[{loader :'file-loader', options: {name: 'bundle.css'}}, 'extract-loader', 'css-loader', 'sass-loader']
     },
@@ -38,7 +38,7 @@ module.exports = {
     },
 
     {
-      //all fonts are vopied to the fonts folder
+      //all fonts are copied to the fonts folder
       test: /.(ttf|otf|eot|otf|svg|woff(2)?)(\?[a-z0-9]+)?$/,
       use: [{
         loader: 'file-loader',
@@ -68,7 +68,7 @@ module.exports = {
       reload: true,
       port: 3000,
       files: ["*.htm", "*.html", "scss/*.*"],
-      index: 'index.htm',
+      index: 'index.html',
       server: { baseDir: ['dist'] }
     })
   ]

@@ -1,22 +1,24 @@
 {
-  "name": "webpacktypescriptscss",
+  "name": "web-starter-template",
   "version": "1.0.0",
   "description": "A starter template for webdevelopment",
   "main": "index.js",
   "scripts": {
-    "webpack:dev": "webpack --mode=development",
-    "webpack:prod": "webpack --mode=production",
-    "watch": "webpack --mode=development --watch",
-    "serve": "http-server dist/ -g -o"
+    "webpack:dev": "node_modules\\.bin\\webpack --mode=development",
+    "webpack:prod": "node_modules\\.bin\\webpack --mode=production",
+    "watch": "node_modules\\.bin\\webpack --mode=development --watch",
+    "serve": "node_modules\\.bin\\http-server dist/ -g -o"
   },
-  "author": "Ebbe Vang, evang.dk",
+  "author": "Deriv Diggs, thoughtrender.com",
   "license": "ISC",
   "devDependencies": {
+    "@types/jquery": "^3.3.33",
     "browser-sync": "^2.24.6",
     "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^1.0.0",
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
+    "http-server": "^0.12.1",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "source-map": "^0.7.3",
@@ -24,7 +26,8 @@
     "ts-loader": "^4.4.2",
     "typescript": "^3.0.1",
     "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.10.3"
   },
   "repository": {
     "type": "git",
@@ -33,5 +36,9 @@
   "bugs": {
     "url": "https://github.com/dimselab/Webpack-template/issues"
   },
-  "homepage": "https://github.com/dimselab/Webpack-template#readme"
+  "homepage": "https://github.com/dimselab/Webpack-template#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "script-loader": "^0.7.2"
+  }
 }
