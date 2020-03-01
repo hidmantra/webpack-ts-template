@@ -1,6 +1,28 @@
 import * as $ from "jquery";
 import * as _ from "lodash";
 
+
+/* prevents code from running until the entire document loads                      */
+$(document).ready(function(){
+    /*
+    $("#btn1").click(function(){
+      $("p").append(" <b>Appended text</b>.");
+    });
+    */
+  
+
+      const siteHeader: JQuery = $("<div></div>").text("Bootstrap: Container-Fluid");
+      siteHeader.addClass("container-fluid");
+      $("body").prepend(".siteHeader");
+
+  });
+
+
+
+/*
+/* uncomment this section for quick/sample test of jquery and lowdash
+/*
+/*
 interface Person {
     firstName: string;
     lastName: string;
@@ -22,3 +44,4 @@ $(()=>{
     $('div').after('<h1>' + tmpMsg + '</h1>');
     
   });
+  */
