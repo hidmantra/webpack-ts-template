@@ -1,3 +1,19 @@
+// all bootstrap styles
+@import "node_modules/bootstrap/scss/bootstrap";
+// required
+/*
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/code";
+@import "../../node_modules/bootstrap/scss/grid";
+*/
+
 $fontColor: #0091aa;
 $colorHeading: #be4a14;
 #content  // div with id: content
@@ -5,11 +21,22 @@ $colorHeading: #be4a14;
     color: $fontColor;
 }
 
-h2
-{
-    color: $colorHeading;
+
+.container-fluid {
+
+    background-color: green;
 }
 
-h1{
-    @extend h2;
+.site-header {
+    background-color: red;
 }
+
+@include media-breakpoint-up(xs) { /**/ }
+/* 576px min width */ 
+@include media-breakpoint-up(sm) { /**/ }
+/* 768px min width */ 
+@include media-breakpoint-up(md) { /**/ }
+/* 992px min width */ 
+@include media-breakpoint-up(lg) { /**/ }
+/* 1200px min width */ 
+@include media-breakpoint-up(xl) { /**/ }

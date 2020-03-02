@@ -1,5 +1,7 @@
 import * as $ from "jquery";
 import * as _ from "lodash";
+import 'bootstrap';
+
 
 
 /* prevents code from running until the entire document loads                      */
@@ -12,8 +14,8 @@ $(document).ready(function(){
   
 
       const siteHeader: JQuery = $("<div></div>").text("Bootstrap: Container-Fluid");
-      siteHeader.addClass("container-fluid");
-      $("body").prepend(".siteHeader");
+      $(siteHeader).addClass("container-fluid");
+      $("body").prepend(siteHeader);
 
   });
 
