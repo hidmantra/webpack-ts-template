@@ -1,0 +1,46 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$fontColor: #0091aa;
+$colorHeading: #be4a14;
+
+#content  
+{
+    color: $fontColor;
+}
+
+.container {
+   border: 2 solid purple;
+}
+.container-fluid {
+
+    background-color: green;
+    
+}
+
+body{
+    background: 300 !important;
+}
+
+.site-header {
+    background-color: red;
+}
+
+@include media-breakpoint-up(xs) { /**/ }
+/* 576px min width sm*/ 
+@include media-breakpoint-up(sm) { /**/ 
+
+}
+/* 768px min width md*/ 
+@include media-breakpoint-up(md) { /**/ 
+    .col-sm{
+        background-color:blue;
+    }
+}
+/* 992px min width lg*/ 
+@include media-breakpoint-up(lg) { 
+    .col-sm{
+        background: grey;
+    }
+ }
+/* 1200px min width xl*/ 
+@include media-breakpoint-up(xl) { /**/ }

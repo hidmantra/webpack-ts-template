@@ -3,7 +3,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
  
 module.exports = {
   // which files should webpack watch and transpile
-  entry: ['./src/index.html', './src/scss/styles.scss', './src/scripts/main.ts'],
+  entry: ['./src/index.html', './src/custom.scss', './src/main.ts'],
   module: {
     // rules webpack should follow when watching...
     rules: [
@@ -14,8 +14,9 @@ module.exports = {
         exclude: /node_modules/
     },
     {
-      test:/\.(s*)css$/,
-      use:[{loader :'file-loader', options: {name: 'bundle.css'}}, 'extract-loader', "css-loader", "postcss-loader",'sass-loader']
+      test: /\.s[ac]ss$/i,
+      use:[
+        'style-loader', {loader :'file-loader', options: {name: 'bundle.css'}}, 'extract-loader', 'css-loader', 'sass-loader', 'postcss-loader']
     },
 
     /*
@@ -32,7 +33,7 @@ module.exports = {
       {
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
+          name: '[hash].[ext]'
         }
       }
       
@@ -68,7 +69,8 @@ module.exports = {
       host: 'localhost',
       reload: true,
       port: 3000,
-      files: ["*.htm", "*.html", "scss/*.*"],
+      files: ["*.htm", "*.html"],
+      /*files: ["*.htm", "*.html", "scss/*.*"],*/
       index: 'index.html',
       server: { baseDir: ['dist'] }
     })
