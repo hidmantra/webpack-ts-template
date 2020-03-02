@@ -14,7 +14,9 @@
   "author": "Deriv Diggs, thoughtrender.com",
   "license": "ISC",
   "devDependencies": {
+    "@types/bootstrap": "^4.3.1",
     "@types/jquery": "^3.3.33",
+    "autoprefixer": "^9.7.4",
     "bootstrap": "^4.4.1",
     "browser-sync": "^2.24.6",
     "browser-sync-webpack-plugin": "^2.2.2",
@@ -24,6 +26,7 @@
     "http-server": "^0.12.1",
     "node-sass": "^4.9.3",
     "popper.js": "^1.16.1",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "script-loader": "^0.7.2",
     "source-map": "^0.7.3",

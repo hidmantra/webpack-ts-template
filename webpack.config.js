@@ -14,10 +14,17 @@ module.exports = {
         exclude: /node_modules/
     },
     {
+      test:/\.(s*)css$/,
+      use:[{loader :'file-loader', options: {name: 'bundle.css'}}, 'extract-loader', "css-loader", "postcss-loader",'sass-loader']
+    },
+
+    /*
+    {
         //(s)css files wil be handled by the scss-loader and then send to the css-loader and finally saved as a bundle
         test:/\.(s*)css$/,
         use:[{loader :'file-loader', options: {name: 'bundle.css'}}, 'extract-loader', 'css-loader', 'sass-loader']
     },
+    */
     {
       // html files will be copied to the dist folder
       test: /.htm(l*)/,
