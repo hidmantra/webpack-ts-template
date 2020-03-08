@@ -1,6 +1,7 @@
 import * as $ from "jquery";
 import * as _ from "lodash";
-import "./custom.scss";
+import "./main.scss";
+import img from "./bk1.png";
 require("bootstrap");
 
 

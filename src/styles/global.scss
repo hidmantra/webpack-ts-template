@@ -1,24 +1,23 @@
-@import "node_modules/bootstrap/scss/bootstrap";
 
-$fontColor: #0091aa;
-$colorHeading: #be4a14;
+
+$enable-responsive-font-sizes: true;   
 
 #content  
 {
-    color: $fontColor;
+    color: $primary;
 }
 
 .container {
-   border: 2 solid purple;
+   border: 2 solid 600;
 }
 .container-fluid {
 
-    background-color: green;
+    background: 200;
     
 }
 
-body{
-    background: 300 !important;
+* {
+    background-image: url('./img/bigbk.jpg') ;
 }
 
 .site-header {

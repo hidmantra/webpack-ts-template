@@ -1,9 +1,10 @@
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
  
 module.exports = {
   // which files should webpack watch and transpile
-  entry: ['./src/index.html', './src/custom.scss', './src/main.ts'],
+  entry: [ './src/template.html', './src/main.scss', './src/main.ts'],
   module: {
     // rules webpack should follow when watching...
     rules: [
@@ -33,7 +34,7 @@ module.exports = {
       {
         loader: 'file-loader',
         options: {
-          name: '[hash].[ext]'
+          name: '[name].[ext]'
         }
       }
       
@@ -49,8 +50,20 @@ module.exports = {
           outputPath: 'fonts/',    // where the fonts will go
           publicPath: './fonts/'       // override the default path
         }
-      }]
-    }
+      }],
+    },
+    {
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      use: [
+        'file-loader',
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            disable:false,                                                                                                                                                                                                                                                           
+          },
+        }
+      ],
+    },
     ]
   },
   resolve: {
@@ -58,7 +71,7 @@ module.exports = {
   },
   output: {
     publicPath: '/dist/',
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist/')
   },
   devtool: 'source-map',
@@ -69,10 +82,15 @@ module.exports = {
       host: 'localhost',
       reload: true,
       port: 3000,
-      files: ["*.htm", "*.html"],
+      files: ["*.htm", "*.html","scss/*.*"],
       /*files: ["*.htm", "*.html", "scss/*.*"],*/
-      index: 'index.html',
+      index: 'template.html',
       server: { baseDir: ['dist'] }
-    })
+    }),
+    new HtmlWebpackPlugin (
+      {
+          title: 'Thought Render',
+          template: './src/template.html'
+      }),
   ]
 };
