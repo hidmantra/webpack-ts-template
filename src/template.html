@@ -25,11 +25,46 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
-  <h1>Webpack - TypeScript - Scss</h1>
-  <h2>TypeScript Hello World</h2>  
+<body class="bg" data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div id="holder"></div>
+  <header class="container clearfix align-middle">
+      <div id="logo-holder" class="float-left"></div>
+      <div class="h2 main-title mx-auto"></div>
+  </header>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                  <a class="nav-link" href="#overview-top">Overview</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link"  href="#technology">Technologies</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle"  href="#" id="navbardrop" data-toggle="dropdown">Portfolio</a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#multimedia">Multi-Media</a>
+                      <a class="dropdown-item" href="#illustrations">Illustrations</a>
+                      <a class="dropdown-item" href="#photography">Photography</a>
+                      <a class="dropdown-item" href="#music">Music</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link"  href="#resume-top">Resume</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link"  href="#contact-top">Contact</a>
+              </li>
+        </ul>
+      </div>
+  </nav>
   <div id="content"></div>
   <div class="container">
+  
     <div class="row">
       <div class="col-sm">
         One of three columns
@@ -46,6 +81,6 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="bundle.js"></script>
+  <!--script src="bundle.js"></script-->
 </body>
 </html>

@@ -1,4 +1,10 @@
-
+@import "~bootstrap/scss/bootstrap";
+@import "custom-vars.scss";
+@import "mobile-xs.scss";
+@import "mobile-sm.scss";
+@import "tablet-md.scss";
+@import "desk-lg.scss";
+@import "desk-xl.scss";
 
 $enable-responsive-font-sizes: true;   
 
@@ -12,12 +18,11 @@ $enable-responsive-font-sizes: true;
 }
 .container-fluid {
 
-    background: 200;
     
 }
 
-* {
-    background-image: url('./img/bigbk.jpg') ;
+body {
+    background-image: url('/src/img/bigbk.jpg') ;
 }
 
 .site-header {

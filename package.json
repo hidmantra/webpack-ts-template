@@ -1,5 +1,5 @@
 {
-  "name": "web-starter-template",
+  "name": "webpack-ts-template",
   "version": "1.0.0",
   "description": "A starter template for webdevelopment",
   "main": "index.js",
@@ -26,6 +26,7 @@
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.12.1",
     "image-webpack-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.9.3",
     "popper.js": "^1.16.1",
     "postcss-loader": "^3.0.0",

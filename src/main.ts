@@ -1,23 +1,30 @@
 import * as $ from "jquery";
 import * as _ from "lodash";
-import "./main.scss";
-import img from "./bk1.png";
+//import BigBk from "../dist/bigbk.jpg"
+//import smallbk from "img/quadbk.png";
 require("bootstrap");
 
-
+const mainBK = new Image();
+const test = new Image();
 
 /* prevents code from running until the entire document loads                      */
 $(document).ready(function(){
-    /*
+   /*
+  mainBK.src = BigBk;
+  mainBK.width = 100;
+  test.src = smallbk;
+  test.width = 75;
+   
     $("#btn1").click(function(){
       $("p").append(" <b>Appended text</b>.");
     });
-    */
   
-
+  
+   $(".bg").css("background-image", "mainBK");
+  */
       const siteHeader: JQuery = $("<div></div>").text("Bootstrap: Container-Fluid");
       $(siteHeader).addClass("container-fluid");
-      $("body").prepend(siteHeader);
+      $(".bg").prepend(siteHeader);
 
   });
 

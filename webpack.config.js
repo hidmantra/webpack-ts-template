@@ -1,10 +1,13 @@
+var webpack = require('webpack');
 const path = require('path');
+const devMode = process.env.NODE_ENV !== 'production';
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
  
 module.exports = {
   // which files should webpack watch and transpile
-  entry: [ './src/template.html', './src/main.scss', './src/main.ts'],
+  entry: [ './src/template.html', './src/styles/style.scss', './src/main.ts'],
   module: {
     // rules webpack should follow when watching...
     rules: [
@@ -15,11 +18,43 @@ module.exports = {
         exclude: /node_modules/
     },
     {
+                
+      test: /\.(sass|scss)$/,
+      use: 
+      [
+          {
+          loader: MiniCssExtractPlugin.loader,
+          
+              options: 
+              {
+                  includePaths: ["./src/styles/style.scss"],
+                  //sourceMap: true,
+                  importLoader: 2,
+                  // only enable hot in development
+    hmr: process.env.NODE_ENV === 'development',
+    // if hmr does not work, this is a forceful method.
+    reloadAll: true,
+              }
+          },
+          "css-loader",
+          //"postcss-loader",
+          "sass-loader"
+      ]
+      
+  },
+
+  {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    },
+    
+    /*
+    {
       test: /\.s[ac]ss$/i,
       use:[
         'style-loader', {loader :'file-loader', options: {name: 'bundle.css'}}, 'extract-loader', 'css-loader', 'sass-loader', 'postcss-loader']
     },
-
+*/
     /*
     {
         //(s)css files wil be handled by the scss-loader and then send to the css-loader and finally saved as a bundle
@@ -76,6 +111,16 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    new MiniCssExtractPlugin (
+      {
+          filename: devMode ? '[name].css' : '[name].[hash].css',
+          chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      }),
+      new HtmlWebpackPlugin (
+        {
+            title: 'Thought Render',
+            template: './src/template.html'
+        }),
     new BrowserSyncPlugin({
       // browse to http://localhost:3000/ during development,
       // ./public directory is being served
@@ -86,11 +131,6 @@ module.exports = {
       /*files: ["*.htm", "*.html", "scss/*.*"],*/
       index: 'template.html',
       server: { baseDir: ['dist'] }
-    }),
-    new HtmlWebpackPlugin (
-      {
-          title: 'Thought Render',
-          template: './src/template.html'
-      }),
+    })
   ]
 };
