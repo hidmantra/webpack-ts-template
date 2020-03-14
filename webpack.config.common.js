@@ -2,16 +2,14 @@ var webpack = require('webpack');
 const path = require('path');
 const devMode = process.env.NODE_ENV !== 'production';
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
  
 module.exports = {
   // which files should webpack watch and transpile
-  entry: [ './src/main.ts', './src/index.html','./src/styles/style.scss'],
-  output: 
-  {
-    path: path.resolve(__dirname, './dist/'),
-    filename: '[name].bundle.js',
-    publicPath: './',
+  entry: [ './src/template.html', './src/styles/style.scss', './src/main.ts'],
+  output: {
+  filename: '[name].bundle.js'
   },
   module: {
     // rules webpack should follow when watching...
@@ -45,10 +43,12 @@ module.exports = {
           //"postcss-loader",
           "sass-loader"
       ]
+      
   },
+
   {
       test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
+      use: [MiniCssExtractPlugin.loader, 'css-loader'],
     },
     {
       // html files will be copied to the dist folder
@@ -57,11 +57,12 @@ module.exports = {
       {
         loader: 'file-loader',
         options: {
-          name: devMode ? '[name].[ext]':'[name][id].[ext]'
+          name: '[name].[ext]'
         }
       }
+      
     },
-   // */
+
     {
       //all fonts are copied to the fonts folder
       test: /.(ttf|otf|eot|otf|svg|woff(2)?)(\?[a-z0-9]+)?$/,
@@ -81,37 +82,28 @@ module.exports = {
         {
           loader: 'image-webpack-loader',
           options: {
-            disable:false,
-            outputPath: 'images/'                                                                                                                                                                                                                                                       
+            disable:false,                                                                                                                                                                                                                                                           
           },
         }
       ],
     },
-    ]
-  },
+    ],
+  
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' , '.scss']
+    extensions: [ '.tsx', '.ts', '.js', '.scss' ]
   },
+  /*output: {
+    publicPath: devMode ? '' : '/dist',
+    filename: '[name].bundle.js',
+    path: devMode ? path.resolve(__dirname, 'dist') : path.resolve(__dirname, './src/'), 
+  },*/
   devtool: 'source-map',
   plugins: [
-    new MiniCssExtractPlugin (
-      {
-          filename: devMode ? '[name].css' : '[name].[hash].css',
-          chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-      }),
-    new BrowserSyncPlugin({
-                                                                                                      // browse to http://localhost:3000/ during development,
-                                                                                                      // ./public directory is being served
-      host: 'localhost',
-      reload: true,
-      port: 3000,                                                   
-      files: ["*.htm", "*.html","scss/*.*"],
-      index: 'index.html',
-      server: { baseDir: ['dist'] }
-    }),
+    new MiniCssExtractPlugin(
+        {
+            filename: devMode? '[name].css': '[name].[hash].css',
 
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.ContextReplacementPlugin(/typedjson-npm/, 'typed-json.js')
-  ]
-};
+            chunkFilename: devMode ? '[id].css': '[name].[hash].css'
+        }),
+    ]
+}};
