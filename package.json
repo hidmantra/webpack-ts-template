@@ -8,7 +8,7 @@
     "webpack:prod": "node_modules\\.bin\\webpack --mode=production",
     "watch": "node_modules\\.bin\\webpack --mode=development --watch",
     "serve": "node_modules\\.bin\\http-server dist/ -g -o",
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base dist",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode=development  --content-base dist",
     "starter": "node_modules\\.bin\\webpack-dev-server --mode=development --content-base dist"
   },
   "author": "Deriv Diggs, thoughtrender.com",
@@ -23,6 +23,7 @@
     "css-loader": "^1.0.0",
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.12.1",
     "image-webpack-loader": "^6.0.0",
     "mini-css-extract-plugin": "^0.9.0",

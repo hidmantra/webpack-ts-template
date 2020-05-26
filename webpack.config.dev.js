@@ -9,9 +9,16 @@ const common = require('./webpack.config.common.js');
 
 module.exports = merge(common,
     {
-        "module": {
+        mode: 'development',
+        devtool: 'source-map',
+        output:
+        {
+            path: path.resolve(__dirname, './dist'),
+            filename: '[name].bundle.js',
+        },
+        module: {
             // rules webpack should follow when watching...
-            "rules": [
+            rules: [
                 {
                     //TypeScipt files will be handled (transpiled) by the typescript-loader
                     test: /\.tsx?$/,
@@ -32,7 +39,7 @@ module.exports = merge(common,
                                     //sourceMap: true,
                                     importLoader: 2,
                                     // only enable hot in development
-                                    hmr: process.env.NODE_ENV === 'development',
+                                    hmr: true,
                                     // if hmr does not work, this is a forceful method.
                                     reloadAll: true,
                                 }
@@ -47,7 +54,7 @@ module.exports = merge(common,
                 {
                     test: /\.css$/,
                     use: ['style-loader', 'css-loader'],
-                },
+                },    
                 {
                     // html files will be copied to the dist folder
                     test: /.htm(l*)/,
@@ -90,17 +97,9 @@ module.exports = merge(common,
         resolve: {
             extensions: ['.tsx', '.ts', '.js', '.scss']
         },
-        output: {
-            publicPath: '',
-            path: path.resolve(__dirname, 'dist')
-        },
-        devtool: 'source-map',
         plugins: [
-            new HtmlWebpackPlugin(
-                {
-                    title: 'Thought Render',
-                    template: './src/template.html'
-                }),
+            
+              
             new BrowserSyncPlugin({
                 // browse to http://localhost:3000/ during development,
                 // ./public directory is being served
@@ -108,9 +107,13 @@ module.exports = merge(common,
                 reload: true,
                 port: 3000,
                 files: ["*.htm", "*.html", "scss/*.*"],
-                /*files: ["*.htm", "*.html", "scss/*.*"],*/
-                index: 'template.html',
+                index: 'tmp.html',
                 server: { baseDir: ['dist'] }
-            })
+            }),
+            new MiniCssExtractPlugin(
+                {
+                  filename: '[name].css',
+                  chunkFilename: '[id].css'
+                }),
         ]
     });
