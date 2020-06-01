@@ -8,9 +8,18 @@
 
 $enable-responsive-font-sizes: true;
 
-#content {
+body, app, #content, #holder, #fullCover {
     color: $primary;
+    padding: 0;
 }
+#holder {
+    background-color: rgba(119, 44, 204, 0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    padding: 0;
+}
+
 
 .main-title {
     text-align: center;
@@ -35,29 +44,76 @@ $enable-responsive-font-sizes: true;
     position: absolute;
     display:block;
     height: 100%;
+    z-index: 500;
 }
 
 .pattern-b,.pattern-a,.pattern-c,.pattern-d {
-    background-size: 90%;
+    background-size: cover;
     background-attachment: fixed;
     background-position: center;
     position: absolute;
     display:block;
+    top:0;
+    padding: 0;
     width: 100%;
     height: 100%;
 }
 .pattern-a {
-    background-image: url('../img/nyc2.jpg');
-    background-repeat: no-repeat;
+    background-image:linear-gradient(rgba(119, 44, 204, 0.5), rgb(255, 60, 0)), url('../img/nyc_brighest.jpg');
+    background-blend-mode: darken;
+
 }
-.pattern-b {
-    background-image: url('../img/nyc.jpg');
-    background-repeat: no-repeat;
+
+#myLogo, #myLogo2, #myLogo3 {
+    //background-image:url('../img/bk-ptrn-bw2.jpg'), url('../img/THR_Logo_knockout2.png'),linear-gradient(rgba(119, 44, 204, 0.5), rgb(255, 60, 0));
+    background-image: url('../img/THR_Logo_knockout2.png');
+    background-blend-mode: hard-light;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: absolute;
+    opacity: .6;
+    top:0;
+    display: block;
+    border: 0;
+    box-sizing: border-box;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: 600;
+}
+content {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+}
+#fullCover {
+    background-color: black;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 10%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: 1000;
+}
+
+.pattern-d {
+    background-image:linear-gradient(rgba(219, 21, 226, 0.438), rgba(9, 5, 41, 0.719)), url('../img/nyc_brighest.jpg');
+    background-blend-mode: hard-light;
 }
 .pattern-c {
-    background-image: url('../img/nyc3.png');
-    background-repeat: no-repeat;
+    background-image: url('../img/nyc_top_colorful.jpg');
 }
+
+.pattern-b{
+    background-image: url('../img/nyc_top_colorful2.jpg');
+}
+
 /*
 .multiBK {
     background-image:
@@ -83,31 +139,39 @@ $enable-responsive-font-sizes: true;
 
 .q1 {
     background-color: rgba(25, 35, 175, 0.9);
+    top:0;
+    z-index: 10;
 }
 .q2 {
     background-color: rgba(175, 48, 25, 0.698);
+    z-index: 20;
 }
 .q3 {
     background-color: rgba(25, 175, 70, 0.3);
+    z-index: 30
+    ;
 }
 .q4 {
     background-color: rgba(175, 152, 25, 0.1);
+    z-index: 40;
 }
 
 .vertLine{
     background-color: black;
     width:4px;
-    height: 100%;
+    height: 10%;
     position: absolute;
     top:0;
+    left: 0;
     z-index: 110;
 }
 
 .horizLine{
     background-color: black;
-    width:100%;
+    width:10%;
     height: 4px;
     position: absolute;
+    top:0;
     left:0;
     z-index: 100;
 }

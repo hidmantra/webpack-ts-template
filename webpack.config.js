@@ -4,6 +4,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   // which files should webpack watch and transpile ['./src/main.ts', './src/template.html', './src/styles/style.scss']
@@ -116,6 +117,7 @@ module.exports = {
 
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.ContextReplacementPlugin(/typedjson-npm/, 'typed-json.js')
+    new webpack.ContextReplacementPlugin(/typedjson-npm/, 'typed-json.js'),
+    //new CleanWebpackPlugin(),
   ]
 };
