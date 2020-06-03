@@ -7,8 +7,8 @@ import "bootstrap";
 import * as geometric from "../node_modules/geometric/build/geometric";
 import { GalleryStripModal } from "./components/gallery_strip_modal/GalleryStripModal";
 
-let myLogo:JQuery;
-const test :HTMLImageElement= new Image();
+let myLogo: JQuery;
+const test: HTMLImageElement = new Image();
 let mPos = new d$.MPos();
 mPos.x = 0;
 mPos.y = 0;
@@ -25,71 +25,49 @@ let enterButton: JQuery;
 let but3: JQuery;
 let but4: JQuery;
 const fullCover: JQuery = $("#fullCover");
-const sect1:JQuery = $("#overview-top");
-const sect2:JQuery = $("#technology-top");
-const sect3:JQuery = $("#portfolio-top");
-const sect4:JQuery = $("#resume-top");
-const mediumHolder:JQuery = $("#medium-holder");
+const sect1: JQuery = $("#overview-top");
+const sect2: JQuery = $("#technology-top");
+const sect3: JQuery = $("#portfolio-top");
+const sect4: JQuery = $("#resume-top");
+const mediumHolder:any =  document.getElementById("medium-holder");
 let wHeight: number = window.innerHeight;
 let wWidth: number = window.innerWidth;
 /* prevents code from running until the entire document loads                      */
 $(document).ready(function () {
   /// eslint-disable-next-line no-console
-  const appAnchor: any = document.querySelector("app");
   console.log("document loaded");
-  const mainHolder: any = $("#holder");
+  const mainHolder: JQuery = $("#holder");
+  const appAnchor: JQuery = $("app");
+
   sqr1 = $("<div class= 'container-fluid quarterFill pattern-a bk-img q1'></div> ");
   sqr2 = $("<div class= 'container-fluid quarterFill pattern-b bk-img q2'></div> ");
   sqr3 = $("<div class= 'container-fluid quarterFill pattern-c bk-img q3'></div> ");
   sqr4 = $("<div class= 'container-fluid quarterFill pattern-d bk-img q4'></div> ");
-  myLogo = $("<div/>",{
+  myLogo = $("<div/>", {
     id: "myLogo"
   });
   vLine = $("<div class= 'vertLine'/>");
-  hLine = $("<div class= 'horizLine'></div>");
-  enterHolder = $("<div/>",{
-    id:'enter-holder',
+  hLine = $("<div class= 'horizLine'/>");
+  enterHolder = $("<div/>", {
+    id: 'enter-holder',
     class: "container-fluid"
   });
-  enterButton = $("<button/>",{
-    id:'enter-button',
+  enterButton = $("<button/>", {
+    id: 'enter-button',
     class: 'mx-auto btn btn-outline-primary',
-    type:'button',
-    text:"PROCEDE"
+    type: 'button',
+    text: "PROCEDE"
   });
-  but3 = $("<div id='but3' class='button'><div>");
-  but4 = $("<div id='but4' class='button'><div>");
 
   $(mainHolder).mousemove(function (event) {
     updateMouse(event.pageX, event.pageY);
-    mediumHolder = document.getElementById("medium-holder");
+  })
 
-    addComponents();
-  });
-/*
-  $(mainHolder).mousedown(function (event) {
-    console.log('pressed');
-    $(handle).css({display:'block' ,top: event.pageY, left: event.pageX});
-    updateMouse(event.pageX, event.pageY)
-  });
-  */
-  
-  enterButton.click((evt)=>{
+  enterButton.click((evt) => {
     console.log("clckd 2");
-    //$(sect3).css({display:"block"});
     $(sect3).addClass("visible");
 
   });
-  but3.click((evt)=>{
-    console.log("clckd 3");
-    //$(sect3).css({display:"block"});
-
-  });
-  but4.click((evt)=>{
-    console.log("clckd 4");
-    $(sect4).css({display:"block"});
-  });
-
   $(sqr1).appendTo(appAnchor);
   $(sqr2).appendTo(appAnchor);
   $(sqr3).appendTo(appAnchor);
@@ -99,20 +77,22 @@ $(document).ready(function () {
   $(myLogo).appendTo(appAnchor);
   $(vLine).appendTo(appAnchor);
   $(hLine).appendTo(appAnchor);
-$(enterHolder).appendTo(appAnchor);
-$(enterButton).appendTo(enterHolder);
+  $(enterHolder).appendTo(appAnchor);
+  $(enterButton).appendTo(enterHolder);
   $(fullCover).animate({
     opacity: 0.4
-  }, 90000, "linear", function() {
+  }, 90000, "linear", function () {
     //
-    });
-    $(mainHolder).addClass("visible");
-    $(mainHolder).removeClass("invisible")
- introAnimation();
+  });
+  $(mainHolder).addClass("visible");
+  $(mainHolder).removeClass("invisible");
+
+  //addComponents();
+  introAnimation();
 });
 
 window.addEventListener("resize", () => {
-  $(myLogo).delay(10).animate({left: (fullCover.width()-myLogo.width())/2, top:(wHeight-myLogo.height())/2});
+  $(myLogo).delay(10).animate({ left: (fullCover.width() - myLogo.width()) / 2, top: (wHeight - myLogo.height()) / 2 });
 
 });
 
@@ -121,9 +101,9 @@ window.addEventListener("scroll", () => {
 
 })
 
-function moveCrosshairs(tmpX: number, tmpY: number){
-  const dDelay:number = 1;
- $(vLine).delay(dDelay).animate({ left: tmpX, top: 0, height: wHeight });
+function moveCrosshairs(tmpX: number, tmpY: number) {
+  const dDelay: number = 1;
+  $(vLine).delay(dDelay).animate({ left: tmpX, top: 0, height: wHeight });
   $(hLine).delay(dDelay).animate({ left: 0, top: tmpY, width: wWidth });
 
   $(sqr1).delay(dDelay).animate({ left: 0, top: 0, width: tmpX, height: tmpY });
@@ -140,19 +120,19 @@ function updateMouse(tmpX: number, tmpY: number) {
   //moveCrosshairs(mPos.x, mPos.y);
 }
 
-function introAnimation(){
-  let tmpPoint:Array<number> = [];
-  for (let i = 0; i < 361; i=i+6) {
-    console.log("p: "+myLogo.width());
-    tmpPoint = geometric.pointRotate([((wWidth-(.7 * myLogo.width()))/2)+5,wHeight/2] ,i,[wWidth/2,wHeight/2]);
-    let tmpX:number = Math.round(tmpPoint[0]);
-    let tmpY:number = Math.round(tmpPoint[1]);
+function introAnimation() {
+  let tmpPoint: Array<number> = [];
+  for (let i = 0; i < 361; i = i + 6) {
+    console.log("p: " + myLogo.width());
+    tmpPoint = geometric.pointRotate([((wWidth - (.7 * myLogo.width())) / 2) + 5, wHeight / 2], i, [wWidth / 2, wHeight / 2]);
+    let tmpX: number = Math.round(tmpPoint[0]);
+    let tmpY: number = Math.round(tmpPoint[1]);
     perimArr.push(tmpPoint);
 
     moveCrosshairs(tmpX, tmpY);
-    
+
     console.log("tmpPoint x: " + tmpX + " y: " + tmpY);
-  
+
   }
 }
 
@@ -182,21 +162,21 @@ $(()=>{
 
   });
   */
-
- function addComponents(): void {
+/*
+function addComponents(): void {
   const galleryStripModal: GalleryStripModal = new GalleryStripModal();
 
   galleryStripModal.appendComponent(mediumHolder);
 
   const screenCovered = () => {
-      // eslint-disable-next-line no-console
-      console.log("bingo");
-      $(".navba").hide();
+    // eslint-disable-next-line no-console
+    console.log("bingo");
+    $(".navba").hide();
   };
   const screenUncovered = () => {
-      $(".navbar").show();
+    $(".navbar").show();
   };
 
   galleryStripModal.CoverUp.on(screenCovered);
   galleryStripModal.CoverDown.on(screenUncovered);
-}
+}8*/
