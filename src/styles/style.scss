@@ -11,32 +11,11 @@ $enable-responsive-font-sizes: true;
 body, app, #content, #holder, #fullCover {
     color: $primary;
     padding: 0;
+    overflow-y:hidden;
 }
 #holder {
     background-color: rgba(119, 44, 204, 0.9);
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    padding: 0;
-}
-
-
-.main-title {
-    text-align: center;
-    color: white;
-}
-/*
-.container {
-   // border: 2 solid grey;
-}
-
-.container-fluid {
-
-   // border: 4 solid rgb(70, 43, 43);
-}
-*/
-.mainkBk {
-    background-image: url('../img/thr-logo-knockout.png');
+    background-image: url('../img/green1_croppred.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -44,10 +23,29 @@ body, app, #content, #holder, #fullCover {
     position: absolute;
     display:block;
     height: 100%;
-    z-index: 500;
+    width: 100%;
+    z-index: 100;
+    padding: 0;
+    
+}
+content {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+#fullCover {
+    background-color: black;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: 300;
 }
 
-.pattern-b,.pattern-a,.pattern-c,.pattern-d {
+.bk-img {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -60,59 +58,50 @@ body, app, #content, #holder, #fullCover {
 }
 .pattern-a {
     background-image:linear-gradient(rgba(119, 44, 204, 0.5), rgb(255, 60, 0)), url('../img/nyc_brighest.jpg');
-    background-blend-mode: darken;
-
+    background-blend-mode: color-dodge;
 }
-
-#myLogo, #myLogo2, #myLogo3 {
-    //background-image:url('../img/bk-ptrn-bw2.jpg'), url('../img/THR_Logo_knockout2.png'),linear-gradient(rgba(119, 44, 204, 0.5), rgb(255, 60, 0));
-    background-image: url('../img/THR_Logo_knockout2.png');
-    background-blend-mode: hard-light;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    position: absolute;
-    opacity: .6;
-    top:0;
-    display: block;
-    border: 0;
-    box-sizing: border-box;
-    line-height: 0;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.2;
-    z-index: 600;
-}
-content {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    z-index: 900;
-}
-#fullCover {
-    background-color: black;
-    position: absolute;
-    top:0;
-    left:0;
-    width: 10%;
-    height: 100%;
-    opacity: 0.1;
-    z-index: 1000;
-}
-
-.pattern-d {
-    background-image:linear-gradient(rgba(219, 21, 226, 0.438), rgba(9, 5, 41, 0.719)), url('../img/nyc_brighest.jpg');
-    background-blend-mode: hard-light;
+.pattern-b{
+    background-image: url('../img/nyc_top_colorful2.jpg');
 }
 .pattern-c {
     background-image: url('../img/nyc_top_colorful.jpg');
 }
-
-.pattern-b{
-    background-image: url('../img/nyc_top_colorful2.jpg');
+.pattern-d {
+    background-image:linear-gradient(rgba(219, 21, 226, 0.438), rgba(9, 5, 41, 0.719)), url('../img/nyc_brighest.jpg');
+    background-blend-mode: hard-light;
 }
+
+#myLogo{
+    background-image: url('../img/THR_Logo_knockout2.png');
+    background-size: 70%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    opacity: .8;
+    display: block;
+    opacity: 0.8;
+    z-index: 600;
+}
+
+#enter-button{
+    width: 20rem;
+    height: 2rem;
+    display: block;
+    z-index: 1020;
+}
+#enter-holder {
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    top: 1rem;
+    display: block;
+    z-index: 1010;
+}
+
 
 /*
 .multiBK {
@@ -141,10 +130,12 @@ content {
     background-color: rgba(25, 35, 175, 0.9);
     top:0;
     z-index: 10;
+    height: 200px;
 }
 .q2 {
     background-color: rgba(175, 48, 25, 0.698);
     z-index: 20;
+    height: 30%;
 }
 .q3 {
     background-color: rgba(25, 175, 70, 0.3);

@@ -29,135 +29,20 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 
-<!--body data-spy="scroll" data-target=".navbar" data-offset="1550">
-  <div id="holder">
-  <header class="container clearfix align-middle">
-      <div id="logo-holder" class="float-left"></div>
-      <div class="h2 main-title mx-auto">Thought Render</div>
-  </header>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-                  <a class="nav-link" href="#overview-top">Overview</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link"  href="#technology">Technologies</a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle"  href="#" id="navbardrop" data-toggle="dropdown">Portfolio</a>
-                  <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#multimedia">Multi-Media</a>
-                      <a class="dropdown-item" href="#illustrations">Illustrations</a>
-                      <a class="dropdown-item" href="#photography">Photography</a>
-                      <a class="dropdown-item" href="#music">Music</a>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link"  href="#resume-top">Resume</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link"  href="#contact-top">Contact</a>
-              </li>
-        </ul>
-      </div>
-  </nav>
-  <div class="container-fluid" id="content">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          One of three columns
-        </div>
-        <div class="col-sm">
-          One of three columns
-        </div>
-        <div class="col-sm">
-          One of three columns
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  </div>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <body>
   
   
-    <header class="container clearfix align-middle">
+    <!--header class="container clearfix align-middle">
       <div id="logo-holder" class="float-left"></div>
       <div class="h2 main-title mx-auto"></div>
-  </header>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a class="nav-link" href="#overview-top">Overview</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#technology">Technologies</a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Portfolio</a>
-                  <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#multimedia">Multi-Media</a>
-                      <a class="dropdown-item" href="#illustrations">Illustrations</a>
-                      <a class="dropdown-item" href="#photography">Photography</a>
-                      <a class="dropdown-item" href="#music">Music</a>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#resume-top">Resume</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#contact-top">Contact</a>
-              </li>
-          </ul>
-      </div>
-  </nav-->
+  </header-->
+  
 
-<div id="holder" class="container-fluid" data-spy="scroll" data-target="#section-list">
+<div id="holder" class="container-fluid invisible">
   <div id="fullCover" class="container-fluid"></div>
   <content class="container-fluid">
-    <div id="section-list" class="list-group d-none">
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar" >
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                    <a class="nav-link" href="#overview-top">Overview</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"  href="#technology">Technologies</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" id="navbardrop" data-toggle="dropdown">Portfolio</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#multimedia">Multi-Media</a>
-                        <a class="dropdown-item" href="#illustrations">Illustrations</a>
-                        <a class="dropdown-item" href="#photography">Photography</a>
-                        <a class="dropdown-item" href="#music">Music</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"  href="#resume-top">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"  href="#contact-top">Contact</a>
-                </li>
-          </ul>
-        </div>
-    </nav>
-    </div>
+    <!--navigation-->
+    
     <app></app>
     <section id="overview-top" class="container d-none">
       <div class="section-title text-center">Overview</div>
@@ -213,7 +98,7 @@
         </div>
       </div>
     </section>
-    <section id="portfolio-top" class="container d-none">
+    <section id="portfolio-top" class="container invisible">
       <div class="section-title text-center">Portfolio</div>
       <!--div id="screen-cover"></div-->
       <div class="medium-holder" id='medium-holder'>
@@ -554,6 +439,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
