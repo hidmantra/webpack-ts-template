@@ -8,14 +8,14 @@
 
 $enable-responsive-font-sizes: true;
 
-body, app, #content, #holder, #fullCover {
+body, intro, #content, #holder, #fullCover {
     color: $primary;
     padding: 0;
     overflow-y:hidden;
 }
 #holder {
-    background-color: rgba(119, 44, 204, 0.9);
     background-image: url('../img/green1_croppred.jpg');
+    z-index: 100;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -24,9 +24,79 @@ body, app, #content, #holder, #fullCover {
     display:block;
     height: 100%;
     width: 100%;
-    z-index: 100;
     padding: 0;
-    
+}
+#border-a{
+    position: absolute;
+    left:4%;
+    top:4%;
+    width:92%;
+    height:92%;
+    border: 20px solid black;
+    opacity: .6;
+    z-index: 110;
+}
+
+#border-b{
+    position:absolute;
+    left:6%;
+    top:6%;
+    width:88%;
+    height:88%;
+    border: 20px solid black;
+    opacity: .9;
+    z-index: 120;
+}
+
+#interface{
+    background-image: url('../img/interface192.png');
+    z-index: 125;
+}
+.face-bk{
+    position: absolute;
+    background-color: black;
+    opacity: .9;
+    z-index: 135;
+}
+#face-top {
+    width: 98%;
+    height: 21%;
+    left: 1%;
+    top:1%;
+    z-index: 130;
+}
+#face-body{
+    width:65%;
+    height:76%;
+    left: 1%;
+    top:23%;
+    z-index: 140;
+}
+#face-nav{
+    width:20%;
+    height:76%;
+    left: 67%;
+    top:23%;
+    z-index: 145;
+}
+#face-scroll{
+    width:11%;
+    height:76%;
+    left: 88%;
+    top:23%;
+    z-index: 150;
+}
+
+#face-head {
+    height:30%;
+    position: relative;
+    display: block;
+}
+
+.face-bod {
+    position: relative;
+    display: block;
+    height:80%;
 }
 content {
     background-color: black;
@@ -51,23 +121,34 @@ content {
     background-position: center;
     position: absolute;
     display:block;
+    background-clip: border-box;
     top:0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
+@keyframes hueshift {
+    from {filter: hue-rotate(1);}
+    to {filter: hue-rotate(350);}
+}
 .pattern-a {
     background-image:linear-gradient(rgba(119, 44, 204, 0.5), rgb(255, 60, 0)), url('../img/nyc_brighest.jpg');
     background-blend-mode: color-dodge;
+    filter: hue-rotate(1);
+    animation-name: hueshift;
+    -moz-animation-name: hueshif;
+    animation-duration: 10s;
 }
 .pattern-b{
-    background-image: url('../img/nyc_top_colorful2.jpg');
+    background-image:linear-gradient(rgba(79, 223, 13, 0.5), rgb(0, 38, 255)), url('../img/nyc_brighest.jpg');
+    background-blend-mode:hue;
+
 }
 .pattern-c {
-    background-image: url('../img/nyc_top_colorful.jpg');
+    background-image:linear-gradient(rgba(219, 21, 226, 0.438), rgba(9, 5, 41, 0.719)), url('../img/nyc_brighest.jpg');
 }
 .pattern-d {
-    background-image:linear-gradient(rgba(219, 21, 226, 0.438), rgba(9, 5, 41, 0.719)), url('../img/nyc_brighest.jpg');
+    background-image:linear-gradient(rgba(240, 117, 35, 0.582), rgba(139, 8, 8, 0.719)), url('../img/nyc_brighest.jpg');
     background-blend-mode: hard-light;
 }
 
@@ -119,12 +200,7 @@ content {
     
 }
 */
-.quarterFill{
-    position: absolute;
-    display: block;
-    width: 100%;
-    background-clip: padding-box;
-}
+
 
 .q1 {
     background-color: rgba(25, 35, 175, 0.9);

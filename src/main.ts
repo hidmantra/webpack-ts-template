@@ -7,11 +7,17 @@ import "bootstrap";
 import * as geometric from "../node_modules/geometric/build/geometric";
 import { GalleryStripModal } from "./components/gallery_strip_modal/GalleryStripModal";
 
+const mainHolder: JQuery = $("#holder");
+const introAnchor: JQuery = $("intro");
+const interHolder: JQuery = $("#interface");
+const fullCover: JQuery = $("#fullCover");
+const sect1: JQuery = $("#overview-top");
+const sect2: JQuery = $("#technology-top");
+const sect3: JQuery = $("#portfolio-top");
+const sect4: JQuery = $("#resume-top");
+const mediumHolder:any =  document.getElementById("medium-holder");
 let myLogo: JQuery;
-const test: HTMLImageElement = new Image();
 let mPos = new d$.MPos();
-mPos.x = 0;
-mPos.y = 0;
 let windowScrollPositon: number;
 let perimArr: Array<any> = [];
 let vLine: JQuery;
@@ -22,27 +28,21 @@ let sqr3: JQuery;
 let sqr4: JQuery;
 let enterHolder: JQuery;
 let enterButton: JQuery;
-let but3: JQuery;
-let but4: JQuery;
-const fullCover: JQuery = $("#fullCover");
-const sect1: JQuery = $("#overview-top");
-const sect2: JQuery = $("#technology-top");
-const sect3: JQuery = $("#portfolio-top");
-const sect4: JQuery = $("#resume-top");
-const mediumHolder:any =  document.getElementById("medium-holder");
+let overviewButton: JQuery;
 let wHeight: number = window.innerHeight;
 let wWidth: number = window.innerWidth;
-/* prevents code from running until the entire document loads                      */
+mPos.x = 0;
+mPos.y = 0;
+
+ 
+/* prevents code from running until the entire document loads */
 $(document).ready(function () {
   /// eslint-disable-next-line no-console
   console.log("document loaded");
-  const mainHolder: JQuery = $("#holder");
-  const appAnchor: JQuery = $("app");
-
-  sqr1 = $("<div class= 'container-fluid quarterFill pattern-a bk-img q1'></div> ");
-  sqr2 = $("<div class= 'container-fluid quarterFill pattern-b bk-img q2'></div> ");
-  sqr3 = $("<div class= 'container-fluid quarterFill pattern-c bk-img q3'></div> ");
-  sqr4 = $("<div class= 'container-fluid quarterFill pattern-d bk-img q4'></div> ");
+  sqr1 = $("<div class= 'container-fluid pattern-a bk-img q1'></div> ");
+  sqr2 = $("<div class= 'container-fluid pattern-b bk-img q2'></div> ");
+  sqr3 = $("<div class= 'container-fluid pattern-c bk-img q3'></div> ");
+  sqr4 = $("<div class= 'container-fluid pattern-d bk-img q4'></div> ");
   myLogo = $("<div/>", {
     id: "myLogo"
   });
@@ -65,24 +65,39 @@ $(document).ready(function () {
 
   enterButton.click((evt) => {
     console.log("clckd 2");
-    $(sect3).addClass("visible");
+    inter();
+
+    $(fullCover).animate({
+      opacity: 1,
+    }, 3000, "linear", function () {
+      $(introAnchor).css({"display":"none"});
+      $(fullCover).animate({
+        opacity: 0
+      }, 3000, "linear", function () {
+        $(fullCover).css({"display":"none"});
+      });
+    });
 
   });
-  $(sqr1).appendTo(appAnchor);
-  $(sqr2).appendTo(appAnchor);
-  $(sqr3).appendTo(appAnchor);
-  $(sqr4).appendTo(appAnchor);
-  //$(myLogo3).appendTo(appAnchor);
-  //$(myLogo2).appendTo(appAnchor);
-  $(myLogo).appendTo(appAnchor);
-  $(vLine).appendTo(appAnchor);
-  $(hLine).appendTo(appAnchor);
-  $(enterHolder).appendTo(appAnchor);
+  $(sqr1).appendTo(introAnchor);
+  $(sqr2).appendTo(introAnchor);
+  $(sqr3).appendTo(introAnchor);
+  $(sqr4).appendTo(introAnchor);
+  $(myLogo).appendTo(introAnchor);
+  $(vLine).appendTo(introAnchor);
+  $(hLine).appendTo(introAnchor);
+  $(enterHolder).appendTo(introAnchor);
   $(enterButton).appendTo(enterHolder);
   $(fullCover).animate({
-    opacity: 0.4
-  }, 90000, "linear", function () {
-    //
+    opacity: 1
+  }, 30000, "linear", function () {
+    $(introAnchor).css({"display":"none"});
+    inter();
+    $(fullCover).animate({
+      opacity: 0
+    }, 3000, "linear", function () {
+      $(fullCover).css({"display":"none"});
+    });
   });
   $(mainHolder).addClass("visible");
   $(mainHolder).removeClass("invisible");
@@ -91,8 +106,53 @@ $(document).ready(function () {
   introAnimation();
 });
 
+function inter(){
+  const bord1:JQuery = $("<div/>", {
+    class: "container-fluid",
+    id: "border-a"
+  });
+  const bord2:JQuery = $("<div/>", {
+    class: "container-fluid",
+    id: "border-b"
+  });
+  const faceTop:JQuery = $("<div/>", {
+    class: "container-fluid face-bk",
+    id: "face-top"
+  });
+  const faceBody:JQuery = $("<div/>", {
+    class: "container-fluid face-bk",
+    id: "face-body"
+  });
+  const faceNav:JQuery = $("<div/>", {
+    class: "container-fluid face-bk",
+    id: "face-nav"
+  });
+  const faceScroll:JQuery = $("<div/>", {
+    class: "container-fluid face-bk",
+    id: "face-scroll"
+  });
+  overviewButton = $("<button/>", {
+    id: 'overview-button',
+    class: 'mx-auto btn btn-outline-primary',
+    type: 'button',
+    text: "Overview",
+    width:"100%",
+  });
+  
+  $(bord1).appendTo(interHolder);
+  $(bord2).appendTo(interHolder);
+  $(faceTop).appendTo(bord2);
+  $(faceBody).appendTo(bord2);
+  $(faceNav).appendTo(bord2);
+  $(faceScroll).appendTo(bord2);
+  $(overviewButton).appendTo(faceNav);
+  overviewButton.click((evt) => {
+    $(sect1).appendTo(faceBody);
+    $(sect1).removeClass("d-none");
+  });
+}
 window.addEventListener("resize", () => {
-  $(myLogo).delay(10).animate({ left: (fullCover.width() - myLogo.width()) / 2, top: (wHeight - myLogo.height()) / 2 });
+  //$(myLogo).delay(10).animate({ left: (fullCover.width() - myLogo.width()) / 2, top: (wHeight - myLogo.height()) / 2 });
 
 });
 
