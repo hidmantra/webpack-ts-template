@@ -184,7 +184,7 @@ function introAnimation() {
   let tmpPoint: Array<number> = [];
   for (let i = 0; i < 361; i = i + 6) {
     console.log("p: " + myLogo.width());
-    tmpPoint = geometric.pointRotate([((wWidth - (.7 * myLogo.width())) / 2) + 5, wHeight / 2], i, [wWidth / 2, wHeight / 2]);
+    tmpPoint = geometric.pointRotate([((wWidth - (.7 * myLogo.width())) / 2), wHeight / 2], i, [wWidth / 2, wHeight / 2]);
     let tmpX: number = Math.round(tmpPoint[0]);
     let tmpY: number = Math.round(tmpPoint[1]);
     perimArr.push(tmpPoint);

@@ -6,7 +6,18 @@
 @import "desk-lg.scss";
 @import "desk-xl.scss";
 
+@font-face {
+    font-family: HeadingFont;
+    src: url('../fonts/Hattori_Hanzo.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 $enable-responsive-font-sizes: true;
+
+h2, h2, h3 {
+    font-family: HeadingFont;
+}
 
 body, intro, #content, #holder, #fullCover {
     color: $primary;

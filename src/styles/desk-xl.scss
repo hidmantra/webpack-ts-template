@@ -1,0 +1,6 @@
+/* 1200px min width xl*/
+@include media-breakpoint-up(xl) {
+    *{
+        color: blue;
+    }
+}

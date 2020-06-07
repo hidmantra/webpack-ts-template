@@ -1,0 +1,6 @@
+/* Mobile Device */
+@include media-breakpoint-down(xs) {
+    * {
+        color: rgb(223, 28, 28);
+    }
+}

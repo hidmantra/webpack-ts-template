@@ -1,0 +1,6 @@
+/* 992px min width lg*/
+@include media-breakpoint-up(lg) {
+    * {
+        color: rgb(28, 109, 52);
+    }
+}
