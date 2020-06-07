@@ -7,16 +7,31 @@
 @import "desk-xl.scss";
 
 @font-face {
-    font-family: HeadingFont;
-    src: url('../fonts/Hattori_Hanzo.woff') format('woff');
+    font-family: jura;
+    src: url('../fonts/jura.ttf') format('tiff');
     font-weight: 700;
     font-style: normal;
+}
+@font-face {
+    font-family: headingFont;
+    src: url('../fonts/hattori_hanzo.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: headingFonttt;
+    src: url('../fonts/hattori_hanzo.woff') format('woff');
+    font-weight: 700;
+    font-style: oblique;
 }
 
 $enable-responsive-font-sizes: true;
 
-h2, h2, h3 {
-    font-family: HeadingFont;
+h1 {
+    font-family: jura;
+}
+h2 {
+    font-family: headingFont;
 }
 
 body, intro, #content, #holder, #fullCover {
@@ -193,24 +208,6 @@ content {
     display: block;
     z-index: 1010;
 }
-
-
-/*
-.multiBK {
-    background-image:
-    url('../img/quadbk.png') left top no-repeat,
-    url('../img/quadbk.png') right top no-repeat,
-    url('../img/quadbk.png') left bottom no-repeat,
-    url('../img/quadbk.png') right bottom no-repeat;
-   // background-repeat: no-repeat;
-    //background-attachment: fixed;
-    //background-position: center;
-    background-size:300px ;
-    //position: absolute;
-    //display:block;
-    
-}
-*/
 
 
 .q1 {

@@ -69,11 +69,11 @@ $(document).ready(function () {
 
     $(fullCover).animate({
       opacity: 1,
-    }, 3000, "linear", function () {
+    }, 1000, "linear", function () {
       $(introAnchor).css({"display":"none"});
       $(fullCover).animate({
         opacity: 0
-      }, 3000, "linear", function () {
+      }, 2000, "linear", function () {
         $(fullCover).css({"display":"none"});
       });
     });
