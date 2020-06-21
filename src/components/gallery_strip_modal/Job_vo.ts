@@ -1,7 +1,6 @@
 
 import { JsonObject, JsonMember } from "./../../../node_modules/typedjson-npm/js/typed-json";
 import 'reflect-metadata';
-import { stringify } from "querystring";
 
 export class Job_vo //implements IJob_vo
 {

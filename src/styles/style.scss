@@ -6,139 +6,299 @@
 @import "desk-lg.scss";
 @import "desk-xl.scss";
 
+
+
 @font-face {
     font-family: jura;
     src: url('../fonts/jura.ttf') format('tiff');
     font-weight: 700;
     font-style: normal;
 }
+
 @font-face {
     font-family: headingFont;
     src: url('../fonts/hattori_hanzo.woff') format('woff');
     font-weight: 700;
     font-style: italic;
 }
+
 @font-face {
-    font-family: headingFonttt;
-    src: url('../fonts/hattori_hanzo.woff') format('woff');
-    font-weight: 700;
-    font-style: oblique;
+    font-family: displayFont;
+    src: url('../fonts/Sarpanch-Medium.ttf') format('woff');
+    font-weight: 500;
+    font-style: normal;
 }
 
 $enable-responsive-font-sizes: true;
 
-h1 {
-    font-family: jura;
-}
-h2 {
-    font-family: headingFont;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: displayFont;
 }
 
-body, intro, #content, #holder, #fullCover {
+.spacer {
+    font-family: headingFont;
+
+}
+
+body,
+intro,
+#holder,
+#fullCover {
     color: $primary;
     padding: 0;
-    overflow-y:hidden;
 }
-#holder {
-    background-image: url('../img/green1_croppred.jpg');
-    z-index: 100;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    position: absolute;
-    display:block;
-    height: 100%;
-    width: 100%;
+
+body {
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+header {
+
+    height: 120px;
+
+}
+
+#full-screen-spacer {
+    position: relative;
+    display: block;
+    height: 100vh;
+    background-color: blue($color: #cf0808);
+    z-index: 11;
+}
+
+
+
+.nav-item.nav-link {
+    color: rgb(196, 103, 32) !important;
+
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 20vu;
     padding: 0;
-}
-#border-a{
-    position: absolute;
-    left:4%;
-    top:4%;
-    width:92%;
-    height:92%;
-    border: 20px solid black;
-    opacity: .6;
-    z-index: 110;
-}
-
-#border-b{
-    position:absolute;
-    left:6%;
-    top:6%;
-    width:88%;
-    height:88%;
-    border: 20px solid black;
-    opacity: .9;
-    z-index: 120;
-}
-
-#interface{
-    background-image: url('../img/interface192.png');
-    z-index: 125;
-}
-.face-bk{
-    position: absolute;
-    background-color: black;
-    opacity: .9;
-    z-index: 135;
-}
-#face-top {
-    width: 98%;
-    height: 21%;
-    left: 1%;
-    top:1%;
-    z-index: 130;
-}
-#face-body{
-    width:65%;
-    height:76%;
-    left: 1%;
-    top:23%;
-    z-index: 140;
-}
-#face-nav{
-    width:20%;
-    height:76%;
-    left: 67%;
-    top:23%;
-    z-index: 145;
-}
-#face-scroll{
-    width:11%;
-    height:76%;
-    left: 88%;
-    top:23%;
-    z-index: 150;
-}
-
-#face-head {
-    height:30%;
-    position: relative;
-    display: block;
-}
-
-.face-bod {
-    position: relative;
-    display: block;
-    height:80%;
-}
-content {
-    background-color: black;
-    width: 100%;
-    height: 100%;
     z-index: 200;
 }
+.navbar-brand {
+    font: .5rem;
+}
+.header-logo{
+    width:  70px;
+    margin: 10%;
+    padding-right: 20%;
+}
+
+
+
+
+intro {
+    opacity: .7;
+}
+
+#holder {
+    background-color: black;
+    color: #ebdab6;
+    position: relative;
+    display: block;
+    height: 10000px;
+    width: 100%;
+    padding: 0;
+    z-index: 10;
+
+}
+
+content {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+#logo-holder {
+    display: inline-block;
+}
+#bigLogoHolder{
+    width: 100%;
+    height: 100%;
+}
+
+#myLogo {
+    background-image: url('../img/THR_Logo_knockout2.png');
+    background-size: 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    display: block;
+    z-index: 900;
+}
+.my-logo {
+    width: 100%;
+    height: 100%;
+   
+    z-index: 40;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+#bigLogoHolder{
+    position: absolute;
+    background-image: url('../img/THR_Logo_knockout2.png');
+    background-size: 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#cityscape {
+    z-index: 40;
+}
+#intro-bk {
+    width: 100%;
+    height: 100%;
+}
+
+#logo-intro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 19, 20, 1);
+    background: -moz-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(20, 19, 20, 1)), color-stop(1%, rgba(20, 19, 20, 1)), color-stop(13%, rgba(20, 19, 20, 1)), color-stop(46%, rgba(74, 71, 74, 1)), color-stop(69%, rgba(74, 71, 74, 1)), color-stop(95%, rgba(20, 19, 20, 1)), color-stop(100%, rgba(20, 19, 20, 1)));
+    background: -webkit-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
+    background: -o-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
+    background: linear-gradient(to right, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#141314', endColorstr='#141314', GradientType=1);
+
+    z-index: 10;
+}
+
+.now-set {
+    position: relative;
+}
+
+.free {
+    position: fixed;
+    opacity: 1;
+    top: 1000px;
+    transform: translateY(100);
+    transition-duration: 4s;
+
+    //animation: opacity 2s linear;
+}
+.fxd{
+    position: fixed;
+    overflow: hidden;
+}
+.rel{
+    position: relative;
+}
+
+#g1 {
+    z-index:110 ;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 25%;
+    text-align: center;
+  
+}
+
+
+#g1l1, 
+#g1l2,
+#g1l3,
+#g1l4 {
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+}
+
+
+.drop {
+    top:-10px;
+    transition: top 2s ease-out;
+}
+.lift {
+    top:+10px;
+}
+#g2 {
+    z-index:120 ;
+    position: absolute;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    opacity: 0;
+    display: none;
+}
+
 #fullCover {
     background-color: black;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
+    
     width: 100%;
     height: 100%;
-    opacity: 0.1;
-    z-index: 300;
+    
+    //opacity: 1;
+    z-index: 100;
+}
+.see{
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in-out;
+
+}
+.no-see{  
+
+    opacity: 0!important;
+    transform:opacity(0);
+    transition-duration: 4s;
+}
+
+.offY {
+    position: inherit;
+
+}
+
+
+#sqrHolder {
+    width: 100px;
+    height: 100px;
+    margin-top: 180px;
+    transform-origin: 200% center;
+    position: relative;
+    animation: rotate 3s linear infinite;
+}
+
+#sqrHolder:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: blue;
+    animation: rotate 3s linear reverse infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
 }
 
 .bk-img {
@@ -146,60 +306,68 @@ content {
     background-attachment: fixed;
     background-position: center;
     position: absolute;
-    display:block;
+    display: flex;
+    perspective: 200px;
     background-clip: border-box;
-    top:0;
+    top: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    // transform-style: preserve-3d;
+    animation: scale 15s ease-out infinite alternate;
 }
+
 @keyframes hueshift {
-    from {filter: hue-rotate(1);}
-    to {filter: hue-rotate(350);}
+    from {
+        filter: hue-rotate(1);
+    }
+
+    to {
+        filter: hue-rotate(350);
+    }
 }
+
+@keyframes scale {
+    0% {
+        width: 100%;
+        //filter: hue-rotate(1deg);
+    }
+
+    100% {
+
+        width: 110%;
+        //filter: hue-rotate(90deg);
+    }
+}
+
 .pattern-a {
-    background-image:linear-gradient(rgba(119, 44, 204, 0.5), rgb(255, 60, 0)), url('../img/nyc_brighest.jpg');
+    background-image: linear-gradient(rgba(119, 44, 204, 0.5), rgb(255, 60, 0)), url('../img/nyc_brighest.jpg');
     background-blend-mode: color-dodge;
-    filter: hue-rotate(1);
-    animation-name: hueshift;
-    -moz-animation-name: hueshif;
-    animation-duration: 10s;
+    //animation: hueshift 5s ease-out infinite alternate;
 }
-.pattern-b{
-    background-image:linear-gradient(rgba(79, 223, 13, 0.5), rgb(0, 38, 255)), url('../img/nyc_brighest.jpg');
-    background-blend-mode:hue;
+
+.pattern-b {
+    background-image: linear-gradient(rgba(79, 223, 13, 0.5), rgb(0, 38, 255)), url('../img/nyc_brighest.jpg');
+    background-blend-mode: hue;
 
 }
+
 .pattern-c {
-    background-image:linear-gradient(rgba(219, 21, 226, 0.438), rgba(9, 5, 41, 0.719)), url('../img/nyc_brighest.jpg');
+    background-image: linear-gradient(rgba(219, 21, 226, 0.438), rgba(9, 5, 41, 0.719)), url('../img/nyc_brighest.jpg');
 }
+
 .pattern-d {
-    background-image:linear-gradient(rgba(240, 117, 35, 0.582), rgba(139, 8, 8, 0.719)), url('../img/nyc_brighest.jpg');
+    background-image: linear-gradient(rgba(240, 117, 35, 0.582), rgba(139, 8, 8, 0.719)), url('../img/nyc_brighest.jpg');
     background-blend-mode: hard-light;
 }
 
-#myLogo{
-    background-image: url('../img/THR_Logo_knockout2.png');
-    background-size: 70%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left:0;
-    opacity: .8;
-    display: block;
-    opacity: 0.8;
-    z-index: 600;
-}
-
-#enter-button{
+#enter-button {
     width: 20rem;
     height: 2rem;
     display: block;
     z-index: 1020;
 }
+
 #enter-holder {
     position: absolute;
     width: 100%;
@@ -212,42 +380,44 @@ content {
 
 .q1 {
     background-color: rgba(25, 35, 175, 0.9);
-    top:0;
+    top: 0;
     z-index: 10;
     height: 200px;
 }
+
 .q2 {
     background-color: rgba(175, 48, 25, 0.698);
     z-index: 20;
     height: 30%;
 }
+
 .q3 {
     background-color: rgba(25, 175, 70, 0.3);
-    z-index: 30
-    ;
+    z-index: 30;
 }
+
 .q4 {
     background-color: rgba(175, 152, 25, 0.1);
     z-index: 40;
 }
 
-.vertLine{
+.vertLine {
     background-color: black;
-    width:4px;
+    width: 4px;
     height: 10%;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     z-index: 110;
 }
 
-.horizLine{
+.horizLine {
     background-color: black;
-    width:10%;
+    width: 10%;
     height: 4px;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     z-index: 100;
 }
 

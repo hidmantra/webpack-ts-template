@@ -16,9 +16,10 @@
   "devDependencies": {
     "@types/bootstrap": "^4.3.1",
     "@types/jquery": "^3.3.33",
+    "animated-scroll-to": "^2.0.8",
     "autoprefixer": "^9.7.4",
-    "bootstrap": "^4.4.1",
-    "browser-sync": "^2.24.6",
+    "bootstrap": "^4.5.0",
+    "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^1.0.0",
@@ -26,17 +27,18 @@
     "file-loader": "^1.1.11",
     "geometric": "^2.2.3",
     "html-webpack-plugin": "^2.30.1",
-    "http-server": "^0.12.1",
+    "http-server": "^0.12.3",
     "image-webpack-loader": "^6.0.0",
     "jquery-ui-bundle": "^1.12.1-migrate",
     "mdbootstrap": "^4.19.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "postcss-loader": "^3.0.0",
     "reflect-metadata": "^0.1.13",
     "sass-loader": "^7.1.0",
     "script-loader": "^0.7.2",
+    "scroll-track": "^1.0.1",
     "source-map": "^0.7.3",
     "style-loader": "^0.22.1",
     "ts-loader": "^4.4.2",
@@ -44,7 +46,7 @@
     "typescript": "^3.0.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.10.3",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
   },
   "repository": {
@@ -57,7 +59,7 @@
   "homepage": "https://github.com/hidmantra/webpack-ts-template#readme",
   "dependencies": {
     "@types/lodash": "^4.14.149",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "lodash": "^4.17.15"
   }
 }

@@ -1,6 +1,11 @@
 /* Mobile Device */
 @include media-breakpoint-down(xs) {
-    * {
-        color: rgb(223, 28, 28);
+    
+    html {
+        font-size: .7rem;
+    }
+    
+    .header-logo{
+        width:  50px;
     }
 }

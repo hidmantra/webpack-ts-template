@@ -1,6 +1,14 @@
 /* 576px min width sm*/
 @include media-breakpoint-up(sm) {
-    * {
-        color: rgb(223, 158, 28);
+
+    html {
+        font-size: .8rem;
+    }
+   
+    .navbar-brand {
+        display: none;
+    }
+    .header-logo{
+        width:  70px;
     }
 }

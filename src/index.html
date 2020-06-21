@@ -29,428 +29,475 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 
-  <body>
-  
-  
-    <!--header class="container clearfix align-middle">
-      <div id="logo-holder" class="float-left"></div>
-      <div class="h2 main-title mx-auto"></div>
-  </header-->
-  
+<body>
 
-<div id="holder" class="container-fluid invisible">
-  <intro></intro>
 
-  <div id="interface" class="container-fluid">
-   
+  <!--navigation-->
+
+  <div id="nav-holder" class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <div id="logo-holder" class="float-left d-inline"></div>
+      <a class="navbar-brand" href="#">Thought Render</a>
+      <button class="clear-fix float-right navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="nav button-outline nav-justified container-fluid">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Experience</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#overview-top">Overview</a>
+              <a class="dropdown-item" href="#technologies">Technologies</a>
+              <a class="dropdown-item" href="#resume">Resume</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#multimedia">Multi-Media</a>
+              <a class="dropdown-item" href="#illustrations">Illustrations</a>
+              <a class="dropdown-item" href="#photography">Photography</a>
+              <a class="dropdown-item" href="#music">Music</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link btn-outline" href="#contact-top">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
 
-  <div id="fullCover" class="container-fluid"></div>
-  <content class="container-fluid">
-    <!--navigation-->
-    <section id="overview-top" class="container d-none">
-      <h1 class="section-title text-center">Overview</h1>
-      <h2 class="section-title text-center">Overview</h2>
-      <h3 class="section-title text-center">Overview</h3>
-      <p class="test-justify">My name is Deriv Diggs and I'm the founder and chief engineer of Thought Render. I've been creating websites,
-        RIAs, kiosks, desktop applications, games, and mobile applications using Adobe AIR/Flash/Flex/Flash
-        Builder/HTML5/CSS3/Javascript. Twelve years ago, before focusing on development, I was a senior designer at
-        Grey Interactive (at the time the interactive division of Grey Advertising) in New York City. Therefore, in
-        addition to my skills as a programmer, I'm extremely proficient with the entire Adobe CS suite of programs
-        especially Photoshop, Illustrator, Flash and Dreamweaver. I won the Adobe Site of the Day award for April
-        11, 2009.
-      </p>
-      <p class="jura">My extensive knowlege of both Flash and Jquery/Javascript, gives me the ablitiy to turn your Flash projects
-        into html5 without loosing effects or functionality. I can also use Flash to change your web applications
-        into native applications for the desktop and for mobile devices.</p>
-      <p>In addition to front end technologies, I have experience programming php, Python, and mySQL, and have
-        extensive experience building dynamic projects that get their content from a variety of backend
-        technologies. Please find my resume, portfolio, and contact information by scrolling down or using the menu
-        at the top.
-      </p>
-    </section>
-    <section id="technology" class="container d-none">
-      <div class="section-title text-center">Technologies</div>
-      <div id="technology-table" class="row">
-        <div class="col-sm">
-          <div class="technology-title text-center">Languages</div>
-          <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">ActionScript 2</a>
-            <a href="#" class="list-group-item list-group-item-action">ActionScript 3</a>
-            <a href="#" class="list-group-item list-group-item-action">Javascript</a>
-            <a href="#" class="list-group-item list-group-item-action">ECMA 5</a>
-            <a href="#" class="list-group-item list-group-item-action">TypeScript</a>
-            <a href="#" class="list-group-item list-group-item-action">HTML</a>
-            <a href="#" class="list-group-item list-group-item-action">CSS3</a>
-            <a href="#" class="list-group-item list-group-item-action">Python</a>
-          </div>
+  <!--navigation-->
+  <div id="holder" class="container-fluid" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <section id="cityscape" class="container d-none"></section>
+    <section id="intro-bk" class="container-fluid">
+
+      <div id="logo-intro">
+        <!--img src="./img/THR_Logo_knockout2.png" class="my-logo"-->
+        <!--div id="myLogo" class="container-fluid"></div-->
+        <div id="bigLogoHolder"></div>
+
+        <div id="fullCover"></div>
+
+
+
+        <!--animation screen-->
+        <div id="g1" class="grp1 text-center d-block rel">
+          <h4 id="g1l1" class="txt-b4 mb-3 not-set">Thought Render</h3>
+            <h1 id="g1l2" class="txt-b4 mt-n2 not-set">Do you make excuses...</h1>
+            <h1 id="g1l3" class="txt-b4 not-set">When asked about your website?</h1>
+            <h5 id="g1l4" class="txt-b4 mt-5 not-set">Websites Starting at $999.</h2>
         </div>
-        <div class="col-sm">
-          <div class="technology-title text-center">Environments</div>
-          <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">WebPack</a>
-            <a href="#" class="list-group-item list-group-item-action">Grunt</a>
-            <a href="#" class="list-group-item list-group-item-action">GIT</a>
-            <a href="#" class="list-group-item list-group-item-action">SVN</a>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="technology-title text-center">Software</div>
-          <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">Visual Studio Code</a>
-            <a href="#" class="list-group-item list-group-item-action">Adobe Photoshop</a>
-            <a href="#" class="list-group-item list-group-item-action">Adobe Illustrator</a>
-          </div>
+        <!--animation screen-->
+        <div id="g2" class="grp2 d-block text-center d-none">
+          <h3 class="ln1">Leverage over</h3>
+          <h2 class="ln1">20yrs</h3>
+            <h3 class="ln2">Experience. Complete</h3>
+            <h3 class="ln3">tailored online identity packages.</h3>
+            <h3 class="ln4">Look for excuses to bring up your</h3>
+            <h3 class="ln5">brand new WEBSITE.</h3>
         </div>
       </div>
     </section>
-    <section id="portfolio-top" class="container invisible">
-      <div class="section-title text-center">Portfolio</div>
-      <!--div id="screen-cover"></div-->
-      <div class="medium-holder" id='medium-holder'>
-        <!--div class="medium-title">Multimedia</div>
-            <div class="portfolio-medium">
-                <div id="multi-thumbs" class="thumb-strip"></div>
+    <content class="container-fluid">
+      <section id="overview-top" class="container d-none">
+        <h1 class="section-title text-center">Overview</h1>
+        <p>My name is Deriv Diggs and I'm the founder and chief engineer of Thought Render. I've been creating websites,
+          RIAs, kiosks, desktop applications, games, and mobile applications using Adobe AIR/Flash/Flex/Flash
+          Builder/HTML5/CSS3/Javascript. Twelve years ago, before focusing on development, I was a senior designer at
+          Grey Interactive (at the time the interactive division of Grey Advertising) in New York City. Therefore, in
+          addition to my skills as a programmer, I'm extremely proficient with the entire Adobe CS suite of programs
+          especially Photoshop, Illustrator, Flash and Dreamweaver. I won the Adobe Site of the Day award for April
+          11, 2009.
+        </p>
+        <p>My extensive knowlege of both Flash and Jquery/Javascript, gives me the ablitiy to turn your Flash projects
+          into html5 without loosing effects or functionality. I can also use Flash to change your web applications
+          into native applications for the desktop and for mobile devices.</p>
+        <p>In addition to front end technologies, I have experience programming php, Python, and mySQL, and have
+          extensive experience building dynamic projects that get their content from a variety of backend
+          technologies. Please find my resume, portfolio, and contact information by scrolling down or using the menu
+          at the top.
+        </p>
+      </section>
+      <section id="technology" class="container d-none">
+        <div class="section-title text-center">Technologies</div>
+        <div id="technology-table" class="row">
+          <div class="col-sm">
+            <div class="technology-title text-center">Languages</div>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">ActionScript 2</a>
+              <a href="#" class="list-group-item list-group-item-action">ActionScript 3</a>
+              <a href="#" class="list-group-item list-group-item-action">Javascript</a>
+              <a href="#" class="list-group-item list-group-item-action">ECMA 5</a>
+              <a href="#" class="list-group-item list-group-item-action">TypeScript</a>
+              <a href="#" class="list-group-item list-group-item-action">HTML</a>
+              <a href="#" class="list-group-item list-group-item-action">CSS3</a>
+              <a href="#" class="list-group-item list-group-item-action">Python</a>
             </div>
-        </div-->
-        <!-- The Modal -->
-      </div>
-      <div class="portfolio-medium">
-        <div class="medium-title">Illustrations</div>
-      </div>
-      <div class="portfolio-medium">
-        <div class="medium-title">Photography</div>
-      </div>
-      <div class="portfolio-medium">
-        <div class="medium-title">Music</div>
-      </div>
-
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title" id="modal-title"></h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="col-sm">
+            <div class="technology-title text-center">Environments</div>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">WebPack</a>
+              <a href="#" class="list-group-item list-group-item-action">Grunt</a>
+              <a href="#" class="list-group-item list-group-item-action">GIT</a>
+              <a href="#" class="list-group-item list-group-item-action">SVN</a>
             </div>
+          </div>
+          <div class="col-sm">
+            <div class="technology-title text-center">Software</div>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Visual Studio Code</a>
+              <a href="#" class="list-group-item list-group-item-action">Adobe Photoshop</a>
+              <a href="#" class="list-group-item list-group-item-action">Adobe Illustrator</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="portfolio-top" class="container invisible">
+        <div class="section-title text-center">Portfolio</div>
+        <!--div id="screen-cover"></div-->
+        <div class="medium-holder" id='medium-holder'>
+          <!--div class="medium-title">Multimedia</div>
+              <div class="portfolio-medium">
+                  <div id="multi-thumbs" class="thumb-strip"></div>
+              </div>
+          </div-->
+          <!-- The Modal -->
+        </div>
+        <div class="portfolio-medium">
+          <div class="medium-title">Illustrations</div>
+        </div>
+        <div class="portfolio-medium">
+          <div class="medium-title">Photography</div>
+        </div>
+        <div class="portfolio-medium">
+          <div class="medium-title">Music</div>
+        </div>
 
-            <!-- Modal body  -->
-            <div id="#test" class="modal-body">
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
 
-              </div-->
-
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-title"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
 
+              <!-- Modal body  -->
+              <div id="#test" class="modal-body">
+
+                </div-->
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="resume-top" class="container d-none">
-      <div class="section-title text-center">Resume</div>
+      </section>
+      <section id="resume-top" class="container d-none">
+        <div class="section-title text-center">Resume</div>
 
-      <p><a href="http://thoughtrender.com/interactive/docs/Resume_of_Deriv_Diggs.pdf">You can click here to download
-          a PDF file containing additonal experience.</a>
-      <p>
-      <div class='h-resume'>
-        <p class="p-contact h-card">
-          <a class="p-name u-url" href="http://thoughtrender.com">Deriv Diggs</a><br />
-          <a class="u-email" href="mailto:derivdiggs@thoughtrender.com">derivdiggs@thoughtrender.com</a><br />
-          <span class="p-street-address">6186 Colonial Lane</span><br />
-          <span class="p-locality">Tobyhanna</span>,
-          <span class="p-region">Pennsylvania</span><br />
-          <span class="p-country-name">United States of America</span><br />
-          <span class="p-tel">908-938-6936</span>
-        </p>
-        <h2>Summary</h2>
-        <p class='p-summary'>Development of RIAs, widgets, desk-top applications, kiosks, and web based
-          applications.
-          Leverage technologies such as <span class="p-skill">ActionScript 2</span> / <span class="p-skill">ActionScript
-            3</span> within <span class="p-skill">Flash</span> and <span class="p-skill">Flash Builder</span> (<span
-            class="p-skill">Flex</span>), <span class="p-skill">MDM
-            Zinc</span>, <span class="p-skill">SHU</span>, and <span class="p-skill">Adobe AIR</span>.
-          Development of scalable, optimized websites using <span class="p-skill">HTML5</span>, <span
-            class="p-skill">Javascript</span>, <span class="p-skill">jQuery</span>, <span class="p-skill">CSS3</span>,
-          <span class="p-skill">PHP</span> and <span class="p-skill">MySQL</span>. Experience with <span
-            class="p-skill">CMS</span>s including <span class="p-skill">Wordpress</span> as well as custom CMSs. Over
-          10years of Adobe CS Suite experience
-          with expertise in <span class="p-skill">Flash</span>, <span class="p-skill">Photoshop</span>, <span
-            class="p-skill">Dreamweaver</span> and <span class="p-skill">Illustrator</span>. Excellent problem
-          solving and adaptation to new resources and ideas. Strong communication, initiative, leadership, and
-          focus.</p>
-        <h2>Experience</h2>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <a class="p-name u-url" href="http://thoughtrender.com">Thought Render</a><br />
-            <span class="p-street-address">244 5th Av. STE D-229</span><br />
-            <span class="p-locality">New York</span>,
-            <span class="p-region">New York</span><br />
-            <span class="p-country-name">United States of America</span><br />
-            <span class="p-tel">908-938-6936</span><br />
-          <p class="p-job-title">CEO</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2013-06-30">September 2012</time><span class="date-to"> -
-            </span><time class="dt-end" datetime="2014-07-30">Present</time>
-            <p class="p-role">Responsibilities include the development and design of all of Thought Render’s
-              brands, using a variety of technologies. Technologies included so far are, Flash / ActionScript
-              3.0, PHP, and Wordpress. Currently working on HTML 5 / CSS3 / Javascript implementations. Main
-              website URL is <a href="http://thoughtrender.com">http://thoughtrender.com</a> which uses a
-              custom animation filter that I built to create the animated building blocks. Under development
-              is <a href="http://thoughtrender.com/SLWEB/">http://thoughtrender.com/SLWEB/</a> this is a work
-              in progress, it uses a MySQL database and php to communicate with ActionScript 3.0.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Created this website as well as sister website <a
-                  href="http://thoughtrender.com/music">http://thoughtrender.com/music.</a></li>
-              <li>Both websites are fully responsive, and solid on any platform or device.</li>
-              <li>Incorporated cutting edge techniques and standard like micro-formatting.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <a class="p-name u-url" href="http://www.hcii.cmu.edu">Carnegie Mellon University</a><br />
-            <span class="p-street-address">5000 Forbes Avenue</span><br />
-            <span class="p-locality">Pittsburgh</span>,
+        <p><a href="http://thoughtrender.com/interactive/docs/Resume_of_Deriv_Diggs.pdf">You can click here to download
+            a PDF file containing additonal experience.</a>
+        <p>
+        <div class='h-resume'>
+          <p class="p-contact h-card">
+            <a class="p-name u-url" href="http://thoughtrender.com">Deriv Diggs</a><br />
+            <a class="u-email" href="mailto:derivdiggs@thoughtrender.com">derivdiggs@thoughtrender.com</a><br />
+            <span class="p-street-address">6186 Colonial Lane</span><br />
+            <span class="p-locality">Tobyhanna</span>,
             <span class="p-region">Pennsylvania</span><br />
             <span class="p-country-name">United States of America</span><br />
-            <span class="p-tel">412-268-3386</span><br />
-          <p class="p-job-title">Senior Research Developer</p>
+            <span class="p-tel">908-938-6936</span>
           </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2012-01-02">January 2012</time><span class="date-to"> -
-            </span><time class="dt-end" datetime="2012-09-30">September 2012</time>
-            <p class="p-role">Responsibilities included developing front-end interfaces using both AS2 and AS3
-              that leveraged a Java based backend for cognitive tutoring systems. I worked directly under Dr.
-              Bruce McLaren <a href="http://www.cs.cmu.edu/~bmclaren/">http://www.cs.cmu.edu/~bmclaren</a>
-              creating tutors in the CTAT <a href="http://ctat.pact.cs.cmu.edu/">http://ctat.pact.cs.cmu.edu/</a>
-              environment for CMU’s
-              Human-Computer Interaction Institute.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Leveraged components created by other developers as well as created new components following
-                proven architectures</li>
-              <li>Re-coded legacy AS2 components into OOP style AS3 components</li>
-              <li>Project managed Dr. McLaren’s visions incorporating an international team of
-                multi-discipline professional</li>
-            </ul>
-          </div>
-        </div>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <a class="p-name u-url" href="http://www.supernovainc.com/">SuperNova Inc.</a><br />
-            <span class="p-street-address">150 allen road, suite 203</span><br />
-            <span class="p-locality">Basking Ridge</span>,
-            <span class="p-region">New Jersey</span><br />
-            <span class="p-country-name">United States of America</span><br />
-            <span class="p-tel">908-504-2800</span><br />
-          <p class="p-job-title">Senior Software Engineer</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2012-03-01">March 2010</time><span class="date-to"> - </span><time
-              class="dt-end" datetime="2012-06-30">June 2011</time>
-            <p class="p-role">Responsibilities included developing interactive software using AS3 inside of
-              Flash Builder (Flex) and Flash.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Created an iPad application, using Flash, of SuperNova’s most popular PC program.</li>
-              <li>Created best coding practices document and helped the team develop a streamlined process.
-              </li>
-              <li>Used the MVC programming paradigm and encapsulated as much code as possible for easy
-                reusability.</li>
-            </ul>
-          </div>
-        </div>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <a class="p-name u-url" href="http://www.mccanntorrelazur.com/">McCann Torre Lazur</a><br />
-            <span class="p-street-address">20 Waterview Blvd.</span><br />
-            <span class="p-locality">Parsippany</span>,
-            <span class="p-region">New Jersey</span><br />
-            <span class="p-country-name">United States of America</span><br />
-            <span class="p-tel">973-331-1488</span><br />
-          <p class="p-job-title">Freelance Multimedia Developer</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2009-01-01">January 2009</time><span class="date-to"> - </span>
-            <time class="dt-end" datetime="2009-07-30">July 2009</time>
-            <p class="p-role">Responsibilities included developing interactive, multimedia websites, and
-              applications with Adobe Flash.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Led the development of <a href="http://www.carefirstforlife.com">
-                  http://www.carefirstforlife.com</a></li>
-              <li>Created touch screen app for Plavix, which incorporated both audio and video, to correspond
-                with text and animations.</li>
-            </ul>
-          </div>
-        </div>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <a class="p-name u-url" href="http://www.ogilvychww.com/">Qi, a part of Ogilvy
-              Commonhealth</a><br />
-            <span class="p-street-address">446 Interpace Pkwy.</span><br />
-            <span class="p-locality">Parsippany</span>,
-            <span class="p-region">New Jersey</span><br />
-            <span class="p-country-name">United States of America</span><br />
-            <span class="p-tel">973-352-1000</span><br />
-          <p class="p-job-title">Freelance Interactive Media Developer</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2007-10-01">October 2007</time><span class="date-to"> -
-            </span><time class="dt-end" datetime="2008-12-31">December 2008</time>
-            <p class="p-role">Responsibilities included the development of broadband technologies including
-              ActionScript 2.0/3.0/Flash, audio/video editing and encoding, and integrating server
-              technologies to create rich and dynamic user experiences that many times interact with servers,
-              and data-bases.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Increased services offered for organization.</li>
-              <li>Taking advantage of OOP, develop expandable and re-usable designs.</li>
-              <li>Fixed and updated files from internal and outside resource teams.</li>
-            </ul>
-          </div>
-        </div>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <span class="p-name">Temel Inc. (out of business)</span><br />
-            <span class="p-street-address"> 716 Main St</span><br />
-            <span class="p-locality">Boonton</span>,
-            <span class="p-region">New Jersey</span><br />
-            <span class="p-country-name">United States of America</span><br />
-            <span class="p-tel">973-335-6298</span><br />
-          <p class="p-job-title">RichMedia Developer</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2007-10-01">October 2006</time><span class="date-to"> -
-            </span><time class="dt-end" datetime="2007-9-30">October 2007</time>
-            <p class="p-role">Responsibilities included the development of broadband technologies including
-              ActionScript 2.0/Flash, audio/video editing and encoding, and integrating server technologies to
-              create rich and dynamic user experiences.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Taking advantage of OOP, develop expandable and re-usable designs.</li>
-              <li>Fixed and updated files from outside resource teams.</li>
-            </ul>
-          </div>
-        </div>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <span class="p-name">Freelance Multi-Media Consultant</span><br />
-            <span class="p-locality">New York</span>,
-            <span class="p-region">New York</span><br />
-            <span class="p-country-name">United States of America</span><br />
-          <p class="p-job-title">Freelance Interactive Media Developer</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2007-10-01">March 2001</time><span class="date-to"> - </span><time
-              class="dt-end" datetime="2008-12-31">October 2006</time>
-            <p class="p-role">Worked on various Flash project through out New York City</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Completed freelance work for Trump Place, Blue Barn Interactive, and Evian among others.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <a class="p-name u-url" href="http://www.nycompaniesindex.com/zactus-inc-1dtdq/">Zactus (out of
-              business)</a><br />
-            <span class="p-street-address">305 Broadway St. 9th Floor</span><br />
-            <span class="p-locality">New York</span>,
-            <span class="p-region">New York</span><br />
-            <span class="p-country-name">United States of America</span><br />
-          <p class="p-job-title">Multimedia Director</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2000-9-01">October 2006</time>
-            -
-            <time class="dt-end" datetime="2001-3-30">October 2007</time>
-            <p class="p-role">Responsibilities included the look and feel of all Zactus media projects, as well
-              as all Flash programming. Business model was based on a custom Flash 4 interface for databases
-              that I was reprogramming in Flash 5.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Debugged and modified over 8000 lines of Action Script.</li>
-              <li>Reduced over 8000 lines of code to less than 1000 lines.</li>
-              <li>Guided the look and feel to create a unified brand.</li>
-            </ul>
-          </div>
-        </div>
-        <!--- a job -->
-        <div class='p-experience h-event'>
-          <p class="p-location h-card">
-            <a class="p-name u-url" href="http://grey.com/us">Grey Interactive (Interactive Division of Grey
-              Advertising</a><br />
-            <span class="p-street-address">200 Fifth Ave.</span><br />
-            <span class="p-locality">New York</span>,
-            <span class="p-region">New York</span><br />
-            <span class="p-country-name">United States of America</span><br />
-            <span class="p-tel">212-420-5100</span><br />
-          <p class="p-job-title">Senior Designer</p>
-          </p>
-          <div class="h-event">
-            <time class="dt-start" datetime="2000-01-01">January 2000</time><span class="date-to"> -
-            </span><time class="dt-end" datetime="2008-09-31">September 2000</time>
-            <p class="p-role">Responsibilities included New Business pitches and designing web sites, reporting
-              directly to the Senior Creative Director. Specialized in story-boarding, and creation of
-              multimedia projects with Flash, and various other audio, and visual programs. Also advised other
-              teams on capabilities and limitations of current technologies.</p>
-            <div class="achieve">Achievements</div>
-            <ul>
-              <li>Relied on for splash page pitches for fortune 100 clients.</li>
-              <li>Helped land Nortel Networks by providing 2 of 6 pieces of artwork shown (Flash/splash).
-                Ultimately my work was chosen.</li>
-              <li>Created email campaign with over a million users sending out customized mandalas for
-                Pantene.</li>
-            </ul>
+          <h2>Summary</h2>
+          <p class='p-summary'>Development of RIAs, widgets, desk-top applications, kiosks, and web based
+            applications.
+            Leverage technologies such as <span class="p-skill">ActionScript 2</span> / <span
+              class="p-skill">ActionScript
+              3</span> within <span class="p-skill">Flash</span> and <span class="p-skill">Flash Builder</span> (<span
+              class="p-skill">Flex</span>), <span class="p-skill">MDM
+              Zinc</span>, <span class="p-skill">SHU</span>, and <span class="p-skill">Adobe AIR</span>.
+            Development of scalable, optimized websites using <span class="p-skill">HTML5</span>, <span
+              class="p-skill">Javascript</span>, <span class="p-skill">jQuery</span>, <span class="p-skill">CSS3</span>,
+            <span class="p-skill">PHP</span> and <span class="p-skill">MySQL</span>. Experience with <span
+              class="p-skill">CMS</span>s including <span class="p-skill">Wordpress</span> as well as custom CMSs. Over
+            10years of Adobe CS Suite experience
+            with expertise in <span class="p-skill">Flash</span>, <span class="p-skill">Photoshop</span>, <span
+              class="p-skill">Dreamweaver</span> and <span class="p-skill">Illustrator</span>. Excellent problem
+            solving and adaptation to new resources and ideas. Strong communication, initiative, leadership, and
+            focus.</p>
+          <h2>Experience</h2>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <a class="p-name u-url" href="http://thoughtrender.com">Thought Render</a><br />
+              <span class="p-street-address">244 5th Av. STE D-229</span><br />
+              <span class="p-locality">New York</span>,
+              <span class="p-region">New York</span><br />
+              <span class="p-country-name">United States of America</span><br />
+              <span class="p-tel">908-938-6936</span><br />
+            <p class="p-job-title">CEO</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2013-06-30">September 2012</time><span class="date-to"> -
+              </span><time class="dt-end" datetime="2014-07-30">Present</time>
+              <p class="p-role">Responsibilities include the development and design of all of Thought Render’s
+                brands, using a variety of technologies. Technologies included so far are, Flash / ActionScript
+                3.0, PHP, and Wordpress. Currently working on HTML 5 / CSS3 / Javascript implementations. Main
+                website URL is <a href="http://thoughtrender.com">http://thoughtrender.com</a> which uses a
+                custom animation filter that I built to create the animated building blocks. Under development
+                is <a href="http://thoughtrender.com/SLWEB/">http://thoughtrender.com/SLWEB/</a> this is a work
+                in progress, it uses a MySQL database and php to communicate with ActionScript 3.0.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Created this website as well as sister website <a
+                    href="http://thoughtrender.com/music">http://thoughtrender.com/music.</a></li>
+                <li>Both websites are fully responsive, and solid on any platform or device.</li>
+                <li>Incorporated cutting edge techniques and standard like micro-formatting.</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- end jobs -->
-        </div>
-    </section>
-    <section id="contact-top" class="container d-none">
-      <div class="section-title text-center">Contact Information</div>
-
-      <div class='underholder'>
-        <h2>Mailing Address</h2>
-        <div class="vcard">
-          <div class="org">Thought Render</div>
-          <div class="adr">
-            <div class="street-address">244 5th Av. STE D-229</div>
-            <span class="locality">New York</span>
-            <abbr class="region" title="Newyork">NY</abbr>,
-            <span class="postal-code">10001</span>,
-            <div class="country-name">U.S.A</div>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <a class="p-name u-url" href="http://www.hcii.cmu.edu">Carnegie Mellon University</a><br />
+              <span class="p-street-address">5000 Forbes Avenue</span><br />
+              <span class="p-locality">Pittsburgh</span>,
+              <span class="p-region">Pennsylvania</span><br />
+              <span class="p-country-name">United States of America</span><br />
+              <span class="p-tel">412-268-3386</span><br />
+            <p class="p-job-title">Senior Research Developer</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2012-01-02">January 2012</time><span class="date-to"> -
+              </span><time class="dt-end" datetime="2012-09-30">September 2012</time>
+              <p class="p-role">Responsibilities included developing front-end interfaces using both AS2 and AS3
+                that leveraged a Java based backend for cognitive tutoring systems. I worked directly under Dr.
+                Bruce McLaren <a href="http://www.cs.cmu.edu/~bmclaren/">http://www.cs.cmu.edu/~bmclaren</a>
+                creating tutors in the CTAT <a href="http://ctat.pact.cs.cmu.edu/">http://ctat.pact.cs.cmu.edu/</a>
+                environment for CMU’s
+                Human-Computer Interaction Institute.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Leveraged components created by other developers as well as created new components following
+                  proven architectures</li>
+                <li>Re-coded legacy AS2 components into OOP style AS3 components</li>
+                <li>Project managed Dr. McLaren’s visions incorporating an international team of
+                  multi-discipline professional</li>
+              </ul>
+            </div>
           </div>
-          <a class="email" href="mailto:inquiries@thoughtrender.com">inquiries@thoughtrender.com</a>
-        </div>
-    </section>
-  </content>
-</div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="main.bundle.js"></script>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <a class="p-name u-url" href="http://www.supernovainc.com/">SuperNova Inc.</a><br />
+              <span class="p-street-address">150 allen road, suite 203</span><br />
+              <span class="p-locality">Basking Ridge</span>,
+              <span class="p-region">New Jersey</span><br />
+              <span class="p-country-name">United States of America</span><br />
+              <span class="p-tel">908-504-2800</span><br />
+            <p class="p-job-title">Senior Software Engineer</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2012-03-01">March 2010</time><span class="date-to"> - </span><time
+                class="dt-end" datetime="2012-06-30">June 2011</time>
+              <p class="p-role">Responsibilities included developing interactive software using AS3 inside of
+                Flash Builder (Flex) and Flash.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Created an iPad application, using Flash, of SuperNova’s most popular PC program.</li>
+                <li>Created best coding practices document and helped the team develop a streamlined process.
+                </li>
+                <li>Used the MVC programming paradigm and encapsulated as much code as possible for easy
+                  reusability.</li>
+              </ul>
+            </div>
+          </div>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <a class="p-name u-url" href="http://www.mccanntorrelazur.com/">McCann Torre Lazur</a><br />
+              <span class="p-street-address">20 Waterview Blvd.</span><br />
+              <span class="p-locality">Parsippany</span>,
+              <span class="p-region">New Jersey</span><br />
+              <span class="p-country-name">United States of America</span><br />
+              <span class="p-tel">973-331-1488</span><br />
+            <p class="p-job-title">Freelance Multimedia Developer</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2009-01-01">January 2009</time><span class="date-to"> - </span>
+              <time class="dt-end" datetime="2009-07-30">July 2009</time>
+              <p class="p-role">Responsibilities included developing interactive, multimedia websites, and
+                applications with Adobe Flash.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Led the development of <a href="http://www.carefirstforlife.com">
+                    http://www.carefirstforlife.com</a></li>
+                <li>Created touch screen app for Plavix, which incorporated both audio and video, to correspond
+                  with text and animations.</li>
+              </ul>
+            </div>
+          </div>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <a class="p-name u-url" href="http://www.ogilvychww.com/">Qi, a part of Ogilvy
+                Commonhealth</a><br />
+              <span class="p-street-address">446 Interpace Pkwy.</span><br />
+              <span class="p-locality">Parsippany</span>,
+              <span class="p-region">New Jersey</span><br />
+              <span class="p-country-name">United States of America</span><br />
+              <span class="p-tel">973-352-1000</span><br />
+            <p class="p-job-title">Freelance Interactive Media Developer</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2007-10-01">October 2007</time><span class="date-to"> -
+              </span><time class="dt-end" datetime="2008-12-31">December 2008</time>
+              <p class="p-role">Responsibilities included the development of broadband technologies including
+                ActionScript 2.0/3.0/Flash, audio/video editing and encoding, and integrating server
+                technologies to create rich and dynamic user experiences that many times interact with servers,
+                and data-bases.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Increased services offered for organization.</li>
+                <li>Taking advantage of OOP, develop expandable and re-usable designs.</li>
+                <li>Fixed and updated files from internal and outside resource teams.</li>
+              </ul>
+            </div>
+          </div>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <span class="p-name">Temel Inc. (out of business)</span><br />
+              <span class="p-street-address"> 716 Main St</span><br />
+              <span class="p-locality">Boonton</span>,
+              <span class="p-region">New Jersey</span><br />
+              <span class="p-country-name">United States of America</span><br />
+              <span class="p-tel">973-335-6298</span><br />
+            <p class="p-job-title">RichMedia Developer</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2007-10-01">October 2006</time><span class="date-to"> -
+              </span><time class="dt-end" datetime="2007-9-30">October 2007</time>
+              <p class="p-role">Responsibilities included the development of broadband technologies including
+                ActionScript 2.0/Flash, audio/video editing and encoding, and integrating server technologies to
+                create rich and dynamic user experiences.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Taking advantage of OOP, develop expandable and re-usable designs.</li>
+                <li>Fixed and updated files from outside resource teams.</li>
+              </ul>
+            </div>
+          </div>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <span class="p-name">Freelance Multi-Media Consultant</span><br />
+              <span class="p-locality">New York</span>,
+              <span class="p-region">New York</span><br />
+              <span class="p-country-name">United States of America</span><br />
+            <p class="p-job-title">Freelance Interactive Media Developer</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2007-10-01">March 2001</time><span class="date-to"> - </span><time
+                class="dt-end" datetime="2008-12-31">October 2006</time>
+              <p class="p-role">Worked on various Flash project through out New York City</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Completed freelance work for Trump Place, Blue Barn Interactive, and Evian among others.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <a class="p-name u-url" href="http://www.nycompaniesindex.com/zactus-inc-1dtdq/">Zactus (out of
+                business)</a><br />
+              <span class="p-street-address">305 Broadway St. 9th Floor</span><br />
+              <span class="p-locality">New York</span>,
+              <span class="p-region">New York</span><br />
+              <span class="p-country-name">United States of America</span><br />
+            <p class="p-job-title">Multimedia Director</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2000-9-01">October 2006</time>
+              -
+              <time class="dt-end" datetime="2001-3-30">October 2007</time>
+              <p class="p-role">Responsibilities included the look and feel of all Zactus media projects, as well
+                as all Flash programming. Business model was based on a custom Flash 4 interface for databases
+                that I was reprogramming in Flash 5.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Debugged and modified over 8000 lines of Action Script.</li>
+                <li>Reduced over 8000 lines of code to less than 1000 lines.</li>
+                <li>Guided the look and feel to create a unified brand.</li>
+              </ul>
+            </div>
+          </div>
+          <!--- a job -->
+          <div class='p-experience h-event'>
+            <p class="p-location h-card">
+              <a class="p-name u-url" href="http://grey.com/us">Grey Interactive (Interactive Division of Grey
+                Advertising</a><br />
+              <span class="p-street-address">200 Fifth Ave.</span><br />
+              <span class="p-locality">New York</span>,
+              <span class="p-region">New York</span><br />
+              <span class="p-country-name">United States of America</span><br />
+              <span class="p-tel">212-420-5100</span><br />
+            <p class="p-job-title">Senior Designer</p>
+            </p>
+            <div class="h-event">
+              <time class="dt-start" datetime="2000-01-01">January 2000</time><span class="date-to"> -
+              </span><time class="dt-end" datetime="2008-09-31">September 2000</time>
+              <p class="p-role">Responsibilities included New Business pitches and designing web sites, reporting
+                directly to the Senior Creative Director. Specialized in story-boarding, and creation of
+                multimedia projects with Flash, and various other audio, and visual programs. Also advised other
+                teams on capabilities and limitations of current technologies.</p>
+              <div class="achieve">Achievements</div>
+              <ul>
+                <li>Relied on for splash page pitches for fortune 100 clients.</li>
+                <li>Helped land Nortel Networks by providing 2 of 6 pieces of artwork shown (Flash/splash).
+                  Ultimately my work was chosen.</li>
+                <li>Created email campaign with over a million users sending out customized mandalas for
+                  Pantene.</li>
+              </ul>
+            </div>
+
+            <!-- end jobs -->
+          </div>
+      </section>
+      <section id="contact-top" class="container d-none">
+        <div class="section-title text-center">Contact Information</div>
+
+        <div class='underholder'>
+          <h2>Mailing Address</h2>
+          <div class="vcard">
+            <div class="org">Thought Render</div>
+            <div class="adr">
+              <div class="street-address">244 5th Av. STE D-229</div>
+              <span class="locality">New York</span>
+              <abbr class="region" title="Newyork">NY</abbr>,
+              <span class="postal-code">10001</span>,
+              <div class="country-name">U.S.A</div>
+            </div>
+            <a class="email" href="mailto:inquiries@thoughtrender.com">inquiries@thoughtrender.com</a>
+          </div>
+      </section>
+    </content>
+  </div>
+  <!--holder-->
+  <script src="main.bundle.js"></script>
 </body>
 
 </html>

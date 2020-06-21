@@ -1,5 +1,5 @@
 import * as $ from "jquery";
-import {JsonObject, JsonMember, TypedJSON} from 'typedjson-npm';
+import {JsonObject, JsonMember, TypedJSON} from "../../../node_modules/typedjson-npm/js/typed-json";
 import { GSM_vo } from "./GSM_vo";
 import { Job_vo } from "./Job_vo";
 import { ThumbHolder } from "./ThumbHolder";
@@ -17,7 +17,7 @@ export class GalleryStripModal
                 "jobTitle" : "Aden",
                 "id"        : 1,
                 "position" : 4,
-                "thumbPath" : "gsm_assets/images/aden_large_thumb400.jpg",
+                "thumbPath" : " gsm_assets/images/aden_large_thumb400.jpg",
                 "filePath" : "gsm_assets/video/adendesktop_456w.mp4",
                 "description" : "I designed and executed this concept for a thrilled client. The shadow at the bottom of the cubes is an example of how sometimes the 'icing' really makes the cake. Clicking one of the items that came out of the cubes took the user to various static pages."
             },
