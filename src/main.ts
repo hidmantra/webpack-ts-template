@@ -7,10 +7,11 @@ import { GalleryStripModal } from "./components/gallery_strip_modal/GalleryStrip
 import SimpleLogo from "./img/THR_logo_bw.png";
 import HeaderLogo from "../src/img/tr.png";
 import BigLogo from "../src/img/THR_Logo_knockout2.png"
-import animateScrollTo from "../node_modules/animated-scroll-to/lib/animated-scroll-to";
-const scrollTrack = require('scroll-track');
-
+let scrollCntrl: d$.CntrlActList;
+//import animateScrollTo from "../node_modules/animated-scroll-to/lib/animated-scroll-to";
+//const scrollTrack = require('scroll-track');
 //import scrollTrack from "../node_modules/scroll-track/src/scroll-element/index 
+import { CntrlGroup } from './components/dUtils';
 const mainHolder: JQuery = $("#holder");
 const introAnchor: JQuery = $("#cityscape");
 
@@ -26,15 +27,17 @@ const g1l1: JQuery = $("#g1l1");
 const g1l2: JQuery = $("#g1l2");
 const g1l3: JQuery = $("#g1l3");
 const g1l4: JQuery = $("#g1l4");
+/*
 const trg1 = scrollTrack.create(g1);
 const trg1l1 = scrollTrack.create(g1l1);
 const trg1l2 = scrollTrack.create(g1l2);
 const trg1l3 = scrollTrack.create(g1l3);
 const trg1l4 = scrollTrack.create(g1l4);
-
+*/
 const headerLogo = new Image();
 const simpleLogo = new Image();
 const bigLogo = new Image();
+let relativeScroll: number;
 let myLogo: JQuery;
 let mPos = new d$.MPos();
 let windowScrollPosition: number;
@@ -45,9 +48,6 @@ let sqr1: JQuery;
 let sqr2: JQuery;
 let sqr3: JQuery;
 let sqr4: JQuery;
-let enterHolder: JQuery;
-let enterButton: JQuery;
-let overviewButton: JQuery;
 let wHeight: number = window.innerHeight;
 let wWidth: number = window.innerWidth;
 let firstRun: boolean = true;
@@ -67,36 +67,9 @@ galleryStripModal.CoverUp.on(screenCovered);
 galleryStripModal.CoverDown.on(screenUncovered);
 
 
-trg1.on("enter-viewport", () => {
-  console.log("free");
-  $(g1).addClass("fxd");
-  $(g1).remove("rel");
-})
-trg1.on("exit-viewport", () => {
-  console.log("free");
-  $(g1).remove("fxd");
-  $(g1).addClass("rel");
-})
-trg1l1.on("enter-viewport", () => {
-  console.log("free");
-  upIn($(g1l1),500)
-})
-
-trg1l1.on("exit-viewport", () => {
-  console.log("now-set");
-dOut($(g1l1))
-})
-trg1l2.on("enter-viewport", () => {
-  console.log("free");
-  upIn($(g1l2),500)
-})
-
-trg1l2.on("exit-viewport", () => {
-  console.log("now-set");
-dOut($(g1l2))
-})
-
-
+const cntrlGroup: d$.CntrlGroup = new d$.CntrlGroup({ start: 1, rest: 20, leave: 80, gone: 100 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 0, final: 10, end: 20 }]);
+let actSetA: d$.ActSet = new d$.ActSet(g1l1, cntrlGroup);
+scrollCntrl = new d$.CntrlActList([actSetA], 200, 100, 0);
 
 /* prevents code from running until the entire document loads */
 $(document).ready(function () {
@@ -113,10 +86,6 @@ $(document).ready(function () {
   bigLogo.src = BigLogo;
   bigLogo.className = "my-logo";
 
-
-
-  //$(bigLogo).appendTo(logoIntroAnchor);
-
   $(headerLogo).appendTo("#logo-holder");
   $(".main-title").html("Thought Render");
 
@@ -124,57 +93,36 @@ $(document).ready(function () {
   sqr2 = $("<div class= 'container-fluid pattern-b bk-img q2'></div> ");
   sqr3 = $("<div class= 'container-fluid pattern-c bk-img q3'></div> ");
   sqr4 = $("<div class= 'container-fluid pattern-d bk-img q4'></div> ");
-
-
-
   $(mainHolder).mousemove(function (event) {
     updateMouse(event.pageX, event.pageY);
   })
 
-
-
-
-  // $(myLogo).appendTo(logoIntroAnchor);
   $(sqr1).appendTo(introAnchor);
   $(sqr2).appendTo(introAnchor);
   $(sqr3).appendTo(introAnchor);
   $(sqr4).appendTo(introAnchor);
   $(vLine).appendTo(introAnchor);
   $(hLine).appendTo(introAnchor);
-  //$(fullCover).addClass("no-see");
   $(fullCover).animate({
     opacity: .3
   }, 5000);
-
 });
-
-
-
-//addComponents();
-
-
-
 
 function launchSection(sectionToLaunch: Function) {
   sectionToLaunch();
 }
 
 function upIn(el: JQuery, dlay: number) {
- // if($(el).hasClass("not-set")){
-    $(el).css("margin-top", "10px")
-    $(el).delay(dlay).animate({
-      "opacity": 1,
-      "margin-top": 0
-    }, 1000, ()=>{
-     // $(el).removeClass("not-set");
-    })
- // }
-    
-  
-  
+  // if($(el).hasClass("not-set")){
+  $(el).css("margin-top", "10px")
+  $(el).delay(dlay).animate({
+    "opacity": 1,
+    "margin-top": 0
+  }, 1000, () => {
+  })
 }
-function dOut(el: JQuery) {
 
+function dOut(el: JQuery) {
   $(el).animate({
     "opacity": 0,
     "margin-top": "-5px"
@@ -189,6 +137,8 @@ window.addEventListener("resize", () => {
 window.addEventListener("scroll", () => {
   windowScrollPosition = $(window).scrollTop();
   console.log("sp: " + windowScrollPosition);
+  relativeScroll = (100 / $(window).innerHeight()) * windowScrollPosition;
+  scrollCntrl.updateAtts(relativeScroll);
   if (windowScrollPosition > 1000) {
     let op: number = (2000 - windowScrollPosition) * .001;
     console.log("op: " + op);
@@ -221,18 +171,10 @@ window.addEventListener("scroll", () => {
 
   if (windowScrollPosition > 1600) {
     if (windowScrollPosition > 1600) {
-     // dOut($(g1l1))
     };
-   // if (windowScrollPosition > 1700) { dOut($(g1l2)) };
     if (windowScrollPosition > 1800) { dOut($(g1l3)) };
     if (windowScrollPosition > 1900) { dOut($(g1l4)) };
-
-
   }
-
-
-
-
 })
 
 function anim1() {
@@ -240,16 +182,12 @@ function anim1() {
   const offsetY: number = 5;
   $(g1l1).addClass("reveal");
   $(g1l2).addClass("reveal");
-  // Number($(g1).position. =   $(g1).position.top = offsetY;
-  //$(hLine).delay(dDelay).ag1l1nimate({ opacity: 1, top: tmpY, width: wWidth });
-  // c
 }
 
 function moveCrosshairs(tmpX: number, tmpY: number) {
 
   $(vLine).delay(dDelay).animate({ left: tmpX, top: 0, height: wHeight });
   $(hLine).delay(dDelay).animate({ left: 0, top: tmpY, width: wWidth });
-
   $(sqr1).delay(dDelay).animate({ left: 0, top: 0, width: tmpX, height: tmpY });
   $(sqr2).delay(dDelay).animate({ left: tmpX, top: 0, width: wWidth - tmpX, height: tmpY });
   $(sqr3).delay(dDelay).animate({ left: 0, top: tmpY, width: tmpX, height: wHeight - tmpY });
@@ -260,15 +198,12 @@ function moveCrosshairs(tmpX: number, tmpY: number) {
     $(mainHolder).addClass("visible");
     $(mainHolder).removeClass("invisible");
     firstRun = false;
-
   }
-
 }
 
 function updateMouse(tmpX: number, tmpY: number) {
   mPos.x = tmpX;
   mPos.y = tmpY;
-  //moveCrosshairs(mPos.x, mPos.y);
 }
 
 function introAnimation() {
@@ -279,14 +214,10 @@ function introAnimation() {
     let tmpX: number = Math.round(tmpPoint[0]);
     let tmpY: number = Math.round(tmpPoint[1]);
     perimArr.push(tmpPoint);
-
     moveCrosshairs(tmpX, tmpY);
-
     console.log("tmpPoint x: " + tmpX + " y: " + tmpY);
-
   }
 }
-
 /*
 /* uncomment this section for quick/sample test of jquery and lowdash
 /*
@@ -331,3 +262,34 @@ function addComponents(): void {
   galleryStripModal.CoverUp.on(screenCovered);
   galleryStripModal.CoverDown.on(screenUncovered);
 }8*/
+
+/*
+trg1.on("enter-viewport", () => {
+  console.log("free");
+  $(g1).addClass("fxd");
+  $(g1).remove("rel");
+})
+trg1.on("exit-viewport", () => {
+  console.log("free");
+  $(g1).remove("fxd");
+  $(g1).addClass("rel");
+})
+trg1l1.on("enter-viewport", () => {
+  console.log("free");
+  upIn($(g1l1),500)
+})
+
+trg1l1.on("exit-viewport", () => {
+  console.log("now-set");
+dOut($(g1l1))
+})
+trg1l2.on("enter-viewport", () => {
+  console.log("free");
+  upIn($(g1l2),500)
+})
+
+trg1l2.on("exit-viewport", () => {
+  console.log("now-set");
+dOut($(g1l2))
+})
+*/
