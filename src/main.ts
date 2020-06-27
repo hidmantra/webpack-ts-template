@@ -1,17 +1,15 @@
 import * as $ from "jquery";
 import * as _ from "lodash";
-import * as d$ from "./components/dUtils";
+import {ActSet, CntrlActList, CntrlGroup, MPos} from "./components/dUtils";
 import "bootstrap";
 import * as geometric from "../node_modules/geometric/build/geometric";
 import { GalleryStripModal } from "./components/gallery_strip_modal/GalleryStripModal";
 import SimpleLogo from "./img/THR_logo_bw.png";
 import HeaderLogo from "../src/img/tr.png";
 import BigLogo from "../src/img/THR_Logo_knockout2.png"
-let scrollCntrl: d$.CntrlActList;
 //import animateScrollTo from "../node_modules/animated-scroll-to/lib/animated-scroll-to";
 //const scrollTrack = require('scroll-track');
 //import scrollTrack from "../node_modules/scroll-track/src/scroll-element/index 
-import { CntrlGroup } from './components/dUtils';
 const mainHolder: JQuery = $("#holder");
 const introAnchor: JQuery = $("#cityscape");
 
@@ -22,24 +20,29 @@ const sect2: JQuery = $("#technology-top");
 const sect3: JQuery = $("#portfolio-top");
 const sect4: JQuery = $("#resume-top");
 const mediumHolder: any = document.getElementById("medium-holder");
+
+//let scrollCntrl: CntrlActList;
+
+let scrollCntrl: any;
+let cntrlGroupAa:CntrlGroup;
+let cntrlGroupAb:CntrlGroup;
+let cntrlGroupAc:CntrlGroup;
+let cntrlGroupAd:CntrlGroup;
+let cntrlGroupAe:CntrlGroup;
+
 const g1: JQuery = $("#g1");
 const g1l1: JQuery = $("#g1l1");
 const g1l2: JQuery = $("#g1l2");
 const g1l3: JQuery = $("#g1l3");
 const g1l4: JQuery = $("#g1l4");
-/*
-const trg1 = scrollTrack.create(g1);
-const trg1l1 = scrollTrack.create(g1l1);
-const trg1l2 = scrollTrack.create(g1l2);
-const trg1l3 = scrollTrack.create(g1l3);
-const trg1l4 = scrollTrack.create(g1l4);
-*/
+const g1l5: JQuery = $("#g1l5");
 const headerLogo = new Image();
 const simpleLogo = new Image();
 const bigLogo = new Image();
+
 let relativeScroll: number;
 let myLogo: JQuery;
-let mPos = new d$.MPos();
+let mPos = new MPos();
 let windowScrollPosition: number;
 let perimArr: Array<any> = [];
 let vLine: JQuery;
@@ -67,14 +70,29 @@ galleryStripModal.CoverUp.on(screenCovered);
 galleryStripModal.CoverDown.on(screenUncovered);
 
 
-const cntrlGroup: d$.CntrlGroup = new d$.CntrlGroup({ start: 1, rest: 20, leave: 80, gone: 100 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 0, final: 10, end: 20 }]);
-let actSetA: d$.ActSet = new d$.ActSet(g1l1, cntrlGroup);
-scrollCntrl = new d$.CntrlActList([actSetA], 200, 100, 0);
+
+
 
 /* prevents code from running until the entire document loads */
 $(document).ready(function () {
   /// eslint-disable-next-line no-console
   console.log("document loaded");
+
+  cntrlGroupAa = new CntrlGroup({ start: 1, rest: 20, leave: 80, gone: 92 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 14, final: 9, end: 0 }]);
+  cntrlGroupAb = new CntrlGroup({ start: 4, rest: 24, leave: 82, gone: 94 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 25, final: 20, end: 10 }]);
+  cntrlGroupAc = new CntrlGroup({ start: 8, rest: 28, leave: 84, gone: 96 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 35, final: 30, end: 20 }]);
+  cntrlGroupAd = new CntrlGroup({ start: 12, rest: 32, leave: 86, gone: 98 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 45, final: 40, end: 30 }]);
+  cntrlGroupAe = new CntrlGroup({ start: 16, rest: 34, leave: 88, gone: 100 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 60, final: 55, end: 45 }]);
+
+  let actSetAa: ActSet = new ActSet(g1l1, cntrlGroupAa);
+  let actSetAb: ActSet = new ActSet(g1l2, cntrlGroupAa);
+  let actSetAc: ActSet = new ActSet(g1l3, cntrlGroupAa);
+  let actSetAd: ActSet = new ActSet(g1l4, cntrlGroupAa);
+  let actSetAe: ActSet = new ActSet(g1l5, cntrlGroupAa);
+  let tmpActArr:Array<ActSet> = [actSetAa,actSetAb,actSetAc,actSetAd, actSetAe];
+  //tmpActArr.push(actSetAa);
+  //tmpActArr.push(actSetAb);
+  scrollCntrl = new CntrlActList(tmpActArr, 100, 200, 0);
 
   simpleLogo.src = SimpleLogo;
   simpleLogo.width = 50;
@@ -136,8 +154,8 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("scroll", () => {
   windowScrollPosition = $(window).scrollTop();
-  console.log("sp: " + windowScrollPosition);
   relativeScroll = (100 / $(window).innerHeight()) * windowScrollPosition;
+  console.log("sp: " + windowScrollPosition + " rel sp: " + relativeScroll);
   scrollCntrl.updateAtts(relativeScroll);
   if (windowScrollPosition > 1000) {
     let op: number = (2000 - windowScrollPosition) * .001;
@@ -152,29 +170,21 @@ window.addEventListener("scroll", () => {
   }else {
     dOut($(g1l1));
   }
-  */
+  
   if (windowScrollPosition > 750 && windowScrollPosition < 1200) {
     console.log("true dat");
-    /*
+  
     if (windowScrollPosition > 800) {
       upIn($(g1l2), 500);
     }
-    */
+    
     if (windowScrollPosition > 900) {
       upIn($(g1l3), 500);
     }
     if (windowScrollPosition > 1000) {
       upIn($(g1l4), 500);
     }
-
-  }
-
-  if (windowScrollPosition > 1600) {
-    if (windowScrollPosition > 1600) {
-    };
-    if (windowScrollPosition > 1800) { dOut($(g1l3)) };
-    if (windowScrollPosition > 1900) { dOut($(g1l4)) };
-  }
+    */
 })
 
 function anim1() {

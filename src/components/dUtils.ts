@@ -77,8 +77,6 @@ export interface ARange {
 export class CntrlGroup {
   aRangeArr: Array<ARange>;
   cRange: CRange;
-  readonly cKeys: Array<string> = ["start", "rest", "leave", "gone"];
-  readonly aKeys: Array<string> = ["initial", "final", "end"];
 
   constructor(cRange: CRange, aRangeArr: Array<ARange>) {
     this.cRange = cRange;
@@ -96,15 +94,13 @@ export class ActSet {
    */
   acts: CntrlGroup;
   targEl: JQuery;
-  /**
-   * @property {Array<JQuery | string>} targs is an array of targets that will follow the acts property
-   */
 
   constructor(targEl: JQuery, act: CntrlGroup) {
     this.acts = act;
+    this.targEl = targEl;
   }
-
 }
+// TypeError: this.aList[i].acts.aRangeArr[t] is undefined
 /**
  * @class CntrlActList
  * @classdesc The CntrlActList or ControllActionList is a similar to a stack of animations,
@@ -134,7 +130,7 @@ export class CntrlActList {
     this.actRange = actRange;
     this.actStart = actStart;
     this.actDone = actStart + actRange;
-    this.updateAtts(curLoc);
+    //this.updateAtts(curLoc);
   }
 
   /**
@@ -144,11 +140,18 @@ export class CntrlActList {
   updateAtts(loc: number) {
     this.curLoc = loc;
     let relLoc: number = (100 / this.actRange) * (loc - this.actStart);
+    console.log("relLoc: "+ relLoc);
+
+    console.log("alist length: "+ this.aList.length);
     /**
      * test if this control action list should activate
      */
-    if (relLoc > 0 && relLoc <= 100) {
-      for (let i = 0; this.aList.length; i++) {
+    if (relLoc > -100 && relLoc <= 100) {
+        for(var i:number=0;i < this.aList.length;i++)
+        {
+     // for(let i in this.aList){
+       // let mList:ActSet = this.aList[i];
+    
         /**
          * convenience variables
          */
@@ -157,30 +160,57 @@ export class CntrlActList {
         const cRest: number = this.aList[i].acts.cRange.rest;
         const cLeave: number = this.aList[i].acts.cRange.leave;
         const cGone: number = this.aList[i].acts.cRange.gone;
-        const startRange:number = (1/(cRest - cStart)) * relLoc; 
-        const leaveRange:number = (1/(cGone - cLeave)) * relLoc; 
+        const startRate:number = (1/(cRest - cStart)); 
+        const leaveRate:number = (1/(cGone - cLeave)); 
+        console.log("this.aList[i].targEl: " + this.aList[i].targEl);
+
+        console.log("this.aList[i].acts: " + this.aList[i].acts.aRangeArr);
         /**
           * iterate through each attribute
+          * TypeError: this.aList[i].acts.aRangeArr[t] is undefined
           */
-        for (let t = 0; this.aList[i].acts.aRangeArr.length; t++) {
+         let t:number;
+        for (t = 0; t < this.aList[i].acts.aRangeArr.length; t++) {
+          console.log("i: " + i + " t: " + t);
           const cAttr: string = this.aList[i].acts.aRangeArr[t].attrDelta;
           const cInitial:number = this.aList[i].acts.aRangeArr[t].initial;
           const cFinal:number = this.aList[i].acts.aRangeArr[t].final;
           const cEnd:number = this.aList[i].acts.aRangeArr[t].end;
-          const buildVal:number = ((cFinal - cInitial) * startRange) + cInitial;
-          const dieVal:number = ((cEnd - cFinal) * leaveRange) + cInitial;
+          const buildVal:number = (((cFinal - cInitial) * startRate) * relLoc)+ cInitial;
+          const dieVal:number = (((cEnd - cFinal) * leaveRate) * relLoc)+ cFinal;
 
-         
+          if (relLoc < this.aList[i].acts.cRange.start ) {
+            //$(cTarget).css("display","none")
+            if(cAttr=="opacity"){
+              $(cTarget).css("opacity", 0);
+            }
+            if(cAttr=="top"){
+              let tmpVal:string = String(cInitial)+"vh";
+              console.log("tmpVal: " + tmpVal);
+              $(cTarget).css("top",tmpVal); 
+            }
+          }
           if (relLoc >= this.aList[i].acts.cRange.start && relLoc < this.aList[i].acts.cRange.rest) {
-              $(cTarget).css("display", "block");
+              $(cTarget).css("dislay", "block");
               if(cAttr=="opacity"){
-                $(cTarget).css("opacity",buildVal);
+                console.log("opacity: " + buildVal);
+                $(cTarget).css("opacity", buildVal);
+              }
+              if(cAttr=="top"){
+                let tmpVal:string = String(buildVal+cInitial)+"vh";
+                console.log("build > tmpVal: " + tmpVal);
+                $(cTarget).css("top", tmpVal); 
               }
           }
           else if (relLoc >= this.aList[i].acts.cRange.rest && relLoc < this.aList[i].acts.cRange.leave) {
               $(cTarget).css("display", "block");
               if(cAttr=="opacity"){
-                $(cTarget).css("opacity",cFinal);
+
+                $(cTarget).css( "opacity", cFinal);
+              }
+              if(cAttr=="top"){
+                let tmpVal:string = String(cFinal)+"vh";
+                $(cTarget).css("top", tmpVal);
               }
           }
           else if (relLoc >= this.aList[i].acts.cRange.leave && relLoc < this.aList[i].acts.cRange.gone) {
@@ -188,18 +218,25 @@ export class CntrlActList {
               if(cAttr=="opacity"){
                 $(cTarget).css("opacity",dieVal);
               }
+              if(cAttr=="top"){
+                let tmpVal:string = String(dieVal)+"vh";
+
+                $(cTarget).css("top",tmpVal);
+              }
           }
           else {
-              $(cTarget).css("display", "none");
               if(cAttr=="opacity"){
                 $(cTarget).css("opacity",cEnd);
               }
+              if(cAttr=="top"){
+                $(cTarget).css("top",String(cEnd)+"vh");
+              }
           }
-        }
+        }//t
 
-      }
+      }//i
 
-    }
+    }//if
   }
 
 

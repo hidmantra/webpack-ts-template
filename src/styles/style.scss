@@ -17,27 +17,45 @@
 
 @font-face {
     font-family: headingFont;
-    src: url('../fonts/hattori_hanzo.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
+    src: url('../fonts/Raleway-Medium.ttf') format('tiff');
+    font-weight: 400;
+    font-style: medium;
 }
 
 @font-face {
     font-family: displayFont;
-    src: url('../fonts/Sarpanch-Medium.ttf') format('woff');
-    font-weight: 500;
-    font-style: normal;
+    src: url('../fonts/Raleway-Bold.ttf') format('tiff');
+    font-weight: 700;
+    font-style: bold;
+}
+@font-face {
+    font-family: regFont;
+    src: url('../fonts/Raleway-Regular.ttf') format('tiff');
+    font-weight: 300;
+    font-style: regular;
+}
+@font-face {
+    font-family: thinFont;
+    src: url('../fonts/Raleway-Thin.ttf') format('tiff');
+    //font-weight: 100;
+    font-style: thin;
+}
+h4{
+    font-family:thinFont!important ;
+    //font-weight: 100;
+}
+h2{
+    font-family:displayFont!important ;
+    font-weight: 700;
+}
+h1{
+    font-family:displayFont!important ;
+    font-weight: 800;
 }
 
 $enable-responsive-font-sizes: true;
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: displayFont;
-}
+
 
 .spacer {
     font-family: headingFont;
@@ -163,7 +181,7 @@ content {
     background-repeat: no-repeat;
 }
 
-#cityscape {
+#cityscape { 
     z-index: 40;
 }
 #intro-bk {
@@ -210,31 +228,55 @@ content {
 
 #g1 {
     z-index:110 ;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 25%;
-    text-align: center;
+    width: 100%;
+    top:130vh;
+    position: absolute;
+    display: block!important;
+    margin: auto;
+
   
 }
 
+#g1l1{
+    font-size: 2em;
+    font-family: thinFont!important;
+    font-weight: lighter;
+    top:9vh;
+}
+#g1l2{
+    font-family: displayFont!important;
+  top:20vh;
+}
+#g1l3{
+    font-family: headingFont;
+    top:30vh;
+  }
+#g1l4{
+    top: 40vh;
+    font-family: regFont;
+  }
+#g1l5{
+    top: 55vh;
+
+  }
 
 #g1l1, 
 #g1l2,
 #g1l3,
-#g1l4 {
+#g1l4,
+#g1l5 {
+    position: fixed;
+    display: none;
     opacity: 0;
-    transition-property: opacity;
-    transition-timing-function: ease-in-out;
+    width:80%;
+    left:10%;
+    padding-top:15vh;
+
+
 }
 
 
-.drop {
-    top:-10px;
-    transition: top 2s ease-out;
-}
-.lift {
-    top:+10px;
-}
+
 #g2 {
     z-index:120 ;
     position: absolute;
