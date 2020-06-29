@@ -140,102 +140,84 @@ export class CntrlActList {
   updateAtts(loc: number) {
     this.curLoc = loc;
     let relLoc: number = (100 / this.actRange) * (loc - this.actStart);
-    console.log("relLoc: "+ relLoc);
+    console.log("relLoc: " + relLoc);
 
-    console.log("alist length: "+ this.aList.length);
+    console.log("alist length: " + this.aList.length);
     /**
      * test if this control action list should activate
      */
     if (relLoc > -100 && relLoc <= 100) {
-        for(var i:number=0;i < this.aList.length;i++)
-        {
-     // for(let i in this.aList){
-       // let mList:ActSet = this.aList[i];
-    
-        /**
-         * convenience variables
-         */
-        const cTarget: JQuery = this.aList[i].targEl;
-        const cStart: number = this.aList[i].acts.cRange.start;
-        const cRest: number = this.aList[i].acts.cRange.rest;
-        const cLeave: number = this.aList[i].acts.cRange.leave;
-        const cGone: number = this.aList[i].acts.cRange.gone;
-        const startRate:number = (1/(cRest - cStart)); 
-        const leaveRate:number = (1/(cGone - cLeave)); 
-        console.log("this.aList[i].targEl: " + this.aList[i].targEl);
+      for (var i: number = 0; i < this.aList.length; i++) {
+          const cTarget: JQuery = this.aList[i].targEl;
+          const cStart: number = this.aList[i].acts.cRange.start;
+          const cRest: number = this.aList[i].acts.cRange.rest;
+          const cLeave: number = this.aList[i].acts.cRange.leave;
+          const cGone: number = this.aList[i].acts.cRange.gone;
+          const startRate: number = (1 / (cRest - cStart));
+          const leaveRate: number = (1 / (cGone - cLeave));
+          let t: number;
+          for (t = 0; t < this.aList[i].acts.aRangeArr.length; t++) {
+            const cAttr: string = this.aList[i].acts.aRangeArr[t].attrDelta;
+            const cInitial: number = this.aList[i].acts.aRangeArr[t].initial;
+            const cFinal: number = this.aList[i].acts.aRangeArr[t].final;
+            const cEnd: number = this.aList[i].acts.aRangeArr[t].end;
+            const buildVal: number = (((cFinal - cInitial) * startRate) * relLoc) + cInitial;
+            const dieVal: number = (((cEnd - cFinal) * leaveRate) * (relLoc-cLeave)) + cFinal;
 
-        console.log("this.aList[i].acts: " + this.aList[i].acts.aRangeArr);
-        /**
-          * iterate through each attribute
-          * TypeError: this.aList[i].acts.aRangeArr[t] is undefined
-          */
-         let t:number;
-        for (t = 0; t < this.aList[i].acts.aRangeArr.length; t++) {
-          console.log("i: " + i + " t: " + t);
-          const cAttr: string = this.aList[i].acts.aRangeArr[t].attrDelta;
-          const cInitial:number = this.aList[i].acts.aRangeArr[t].initial;
-          const cFinal:number = this.aList[i].acts.aRangeArr[t].final;
-          const cEnd:number = this.aList[i].acts.aRangeArr[t].end;
-          const buildVal:number = (((cFinal - cInitial) * startRate) * relLoc)+ cInitial;
-          const dieVal:number = (((cEnd - cFinal) * leaveRate) * relLoc)+ cFinal;
 
-          if (relLoc < this.aList[i].acts.cRange.start ) {
-            //$(cTarget).css("display","none")
-            if(cAttr=="opacity"){
-              $(cTarget).css("opacity", 0);
+            if (relLoc < this.aList[i].acts.cRange.start) {
+              if (cAttr == "opacity") {
+                cTarget.css("opacity", 0);
+              }
+              if (cAttr == "top") {
+                let tmpVal: string = String(cInitial) + "vh";
+                cTarget.css("top", tmpVal);
+              }
             }
-            if(cAttr=="top"){
-              let tmpVal:string = String(cInitial)+"vh";
-              console.log("tmpVal: " + tmpVal);
-              $(cTarget).css("top",tmpVal); 
-            }
-          }
-          if (relLoc >= this.aList[i].acts.cRange.start && relLoc < this.aList[i].acts.cRange.rest) {
-              $(cTarget).css("dislay", "block");
-              if(cAttr=="opacity"){
+            else if (relLoc >= this.aList[i].acts.cRange.start && relLoc < this.aList[i].acts.cRange.rest) {
+              cTarget.css("display", "block");
+
+              if (cAttr == "opacity") {
+                cTarget.css("opacity", buildVal);
                 console.log("opacity: " + buildVal);
-                $(cTarget).css("opacity", buildVal);
               }
-              if(cAttr=="top"){
-                let tmpVal:string = String(buildVal+cInitial)+"vh";
-                console.log("build > tmpVal: " + tmpVal);
-                $(cTarget).css("top", tmpVal); 
+              if (cAttr == "top") {
+                let tmpVal: string = String(buildVal) + "vh";
+                cTarget.css("top", tmpVal);
               }
-          }
-          else if (relLoc >= this.aList[i].acts.cRange.rest && relLoc < this.aList[i].acts.cRange.leave) {
-              $(cTarget).css("display", "block");
-              if(cAttr=="opacity"){
+            }
+            else if (relLoc >= this.aList[i].acts.cRange.rest && relLoc < this.aList[i].acts.cRange.leave) {
+              cTarget.css("display", "block");
+              if (cAttr == "opacity") {
 
-                $(cTarget).css( "opacity", cFinal);
+                cTarget.css("opacity", cFinal);
               }
-              if(cAttr=="top"){
-                let tmpVal:string = String(cFinal)+"vh";
-                $(cTarget).css("top", tmpVal);
+              if (cAttr == "top") {
+                let tmpVal: string = String(cFinal) + "vh";
+                cTarget.css("top", tmpVal);
               }
-          }
-          else if (relLoc >= this.aList[i].acts.cRange.leave && relLoc < this.aList[i].acts.cRange.gone) {
-              $(cTarget).css("display", "block");
-              if(cAttr=="opacity"){
-                $(cTarget).css("opacity",dieVal);
+            }
+            else if (relLoc >= this.aList[i].acts.cRange.leave && relLoc < this.aList[i].acts.cRange.gone) {
+              cTarget.css("display", "block");
+              if (cAttr == "opacity") {
+                cTarget.css("opacity", dieVal);
               }
-              if(cAttr=="top"){
-                let tmpVal:string = String(dieVal)+"vh";
+              if (cAttr == "top") {
+                let tmpVal: string = String(dieVal) + "vh";
 
-                $(cTarget).css("top",tmpVal);
+                cTarget.css("top", tmpVal);
               }
-          }
-          else {
-              if(cAttr=="opacity"){
-                $(cTarget).css("opacity",cEnd);
+            }
+            else {
+              if (cAttr == "opacity") {
+                cTarget.css("opacity", cEnd);
               }
-              if(cAttr=="top"){
-                $(cTarget).css("top",String(cEnd)+"vh");
+              if (cAttr == "top") {
+                cTarget.css("top", String(cEnd) + "vh");
               }
-          }
-        }//t
-
+            }
+          }//t
       }//i
-
     }//if
   }
 

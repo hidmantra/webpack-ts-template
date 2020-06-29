@@ -78,17 +78,17 @@ $(document).ready(function () {
   /// eslint-disable-next-line no-console
   console.log("document loaded");
 
-  cntrlGroupAa = new CntrlGroup({ start: 1, rest: 20, leave: 80, gone: 92 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 14, final: 9, end: 0 }]);
-  cntrlGroupAb = new CntrlGroup({ start: 4, rest: 24, leave: 82, gone: 94 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 25, final: 20, end: 10 }]);
-  cntrlGroupAc = new CntrlGroup({ start: 8, rest: 28, leave: 84, gone: 96 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 35, final: 30, end: 20 }]);
-  cntrlGroupAd = new CntrlGroup({ start: 12, rest: 32, leave: 86, gone: 98 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 45, final: 40, end: 30 }]);
-  cntrlGroupAe = new CntrlGroup({ start: 16, rest: 34, leave: 88, gone: 100 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 60, final: 55, end: 45 }]);
+  cntrlGroupAa = new CntrlGroup({ start: 1, rest: 24, leave: 80, gone: 87 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 11, final: 9, end: 0 }]);
+  cntrlGroupAb = new CntrlGroup({ start: 8, rest: 32, leave: 82, gone: 89 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 22, final: 20, end: 10 }]);
+  cntrlGroupAc = new CntrlGroup({ start: 16, rest: 40, leave: 84, gone: 91 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 32, final: 30, end: 20 }]);
+  cntrlGroupAd = new CntrlGroup({ start: 24, rest: 48, leave: 86, gone: 93 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 42, final: 40, end: 30 }]);
+  cntrlGroupAe = new CntrlGroup({ start: 32, rest: 56, leave: 88, gone: 95 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 57, final: 55, end: 45 }]);
 
   let actSetAa: ActSet = new ActSet(g1l1, cntrlGroupAa);
-  let actSetAb: ActSet = new ActSet(g1l2, cntrlGroupAa);
-  let actSetAc: ActSet = new ActSet(g1l3, cntrlGroupAa);
-  let actSetAd: ActSet = new ActSet(g1l4, cntrlGroupAa);
-  let actSetAe: ActSet = new ActSet(g1l5, cntrlGroupAa);
+  let actSetAb: ActSet = new ActSet(g1l2, cntrlGroupAb);
+  let actSetAc: ActSet = new ActSet(g1l3, cntrlGroupAc);
+  let actSetAd: ActSet = new ActSet(g1l4, cntrlGroupAd);
+  let actSetAe: ActSet = new ActSet(g1l5, cntrlGroupAe);
   let tmpActArr:Array<ActSet> = [actSetAa,actSetAb,actSetAc,actSetAd, actSetAe];
   //tmpActArr.push(actSetAa);
   //tmpActArr.push(actSetAb);
