@@ -118,9 +118,6 @@ header {
     padding-right: 20%;
 }
 
-
-
-
 intro {
     opacity: .7;
 }
@@ -144,8 +141,6 @@ intro {
     z-index: 10;
 
 }
-
-
 
 #logo-holder {
     display: inline-block;
@@ -199,22 +194,28 @@ intro {
     position: absolute;
     width: 100%;
     height: 100%;
-   /* background: rgba(20, 19, 20, 1);
-    background: -moz-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(20, 19, 20, 1)), color-stop(1%, rgba(20, 19, 20, 1)), color-stop(13%, rgba(20, 19, 20, 1)), color-stop(46%, rgba(74, 71, 74, 1)), color-stop(69%, rgba(74, 71, 74, 1)), color-stop(95%, rgba(20, 19, 20, 1)), color-stop(100%, rgba(20, 19, 20, 1)));
-    background: -webkit-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
-    background: -o-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
-    background: -ms-linear-gradient(left, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
-    background: linear-gradient(to right, rgba(20, 19, 20, 1) 0%, rgba(20, 19, 20, 1) 1%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 95%, rgba(20, 19, 20, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#141314', endColorstr='#141314', GradientType=1);
-*/
     z-index: 10;
 }
-
+iframe{
+    width: 100%;
+    margin: auto;
+}
 #overview-top,
-#technology {
-    padding:10px;
+#technology,
+#portfolio-top,
+#resume-top,
+#contact-top {
+    width: 100%;
+    padding:30px;
     background-color: rgb(0,0,0);
+}
+
+#resume-top {
+    background-image: url("../img/nyc_bk.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .now-set {
@@ -313,6 +314,10 @@ intro {
     
     //opacity: 1;
     z-index: 100;
+}
+.p-name {
+    font-size: large;
+    font-style: italic;
 }
 .see{
     opacity: 1;

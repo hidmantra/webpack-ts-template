@@ -6,12 +6,14 @@ import * as geometric from "../node_modules/geometric/build/geometric";
 import { GalleryStripModal } from "./components/gallery_strip_modal/GalleryStripModal";
 import SimpleLogo from "./img/THR_logo_bw.png";
 import HeaderLogo from "../src/img/tr.png";
-import BigLogo from "../src/img/THR_Logo_knockout2.png"
+import BigLogo from "../src/img/THR_Logo_knockout2.png";
+import ProfilePic from "../src/img/deriv.jpg";
 //import animateScrollTo from "../node_modules/animated-scroll-to/lib/animated-scroll-to";
 //const scrollTrack = require('scroll-track');
 //import scrollTrack from "../node_modules/scroll-track/src/scroll-element/index 
 const mainHolder: JQuery = $("#holder");
 const introAnchor: JQuery = $("#cityscape");
+const ppholder: JQuery = $("#profile-pic-holder");
 
 const logoIntroAnchor: JQuery = $("#bigLogoHolder");
 const fullCover: JQuery = $("#fullCover");
@@ -56,6 +58,7 @@ const g2l6: JQuery = $("#g2l6");
 const headerLogo = new Image();
 const simpleLogo = new Image();
 const bigLogo = new Image();
+const profilePic = new Image();
 
 let relativeScroll: number;
 let myLogo: JQuery;
@@ -128,6 +131,9 @@ $(document).ready(function () {
   simpleLogo.src = SimpleLogo;
   simpleLogo.width = 50;
 
+  profilePic.src = ProfilePic;
+  profilePic.width = 300;
+
   headerLogo.src = HeaderLogo;
   headerLogo.width = 100;
   headerLogo.className = "header-logo";
@@ -137,6 +143,9 @@ $(document).ready(function () {
 
   $(headerLogo).appendTo("#logo-holder");
   $(".main-title").html("Thought Render");
+
+  $(profilePic).appendTo(ppholder);
+  
 
   sqr1 = $("<div class= 'container-fluid pattern-a bk-img q1'></div> ");
   sqr2 = $("<div class= 'container-fluid pattern-b bk-img q2'></div> ");
