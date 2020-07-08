@@ -14,7 +14,7 @@ import ProfilePic from "../src/img/deriv.jpg";
 const mainHolder: JQuery = $("#holder");
 const introAnchor: JQuery = $("#cityscape");
 const ppholder: JQuery = $("#profile-pic-holder");
-
+const resTop: JQuery = $("#resume-top");
 const logoIntroAnchor: JQuery = $("#bigLogoHolder");
 const fullCover: JQuery = $("#fullCover");
 const sect1: JQuery = $("#overview-top");
@@ -170,23 +170,6 @@ function launchSection(sectionToLaunch: Function) {
   sectionToLaunch();
 }
 
-function upIn(el: JQuery, dlay: number) {
-  // if($(el).hasClass("not-set")){
-  $(el).css("margin-top", "10px")
-  $(el).delay(dlay).animate({
-    "opacity": 1,
-    "margin-top": 0
-  }, 1000, () => {
-  })
-}
-
-function dOut(el: JQuery) {
-  $(el).animate({
-    "opacity": 0,
-    "margin-top": "-5px"
-  }, 1000)
-}
-
 window.addEventListener("resize", () => {
   //$(myLogo).delay(10).animate({ left: (fullCover.width() - myLogo.width()) / 2, top: (wHeight - myLogo.height()) / 2 });
   console.log("top: " + $(logoIntroAnchor).offset);
@@ -195,7 +178,9 @@ window.addEventListener("resize", () => {
 window.addEventListener("scroll", () => {
   windowScrollPosition = $(window).scrollTop();
   relativeScroll = (100 / $(window).innerHeight()) * windowScrollPosition;
-  console.log("sp: " + windowScrollPosition + " rel sp: " + relativeScroll);
+  //console.log("sp: " + windowScrollPosition + " rel sp: " + relativeScroll);
+  //console.log("restop pos: " + ((document.getElementById("resume-top").getBoundingClientRect())).top);
+
   scrollCntrlA.updateAtts(relativeScroll);
   scrollCntrlB.updateAtts(relativeScroll);
 
@@ -205,28 +190,15 @@ window.addEventListener("scroll", () => {
 
     $(logoIntroAnchor).css("opacity", op);
   }
-
-  /*
-  if (windowScrollPosition > 750 && windowScrollPosition < 950) {
-    upIn($(g1l1), 500);
-  }else {
-    dOut($(g1l1));
-  }
   
-  if (windowScrollPosition > 750 && windowScrollPosition < 1200) {
-    console.log("true dat");
-  
-    if (windowScrollPosition > 800) {
-      upIn($(g1l2), 500);
-    }
-    
-    if (windowScrollPosition > 900) {
-      upIn($(g1l3), 500);
-    }
-    if (windowScrollPosition > 1000) {
-      upIn($(g1l4), 500);
-    }
-    */
+  let resTopPos:number = ((document.getElementById("resume-top").getBoundingClientRect())).y
+  let actRes:boolean = false;
+  if(resTopPos < 0) {
+    actRes = true;
+    let newPos:number =((resTopPos)/2);
+    let percPos:string =  newPos + "px 0px";
+    $("#resume-top").css("background-position", percPos);
+  };
 })
 
 function anim1() {
@@ -271,32 +243,6 @@ function introAnimation() {
   }
 }
 /*
-/* uncomment this section for quick/sample test of jquery and lowdash
-/*
-/*
-interface Person {
-    firstName: string;
-    lastName: string;
-}
-
-function greeter(person: Person): string {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
-let user: Person = { firstName: "John", lastName: "Doe" };
-
-let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-element.innerHTML = greeter(user);
-
-$(()=>{
-    console.log('yehaa');
-    let jq: string = "This content has been loaded with jQuery";
-    let ld: string = " AND Lodash";
-    let tmpMsg: string[] = _.concat( jq, ld );
-    $('div').after('<h1>' + tmpMsg + '</h1>');
-
-  });
-  */
-/*
 function addComponents(): void {
   const galleryStripModal: GalleryStripModal = new GalleryStripModal();
 
@@ -313,35 +259,5 @@ function addComponents(): void {
 
   galleryStripModal.CoverUp.on(screenCovered);
   galleryStripModal.CoverDown.on(screenUncovered);
-}8*/
+}*/
 
-/*
-trg1.on("enter-viewport", () => {
-  console.log("free");
-  $(g1).addClass("fxd");
-  $(g1).remove("rel");
-})
-trg1.on("exit-viewport", () => {
-  console.log("free");
-  $(g1).remove("fxd");
-  $(g1).addClass("rel");
-})
-trg1l1.on("enter-viewport", () => {
-  console.log("free");
-  upIn($(g1l1),500)
-})
-
-trg1l1.on("exit-viewport", () => {
-  console.log("now-set");
-dOut($(g1l1))
-})
-trg1l2.on("enter-viewport", () => {
-  console.log("free");
-  upIn($(g1l2),500)
-})
-
-trg1l2.on("exit-viewport", () => {
-  console.log("now-set");
-dOut($(g1l2))
-})
-*/

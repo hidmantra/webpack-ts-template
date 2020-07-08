@@ -72,6 +72,7 @@ intro,
 #fullCover {
     color: $primary;
     padding: 0;
+    background-color: black!important;
 }
 
 body {
@@ -136,7 +137,8 @@ intro {
     position: relative;
     display: block;
     height: 500vh;  
-    width: 100%;
+    /*width: 100%;*/
+    width: 1200px;
     padding: 0;
     z-index: 10;
 
@@ -206,16 +208,25 @@ iframe{
 #resume-top,
 #contact-top {
     width: 100%;
+    overflow-wrap: normal;
     padding:30px;
     background-color: rgb(0,0,0);
 }
 
 #resume-top {
+    background-attachment: fixed;
+    background-image: url("../img/nyc_bk.jpg");
+    background-repeat: no-repeat;
+    background-size: 4000px;
+    background-position: 0px 0px;
+}
+
+#nyc-long {
+    position: absolute;
     background-image: url("../img/nyc_bk.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: center;
-    background-attachment: fixed;
+    opacity: 0;
 }
 
 .now-set {
