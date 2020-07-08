@@ -89,7 +89,7 @@ const galleryStripModal: GalleryStripModal = new GalleryStripModal();
 galleryStripModal.CoverUp.on(screenCovered);
 galleryStripModal.CoverDown.on(screenUncovered);
 
-
+addComponents();
 
 
 
@@ -242,7 +242,7 @@ function introAnimation() {
     console.log("tmpPoint x: " + tmpX + " y: " + tmpY);
   }
 }
-/*
+
 function addComponents(): void {
   const galleryStripModal: GalleryStripModal = new GalleryStripModal();
 
@@ -259,5 +259,5 @@ function addComponents(): void {
 
   galleryStripModal.CoverUp.on(screenCovered);
   galleryStripModal.CoverDown.on(screenUncovered);
-}*/
+}
 
