@@ -137,8 +137,8 @@ intro {
     position: relative;
     display: block;
     height: 500vh;  
-    /*width: 100%;*/
-    width: 1200px;
+    width: 100%;
+    /*width: 1200px;*/
     padding: 0;
     z-index: 10;
 
@@ -219,14 +219,6 @@ iframe{
     background-repeat: no-repeat;
     background-size: 4000px;
     background-position: 0px 0px;
-}
-
-#nyc-long {
-    position: absolute;
-    background-image: url("../img/nyc_bk.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    opacity: 0;
 }
 
 .now-set {

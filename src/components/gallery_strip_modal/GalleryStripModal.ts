@@ -58,7 +58,7 @@ export class GalleryStripModal
                 "id"        : 6,
                 "position" : 6,
                 "thumbPath" : "gsm_assets/images/pantene1_large_thumb400.jpg",
-                "filePath" : "gsm_assets/video/pantene1_456w.mp4",
+                "filePath" : "gsm_assets/video/pantene2_456w.mp4",
                 "description" : "I designed this screensaver which had hundreds of thousands of impressions and thousands of downloads. The elements in the mandala resized and repostioned based on mouse movement and location."
             },
             {
@@ -106,7 +106,7 @@ export class GalleryStripModal
                 "id"        : 12,
                 "position" : 12,
                 "thumbPath" : "gsm_assets/images/pantene2_large_thumb400.jpg",
-                "filePath" : "gsm_assets/video/pantene2_456w.mp4",
+                "filePath" : "gsm_assets/video/pantene1_456w.mp4",
                 "description" : "I came up the color transitions and animations to liven up an already great design by my art director."
             },
             {
@@ -221,16 +221,12 @@ export class GalleryStripModal
      * An array of Job_vos sorted in order of each position property
      */
   private _sortedTmpJobVO:Array<Job_vo> = new Array<Job_vo>();
-  //private _sortedTmpJobVO:Array<Job_vo>;
-    //private _sortedTmpJobVO:[];
     private readonly onCoverUp = new LiteEvent<void>();
     private readonly onCoverDown = new LiteEvent<void>();
     
 
     constructor()
     {
-        //this._sortedTmpJobVO:Array<Job_vo> = new Array<Job_vo>();
-       // this._sortedTmpJobVO:Array<Job_vo> = new Array<Job_vo>();
         console.log('GSM class built');
         this._coverUp = document.createElement("div");
         this._tester = new EventEmitter();
@@ -293,8 +289,6 @@ export class GalleryStripModal
             myThumb.src = tPath;
             myThumb.className = 'myImage';
             let dataHolder:object = {vo:tmpJobVO,context:this};
-            
-
             myThumb.addEventListener('click', function(){
                 this.dispatchEvent(new CustomEvent("modalLauncher", {
                     bubbles:true,
@@ -305,10 +299,7 @@ export class GalleryStripModal
             });
                 
             holderElement.appendChild(myThumb); 
-             
         }
-
-
         $('img').css('padding', '20px');
     }
 
@@ -342,12 +333,6 @@ export class GalleryStripModal
      */
     public launchModal(e:CustomEvent):void
     {
-        //let tmpscreen:boolean;
-        /*
-        var tmpscreen = ():boolean => {
-            return this.isScreenCovered;
-        }
-        */
         let classRef:any = e.detail.dt.context;
         console.log("3 isScreenCovered: " + classRef.isScreenCovered);
        
@@ -357,17 +342,13 @@ export class GalleryStripModal
             this.isScreenCovered = true;
             classRef.onCoverUp.trigger();
         }
-        //() => {console.log("try");this.onCoverUp.trigger();};
-        //let tmpJobVo:Job_vo = e.detail.vo as Job_vo;
         let tmpJobVo:Job_vo = e.detail.dt.vo as Job_vo;
 
         let title:HTMLElement = document.getElementById('modal-title');
         title.innerHTML = tmpJobVo.jobTitle;
         console.log("description: " + tmpJobVo.description);
         
-       //let tmph = document.createElement("button");
        
-       //$('.medium-holder').append(tmph);
        let tw:number = 10;
        this._coverUp = document.createElement("div");
        this._coverUp.className = "cover-up"
@@ -381,14 +362,7 @@ export class GalleryStripModal
        this._coverUp.style.backgroundColor = 'black';
        this._coverUp.style.opacity = ".8";
        this._coverUp.style.overflow = "hidden";
-       //this._coverUp.dispatchEvent(new Event("coverOn"));
-       //this._coverUp.dispatchEvent(new ScreenCoverEvent("coverOn"));
-       //ScreenCoverEvent.
-       
        $('.medium-holder').append(this._coverUp);
-      
-      
-
        let projectTitle = document.createElement("div");
        projectTitle.style.color = "white";
        projectTitle.style.paddingTop = "50px"

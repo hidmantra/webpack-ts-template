@@ -140,9 +140,9 @@ export class CntrlActList {
   updateAtts(loc: number) {
     this.curLoc = loc;
     let relLoc: number = (100 / this.actRange) * (loc - this.actStart);
-    console.log("relLoc: " + relLoc);
+    //console.log("relLoc: " + relLoc);
 
-    console.log("alist length: " + this.aList.length);
+   // console.log("alist length: " + this.aList.length);
     /**
      * test if this control action list should activate
      */
