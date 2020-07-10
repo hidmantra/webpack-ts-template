@@ -1,6 +1,6 @@
 import * as $ from "jquery";
 import * as _ from "lodash";
-import {ActSet, CntrlActList, CntrlGroup, MPos} from "./components/dUtils";
+import { ActSet, CntrlActList, CntrlGroup, MPos, findPos } from './components/dUtils';
 import "bootstrap";
 import * as geometric from "../node_modules/geometric/build/geometric";
 import { GalleryStripModal } from "./components/gallery_strip_modal/GalleryStripModal";
@@ -176,6 +176,7 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("scroll", () => {
+  console.log("pos arr: " + findPos(document.getElementById("resume-top")));
   windowScrollPosition = $(window).scrollTop();
   relativeScroll = (100 / $(window).innerHeight()) * windowScrollPosition;
   //console.log("sp: " + windowScrollPosition + " rel sp: " + relativeScroll);

@@ -1,8 +1,25 @@
 import * as $ from 'jquery';
+let curLeft:number;
+let curTop:number;
+
+export function findPos(obj:any) {
+  var curLeft = curTop = 0;
+  if (obj.offsetParent) {
+    do {
+			curLeft += obj.offsetLeft;
+      curTop += obj.offsetTop;
+    } while (obj = obj.offsetParent); 
+    return [curLeft,curTop];
+  }
+}
+
 export interface ImPos {
   x: number;
   y: number;
 }
+export class PositionUtils {
+}
+
 
 export class MPos implements ImPos {
   x: number;
@@ -10,7 +27,7 @@ export class MPos implements ImPos {
   constructor(_x?: number, _y?: number) {
     if (_x) {
       this.x = _x;
-    }
+     }
     if (_y) {
       this.y = _y;
     }

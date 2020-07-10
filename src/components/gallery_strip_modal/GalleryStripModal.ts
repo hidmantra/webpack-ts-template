@@ -4,6 +4,8 @@ import { GSM_vo } from "./GSM_vo";
 import { Job_vo } from "./Job_vo";
 import { ThumbHolder } from "./ThumbHolder";
 import { EventEmitter } from "events";
+import { createPopper } from "../../../node_modules/@popperjs/core/dist/esm/popper";
+
 
 export class GalleryStripModal
 {
@@ -281,13 +283,23 @@ export class GalleryStripModal
         let thumbsHtml:string = "";
         
         //add images to stage
+        let cnt:number=0;
         for(let tmpJobVO of this._sortedTmpJobVO)
         {
+            let thumbID:string = "thumb" + cnt;
             let tPath:string = tmpJobVO.thumbPath;
             let myThumb = new Image();
             myThumb.width = this._thumbWidth;
             myThumb.src = tPath;
             myThumb.className = 'myImage';
+            myThumb.id = thumbID;
+            let toolTip:JQuery = $("<div id='toolTip'><h5>" +tmpJobVO.jobTitle + "</h5><p>"+tmpJobVO.description+"</p></div>");
+            
+            const tmb = document.querySelector('#thumb'+cnt);
+            const tooltip = document.querySelector('#tooltip');
+            createPopper(tmb, tooltip, {
+                placement: 'right',
+              });
             let dataHolder:object = {vo:tmpJobVO,context:this};
             myThumb.addEventListener('click', function(){
                 this.dispatchEvent(new CustomEvent("modalLauncher", {
@@ -298,9 +310,10 @@ export class GalleryStripModal
                 }));
             });
                 
-            holderElement.appendChild(myThumb); 
+            holderElement.appendChild(myThumb);
         }
         $('img').css('padding', '20px');
+       
     }
 
 
@@ -319,7 +332,8 @@ export class GalleryStripModal
         if(deep){
             ax= txt.indexOf('>')+1;
             txt= txt.substring(0, ax)+who.innerHTML+ txt.substring(ax);
-        }
+        } 
+        
         el= null;
         return txt;
     }
@@ -334,7 +348,7 @@ export class GalleryStripModal
     public launchModal(e:CustomEvent):void
     {
         let classRef:any = e.detail.dt.context;
-        console.log("3 isScreenCovered: " + classRef.isScreenCovered);
+        //console.log("3 isScreenCovered: " + classRef.isScreenCovered);
        
         //console.log("3 isScreenCovered: " + tmpscreen());
         if(classRef.isScreenCovered == false){
@@ -365,27 +379,29 @@ export class GalleryStripModal
        $('.medium-holder').append(this._coverUp);
        let projectTitle = document.createElement("div");
        projectTitle.style.color = "white";
-       projectTitle.style.paddingTop = "50px"
+       projectTitle.style.paddingTop = "10px"
        projectTitle.style.paddingLeft = "40px";
        projectTitle.innerHTML = "<p>" + tmpJobVo.jobTitle + "</p>";
-       this._coverUp.appendChild(projectTitle);
+       //this._coverUp.appendChild(projectTitle);
 
        let videoPlayer = document.createElement("div");
        videoPlayer.className = "video-player";
-       videoPlayer.style.position = "fixed";
+      // videoPlayer.style.position = "fixed";
+       videoPlayer.style.position = "relative";
        videoPlayer.style.top ="0";
        videoPlayer.style.left="0";
-       videoPlayer.style.paddingLeft = "40px";
+       //videoPlayer.style.paddingLeft = "40px";
        videoPlayer.style.paddingTop = "100px";
-       let htmlText:string="<video width='600' loop autoplay ><source src='" + tmpJobVo.filePath + "' type='video/mp4'></video>";
+       let htmlText:string="<video width='100%' loop autoplay><source src='" + tmpJobVo.filePath + "' type='video/mp4'></video>";
         videoPlayer.innerHTML = htmlText;
-        $('.medium-holder').append(videoPlayer);
+        $('#vid-holder').append(videoPlayer);
+        $(videoPlayer).append(projectTitle);
 
         let desc = document.createElement("div");
         desc.style.color = "white";
         //desc.style.paddingLeft = "640px";
-        desc.style.paddingTop = "20px";
-        desc.style.width = "600px";
+        desc.style.paddingTop = "0px";
+        desc.style.width = "100%";
 
         desc.innerHTML = "<p>" + tmpJobVo.description + "</p>";
         videoPlayer.appendChild(desc);
