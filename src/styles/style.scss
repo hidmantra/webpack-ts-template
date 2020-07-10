@@ -91,13 +91,16 @@ header {
     left:100px;
 }
 
-#toolTip {
+#descHold {
+    display: flexbox;
     background: #333;
     color: white;
     font-weight: bold;
     padding: 4px 8px;
     font-size: 13px;
+    border: 1px solid grey;
     border-radius: 4px;
+    width: 300px;
   }
 
 #vid-holder {

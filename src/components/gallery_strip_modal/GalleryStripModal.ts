@@ -214,7 +214,7 @@ export class GalleryStripModal
     //
     private _gsm_vo:GSM_vo = new GSM_vo();
     private _thumbWidth:number;
-    private _targetComponent:HTMLElement;
+    private _targetComponent:JQuery;
     public _tester:EventEmitter;
     //private _coverUp:HTMLElement = document.createElement("div");
     public _coverUp:HTMLElement //= new HTMLElement();
@@ -250,34 +250,28 @@ export class GalleryStripModal
      * 
      * @param targetComponent The component to which the GSM will attached to
      */
-    public appendComponent( targetComponent:HTMLElement ):void
+    public appendComponent( targetComponent:JQuery ):void
     {
          this._targetComponent = targetComponent;
          console.log("targetcompon: "+ this._targetComponent);
         //convert json object into a GSM_vo
         this._gsm_vo = TypedJSON.parse(TypedJSON.stringify(this.tmpJson) , GSM_vo);
         //first handle data for overall component
-
         //get the width for thumb nails
         this._thumbWidth = this._gsm_vo.thumbWidth;
-
         //create the label for the component
-        let titleElement:HTMLElement = document.createElement("div");
-        titleElement.className = "medium-title";
-        titleElement.innerHTML = this._gsm_vo.componentTitle
-        $(titleElement).insertAfter(this._targetComponent);
+        let titleElement:JQuery = $("<div class='medium-title'><h5>"+this._gsm_vo.componentTitle+"</h5></div>");
+        //$(titleElement).insertAfter(this._targetComponent);
 
-        this._targetComponent.appendChild(titleElement);
+        $(this._targetComponent).append(titleElement);
+
+       // let holderElement:any = $("<div id='GSM-" + this._gsm_vo.componentID+"' class='portfolio-medium thumb-strip'></div>");
         let holderElement:HTMLElement = document.createElement("div");
-        
-        holderElement.className="portfolio-medium";
+
         //append compoent id to div id to target current component if their are multiple GSMs
-        holderElement.innerHTML = "<div id='GSM-" + this._gsm_vo.componentID +"' class='thumb-strip'>";
-        this._targetComponent.appendChild(holderElement);
+        $(this._targetComponent).append(holderElement);
         //add listener to holder to catch clicks on image
         holderElement.addEventListener("modalLauncher", this.launchModal);
-        
-       
         //sort the jobs in order of position
         this._sortedTmpJobVO = this._gsm_vo.job_vos.sort(function(obj1, obj2){return obj1.position - obj2.position;})
         let thumbsHtml:string = "";
@@ -286,31 +280,41 @@ export class GalleryStripModal
         let cnt:number=0;
         for(let tmpJobVO of this._sortedTmpJobVO)
         {
+            let itemHolder:JQuery=$("<div id='descHold'></div>");
             let thumbID:string = "thumb" + cnt;
             let tPath:string = tmpJobVO.thumbPath;
             let myThumb = new Image();
             myThumb.width = this._thumbWidth;
             myThumb.src = tPath;
             myThumb.className = 'myImage';
-            myThumb.id = thumbID;
-            let toolTip:JQuery = $("<div id='toolTip'><h5>" +tmpJobVO.jobTitle + "</h5><p>"+tmpJobVO.description+"</p></div>");
+            let titleTxt:any =$("<h5>" +tmpJobVO.jobTitle + "</h5>");
+            let descTxt:any = $("<p>"+tmpJobVO.description+"</p>");
             
-            const tmb = document.querySelector('#thumb'+cnt);
-            const tooltip = document.querySelector('#tooltip');
-            createPopper(tmb, tooltip, {
-                placement: 'right',
-              });
+            
             let dataHolder:object = {vo:tmpJobVO,context:this};
             myThumb.addEventListener('click', function(){
                 this.dispatchEvent(new CustomEvent("modalLauncher", {
+                    
                     bubbles:true,
                     //detail:{vo: tmpJobVO}
                     detail:{dt: dataHolder}
-
+                    
+                    
                 }));
+                console.log("clicked");
             });
-                
-            holderElement.appendChild(myThumb);
+            /*
+            myThumb.addEventListener('hover',()=>{
+
+            })
+             */   
+            itemHolder.append(titleTxt);
+            itemHolder.append(myThumb);
+            itemHolder.append(descTxt);
+            $(holderElement).append(itemHolder);
+
+            //holderElement.appendChild(myThumb);
+           // myThumb.append(descTxt);
         }
         $('img').css('padding', '20px');
        
