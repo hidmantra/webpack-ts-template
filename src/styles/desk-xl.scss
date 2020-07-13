@@ -1,15 +1,25 @@
 /* 1200px min width xl*/
 @include media-breakpoint-up(xl) {
 
-    html {
-        font-size: .9rem;
+     html{
+        font-size: 1.5rem;
+        color: rgb(228, 201, 50);
+
     }
-    /*
-    #holder {
-        width: 500px;
+    
+    section {
+        width: 1200px;
     }
-    */
+    
+    .navbar-brand {
+        display: block;
+        font-size: 1.4rem;
+        padding-left: 10px;
+
+    }
     .header-logo{
         width:  140px;
+        background-color:blue;
+
     }
 }

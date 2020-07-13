@@ -2,19 +2,23 @@
 @include media-breakpoint-up(lg) {
 
     html {
-        font-size: .7rem;
+        font-size: 1.3rem;
+        color: rgb(5,250,0);
+
     }
     .navbar-brand {
         display: block;
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding-left: 10px;
     }
-    /*
+    
     #holder {
-        width: 768px;
+        width: 100%;
     }
-    */
+    
     .header-logo{
         width:  120px;
+        background-color:rgb(17, 182, 69);
+
     }
 }
