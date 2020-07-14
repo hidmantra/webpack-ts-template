@@ -64,10 +64,14 @@
 
     }
 
-    * {
+   * {
         font-size: .8rem;
     }
-
+/*
+    html {
+        font-size: .8rem;
+    }
+*/
     body,
     intro,
     #holder,
@@ -97,6 +101,7 @@
     #thumb-row {
         position: relative;
         width: 100%;
+       // margin: auto;
     }
 
     #grid-holder {
@@ -111,10 +116,11 @@
         color: white;
         font-weight: bold;
         padding: 4px 8px;
-        //margin: 20px;
+        margin-left: 18%;
+        margin-right: 10%;
         margin-top: 30px;
-        margin-left: auto;
-        font-size: .8rem;
+       // margin-left: auto;
+        font-size: 1rem;
         border: 1px solid grey;
         border-radius: 20px;
         width: 300px;

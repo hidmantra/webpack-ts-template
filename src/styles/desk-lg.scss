@@ -2,7 +2,7 @@
 @include media-breakpoint-up(lg) {
 
     html {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         color: rgb(5,250,0);
 
     }
@@ -10,6 +10,12 @@
         display: block;
         font-size: 1.2rem;
         padding-left: 10px;
+    }
+
+    #descHold {
+        margin-left: auto;
+        width: 400px;
+
     }
     
     #holder {

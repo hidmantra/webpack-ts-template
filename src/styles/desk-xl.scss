@@ -2,7 +2,7 @@
 @include media-breakpoint-up(xl) {
 
      html{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: rgb(228, 201, 50);
 
     }
@@ -20,6 +20,11 @@
     .header-logo{
         width:  140px;
         background-color:blue;
+
+    }
+    #descHold {
+        margin-left: auto;
+        width: 300px;
 
     }
 }

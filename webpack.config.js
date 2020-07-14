@@ -109,7 +109,7 @@ module.exports = {
       // ./public directory is being served
       host: 'localhost',
       reload: true,
-      port: 3000,
+      port: 3000  ,
       files: ["*.htm", "*.html", "scss/*.*"],
       index: 'index.html',
       server: { baseDir: ['dist'] }
