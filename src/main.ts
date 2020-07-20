@@ -8,12 +8,15 @@ import SimpleLogo from "./img/THR_logo_bw.png";
 import HeaderLogo from "../src/img/tr.png";
 import BigLogo from "../src/img/THR_Logo_knockout2.png";
 import ProfilePic from "../src/img/deriv.jpg";
+import SkyDivePic from "../src/img/deriv.jpg";
+
 //import animateScrollTo from "../node_modules/animated-scroll-to/lib/animated-scroll-to";
 //const scrollTrack = require('scroll-track');
 //import scrollTrack from "../node_modules/scroll-track/src/scroll-element/index 
 const mainHolder: JQuery = $("#holder");
 const introAnchor: JQuery = $("#cityscape");
 const ppholder: JQuery = $("#profile-pic-holder");
+const sdholder: JQuery = $("#skyDive-pic-holder");
 const resTop: JQuery = $("#resume-top");
 const logoIntroAnchor: JQuery = $("#bigLogoHolder");
 const fullCover: JQuery = $("#fullCover");
@@ -59,6 +62,7 @@ const headerLogo = new Image();
 const simpleLogo = new Image();
 const bigLogo = new Image();
 const profilePic = new Image();
+const skyDivePic = new Image();
 
 let relativeScroll: number;
 let myLogo: JQuery;
@@ -126,13 +130,19 @@ $(document).ready(function () {
   //tmpActArr.push(actSetAa);
   //tmpActArr.push(actSetAb);
   scrollCntrlA = new CntrlActList(tmpActArrA, 100, 200, 0);
-  scrollCntrlB = new CntrlActList(tmpActArrB, 400, 200, 0);
+  //scrollCntrlB = new CntrlActList(tmpActArrB, 400, 200, 0);
 
   simpleLogo.src = SimpleLogo;
   simpleLogo.width = 50;
 
   profilePic.src = ProfilePic;
-  profilePic.width = 300;
+  profilePic.width = 200;
+  profilePic.id = "ppic";
+  //profilePic.className = "col";
+
+  skyDivePic.src = SkyDivePic;
+  skyDivePic.width = 200;
+  skyDivePic.id = "spic";
 
   headerLogo.src = HeaderLogo;
   headerLogo.width = 100;
@@ -143,8 +153,9 @@ $(document).ready(function () {
 
   $(headerLogo).appendTo("#logo-holder");
   $(".main-title").html("Thought Render");
-
+  const topRow:JQuery = $("#overview-top-row");
   $(profilePic).appendTo(ppholder);
+  $(skyDivePic).appendTo(sdholder);
   
 
   sqr1 = $("<div class= 'container-fluid pattern-a bk-img q1'></div> ");
@@ -183,7 +194,7 @@ window.addEventListener("scroll", () => {
   //console.log("restop pos: " + ((document.getElementById("resume-top").getBoundingClientRect())).top);
 
   scrollCntrlA.updateAtts(relativeScroll);
-  scrollCntrlB.updateAtts(relativeScroll);
+  //scrollCntrlB.updateAtts(relativeScroll);
 
   if (windowScrollPosition > 1000) {
     let op: number = (2000 - windowScrollPosition) * .001;

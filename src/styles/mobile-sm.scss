@@ -14,12 +14,18 @@
    
     #holder {
         /*width: 400px;*/
-        width: 100%;
+       // width: 100%;
+       width: 576px;
     }
     .header-logo{
         width:  80px;
-        background-color:rgb(255, 162, 0);
     }
+
+    #logo-intro {
+        position: absolute;
+        width: 100%;
+    }
+
     #descHold {
         margin-left: 10%;
         width: 500px;
@@ -27,20 +33,4 @@
 
 
     }
-    /*
-    #descHold {
-        display: flexbox;
-        background: #333;
-        color: white;
-        font-weight: bold;
-        padding: 4px 8px;
-        //margin: 20px;
-        margin-top: 30px;
-        margin-left: auto;
-        //font-size: 1rem;
-        border: 1px solid grey;
-        border-radius: 20px;
-        width: 300px;
-    }
-    */
 }

@@ -34,7 +34,7 @@
 
   <!--navigation-->
 
-  <div id="nav-holder" class="container-fluid">
+  <div id="nav-holder" class="container">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
       <div id="logo-holder" class="float-left d-inline"></div>
       <a class="navbar-brand" href="#">Thought Render</a>
@@ -49,7 +49,7 @@
               aria-expanded="false">Experience</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#overview-top">Overview</a>
-              <a class="dropdown-item" href="#technologies">Technologies</a>
+              <a class="dropdown-item" href="#technology">Technologies</a>
               <a class="dropdown-item" href="#resume">Resume</a>
             </div>
           </li>
@@ -77,15 +77,11 @@
     <section id="intro-bk" class="container-fluid">
 
       <div id="logo-intro">
-        <!--img src="./img/THR_Logo_knockout2.png" class="my-logo"-->
-        <!--div id="myLogo" class="container-fluid"></div-->
         <div id="bigLogoHolder"></div>
 
         <div id="fullCover"></div>
 
 
-
-        <!--animation screen-->
         <div id="g1" class="text-center d-block">
           <div id="g1l1">Thought Render</div>
           <h2 id="g1l2">Do you make excuses...</h2>
@@ -94,7 +90,6 @@
 
           <h4 id="g1l5">Websites Starting at $999.</h4>
         </div>
-        <!--animation screen-->
         <div id="g2" class="d-block text-center">
           <div id="g2l1">Leverage over</div>
           <h1 id="g2l2">20yrs</h3>
@@ -103,35 +98,44 @@
             <h3 id="g2l5">Look for excuses to bring up your</h3>
             <h2 id="g2l6">brand new WEBSITE.</h2>
         </div>
-
+      </div>
     </section>
-    <section id="overview-top" class="container-fluid">
+    <section id="overview-top mt-5" class="container">
       <h1 class="section-title text-center mb-5">Overview</h1>
-      <div class="media mt-3">
-        <a id="profile-pic-holder" class="pr-3" href="#">
-          <!--img src="../img/deriv.jpg" alt="Generic placeholder image"-->
-        </a>
-        <div class="media-body">
+      <div id="overview-top-row" class="row mt-3">
+        <div id="profile-pic-holder" class="col-5">
+        </div>
+        <div class="col-7">
           <h5 class="mt-0">CEO: Deriv Diggs</h5>
           My name is Deriv Diggs and I'm the founder and chief engineer of Thought Render. I've been creating websites,
-        RIAs, kiosks, desktop applications, games, and mobile applications using Adobe AIR/Flash/Flex/Flash
-        Builder/HTML5/CSS3/Javascript. Twelve years ago, before focusing on development, I was a senior designer at
-        Grey Interactive (at the time the interactive division of Grey Advertising) in New York City. Therefore, in
-        addition to my skills as a programmer, I'm extremely proficient with the entire Adobe CS suite of programs
-        especially Photoshop, Illustrator, Flash and Dreamweaver. I won the Adobe Site of the Day award for April
-        11, 2009.
+          RIAs, kiosks, desktop applications, games, and mobile applications using Adobe AIR/Flash/Flex/Flash
+          Builder/HTML5/CSS3/Javascript. 
         </div>
       </div>
-      <p>My extensive knowlege of both Flash and Jquery/Javascript, gives me the ablitiy to turn your Flash projects
-        into html5 without loosing effects or functionality. I can also use Flash to change your web applications
-        into native applications for the desktop and for mobile devices.</p>
-      <p>In addition to front end technologies, I have experience programming php, Python, and mySQL, and have
-        extensive experience building dynamic projects that get their content from a variety of backend
-        technologies. Please find my resume, portfolio, and contact information by scrolling down or using the menu
-        at the top.
-      </p>
+      <div class="row mt-3">
+        <div class="col">Twelve years ago, before focusing on development, I was a senior designer at
+          Grey Interactive (at the time the interactive division of Grey Advertising) in New York City. Therefore, in
+          addition to my skills as a programmer, I'm extremely proficient with the entire Adobe CS suite of programs
+          especially Photoshop, Illustrator, Flash and Dreamweaver. I won the Adobe Site of the Day award for April
+          11, 2009.</div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">My extensive knowlege of both Flash and Jquery/Javascript, gives me the ablitiy to turn your
+          Flash projects
+          into html5 without loosing effects or functionality. I can also use Flash to change your web applications
+          into native applications for the desktop and for mobile devices.</div>
+        <div id="skyDive-pic-holder" class="pr-3 col"></div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">In addition to front end technologies, I have experience programming php, Python, and mySQL,
+          and have
+          extensive experience building dynamic projects that get their content from a variety of backend
+          technologies. Please find my resume, portfolio, and contact information by scrolling down or using the menu
+          at the top.
+        </div>
+      </div>
     </section>
-    <section id="technology" class="container-fluid">
+    <section id="technology" class="container-fluid pt-5">
       <h1 class="section-title text-center mb-5">Technologies</h1>
       <div id="technology-table" class="row">
         <div class="col-sm">
@@ -167,7 +171,6 @@
       </div>
     </section>
     <section id="resume-top" class="container-fluid">
-      <!--div id="nyc-long"></div-->
       <h1 class="section-title text-center">Resume</h1>
 
       <p><a href="http://thoughtrender.com/interactive/docs/Resume_of_Deriv_Diggs.pdf">You can click here to download
@@ -200,7 +203,6 @@
             class="p-skill">PHP</span>/<span class="p-skill">MySQL</span> and <span class="p-skill">Node.js</span>/<span
             class="p-skill">Mongo</span> db.</p>
         <h2>Experience</h2>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <a class="p-name u-url" href="http://thoughtrender.com">Thought Render</a><br />
@@ -231,7 +233,6 @@
           </div>
         </div>
 
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <a class="p-name u-url" href="http://www.hcii.cmu.edu">Carnegie Mellon University</a><br />
@@ -261,7 +262,6 @@
             </ul>
           </div>
         </div>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <a class="p-name u-url" href="http://www.supernovainc.com/">SuperNova Inc.</a><br />
@@ -287,7 +287,6 @@
             </ul>
           </div>
         </div>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <a class="p-name u-url" href="http://www.mccanntorrelazur.com/">McCann Torre Lazur</a><br />
@@ -312,7 +311,6 @@
             </ul>
           </div>
         </div>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <a class="p-name u-url" href="http://www.ogilvychww.com/">Qi, a part of Ogilvy
@@ -339,7 +337,6 @@
             </ul>
           </div>
         </div>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <span class="p-name">Temel Inc. (out of business)</span><br />
@@ -363,7 +360,6 @@
             </ul>
           </div>
         </div>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <span class="p-name">Freelance Multi-Media Consultant</span><br />
@@ -383,7 +379,6 @@
             </ul>
           </div>
         </div>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <a class="p-name u-url" href="http://www.nycompaniesindex.com/zactus-inc-1dtdq/">Zactus (out of
@@ -409,7 +404,6 @@
             </ul>
           </div>
         </div>
-        <!--- a job -->
         <div class='p-experience h-event'>
           <p class="p-location h-card">
             <a class="p-name u-url" href="http://grey.com/us">Grey Interactive (Interactive Division of Grey
@@ -438,52 +432,42 @@
             </ul>
           </div>
 
-          <!-- end jobs -->
         </div>
     </section>
     <section id="portfolio-top">
       <h1 class="section-title text-center">Portfolio</h1>
-      <!--div id="screen-cover"></div-->
       <iframe width="1050" height="600" src="https://www.youtube.com/embed/hQnYo3EmNcY" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <div class="medium-holder container text-center" id='medium-holder'>
         <div id="vid-holder" class="container">
-        
-        <!--div class="medium-title">Multimedia</div>
-              <div class="portfolio-medium">
-                  <div id="multi-thumbs" class="thumb-strip"></div>
+
+
+        </div>
+        <div class="portfolio-medium">
+          <div class="medium-title">Illustrations</div>
+        </div>
+        <div class="portfolio-medium">
+          <div class="medium-title">Photography</div>
+        </div>
+        <div class="portfolio-medium">
+          <div class="medium-title">Music</div>
+        </div>
+
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-title"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-          </div-->
-        <!-- The Modal -->
-      </div>
-      <div class="portfolio-medium">
-        <div class="medium-title">Illustrations</div>
-      </div>
-      <div class="portfolio-medium">
-        <div class="medium-title">Photography</div>
-      </div>
-      <div class="portfolio-medium">
-        <div class="medium-title">Music</div>
-      </div>
 
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title" id="modal-title"></h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-            <!-- Modal body  -->
-            <div id="#test" class="modal-body">
+              <div id="#test" class="modal-body">
 
               </div>
 
-              <!-- Modal footer -->
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
@@ -495,7 +479,7 @@
     <section id="contact-top" class="container-fluid">
       <h1 class="section-title text-center">Contact Information</h1>
       <div class='underholder'>
-        <h2>Mailing Address</h2>
+        <h5>Mailing Address</h5>
         <div class="vcard">
           <div class="org">Thought Render</div>
           <div class="adr">
@@ -509,7 +493,6 @@
         </div>
     </section>
   </div>
-  <!--holder-->
   <script src="main.bundle.js"></script>
 </body>
 

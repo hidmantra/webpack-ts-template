@@ -80,11 +80,11 @@
         padding: 0;
         background-color: black !important;
     }
-
+   
     body {
 
         overflow-y: scroll;
-        overflow-x: hidden;
+        //overflow-x: hidden;
     }
 
     header {
@@ -141,8 +141,15 @@
         background-color: blue($color: #cf0808);
         z-index: 11;
     }
+    #ppic,
+    #spic {
+        width: 100%;
+    }
 
+    #nav-holder {
 
+        width: 200px;
+    }
 
     .nav-item.nav-link {
         color: rgb(196, 103, 32) !important;
@@ -153,12 +160,12 @@
         display: flex;
         position: fixed;
         top: 0;
-        padding: 0;
+        padding: 10px;
         z-index: 200;
     }
 
     .navbar-brand {
-        font-size: .6rem;
+        font-size: 1rem;
 
     }
 
@@ -166,9 +173,6 @@
         width: 70px;
         margin: 10%;
         padding-right: 20%;
-        background-color: red;
-
-
     }
 
     intro {
@@ -189,10 +193,12 @@
         position: relative;
         display: block;
         height: 500vh;
-        width: 100%;
+        //width: 100%;
+        width: 350px;
         /*width: 1200px;*/
         padding: 0;
         z-index: 10;
+        //overflow-x: hidden;
 
     }
 
@@ -233,7 +239,7 @@
     #bigLogoHolder {
         position: absolute;
         background-image: url('../img/THR_Logo_knockout2.png');
-        background-size: 50%;
+        background-size: 70%;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -246,10 +252,12 @@
     #intro-bk {
         width: 100%;
         height: 100%;
+        padding: 0px;
     }
 
     #logo-intro {
         position: absolute;
+        //width: 345px;
         width: 100%;
         height: 100%;
         z-index: 10;
@@ -573,13 +581,11 @@
         z-index: 100;
     }
 
-    .site-header {
-        background-color: red;
-    }
+   
 }
     
     html {
-        font-size: .7rem;
+        font-size: .9rem;
     }
     
   
@@ -587,7 +593,6 @@
         width:  50px;
         margin: 10%;
         padding-right: 20%;
-        background-color: red;
     
     }
      
