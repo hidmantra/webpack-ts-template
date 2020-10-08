@@ -20,6 +20,7 @@ const sdholder: JQuery = $("#skyDive-pic-holder");
 const resTop: JQuery = $("#resume-top");
 const logoIntroAnchor: JQuery = $("#bigLogoHolder");
 const fullCover: JQuery = $("#fullCover");
+const photocarousel: JQuery = $("#photo-carousel");
 const sect1: JQuery = $("#overview-top");
 const sect2: JQuery = $("#technology-top");
 const sect3: JQuery = $("#portfolio-top");
@@ -81,6 +82,7 @@ let firstRun: boolean = true;
 let dDelay: number = 1;
 mPos.x = 0;
 mPos.y = 0;
+/*
 const screenCovered = () => {
   // eslint-disable-next-line no-console
   console.log("bingo");
@@ -92,8 +94,9 @@ const screenUncovered = () => {
 const galleryStripModal: GalleryStripModal = new GalleryStripModal();
 galleryStripModal.CoverUp.on(screenCovered);
 galleryStripModal.CoverDown.on(screenUncovered);
-
 addComponents();
+
+*/
 
 
 
@@ -175,6 +178,7 @@ $(document).ready(function () {
   $(fullCover).animate({
     opacity: .3
   }, 5000);
+  addComponents();
 });
 
 function launchSection(sectionToLaunch: Function) {
