@@ -8,7 +8,7 @@ import SimpleLogo from "./img/THR_logo_bw.png";
 import HeaderLogo from "../src/img/tr.png";
 import BigLogo from "../src/img/THR_Logo_knockout2.png";
 import ProfilePic from "../src/img/deriv.jpg";
-import SkyDivePic from "../src/img/deriv.jpg";
+import SkyDivePic from "../src/img/deriv2.jpg";
 
 //import animateScrollTo from "../node_modules/animated-scroll-to/lib/animated-scroll-to";
 //const scrollTrack = require('scroll-track');
