@@ -25,7 +25,7 @@ const sect1: JQuery = $("#overview-top");
 const sect2: JQuery = $("#technology-top");
 const sect3: JQuery = $("#portfolio-top");
 const sect4: JQuery = $("#resume-top");
-const mediumHolder: any = document.getElementById("medium-holder");
+const mediumHolder: any = document.getElementById("multimedia");
 
 //let scrollCntrl: CntrlActList;
 
@@ -112,11 +112,11 @@ $(document).ready(function () {
   cntrlGroupAe = new CntrlGroup({ start: 32, rest: 56, leave: 88, gone: 95 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 57, final: 55, end: 45 }]);
  
   cntrlGroupBa = new CntrlGroup({ start: 1, rest: 24, leave: 80, gone: 87 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 11, final: 9, end: 0 }]);
-  cntrlGroupBb = new CntrlGroup({ start: 8, rest: 32, leave: 82, gone: 89 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 17, final: 15, end: 7 }]);
-  cntrlGroupBc = new CntrlGroup({ start: 16, rest: 40, leave: 84, gone: 91 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 24, final: 22, end: 14 }]);
-  cntrlGroupBd = new CntrlGroup({ start: 24, rest: 48, leave: 86, gone: 93 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 31, final: 29, end: 21 }]);
-  cntrlGroupBe = new CntrlGroup({ start: 32, rest: 56, leave: 88, gone: 95 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 38, final: 36, end: 28 }]);
-  cntrlGroupBf = new CntrlGroup({ start: 40, rest: 64, leave: 90, gone: 97 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 46, final: 44, end: 35 }]);
+  cntrlGroupBb = new CntrlGroup({ start: 8, rest: 32, leave: 82, gone: 89 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 19, final: 17, end: 7 }]);
+  cntrlGroupBc = new CntrlGroup({ start: 16, rest: 40, leave: 84, gone: 91 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 28, final: 26, end: 14 }]);
+  cntrlGroupBd = new CntrlGroup({ start: 24, rest: 48, leave: 86, gone: 93 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 37, final: 35, end: 21 }]);
+  cntrlGroupBe = new CntrlGroup({ start: 42, rest: 67, leave: 88, gone: 95 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 48, final: 46, end: 28 }]);
+  cntrlGroupBf = new CntrlGroup({ start: 50, rest: 74, leave: 90, gone: 97 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 57, final: 55, end: 35 }]);
   let actSetAa: ActSet = new ActSet(g1l1, cntrlGroupAa);
   let actSetAb: ActSet = new ActSet(g1l2, cntrlGroupAb);
   let actSetAc: ActSet = new ActSet(g1l3, cntrlGroupAc);
@@ -133,7 +133,7 @@ $(document).ready(function () {
   //tmpActArr.push(actSetAa);
   //tmpActArr.push(actSetAb);
   scrollCntrlA = new CntrlActList(tmpActArrA, 100, 200, 0);
-  //scrollCntrlB = new CntrlActList(tmpActArrB, 400, 200, 0);
+  scrollCntrlB = new CntrlActList(tmpActArrB, 400, 200, 0);
 
   simpleLogo.src = SimpleLogo;
   simpleLogo.width = 50;
@@ -198,7 +198,7 @@ window.addEventListener("scroll", () => {
   //console.log("restop pos: " + ((document.getElementById("resume-top").getBoundingClientRect())).top);
 
   scrollCntrlA.updateAtts(relativeScroll);
-  //scrollCntrlB.updateAtts(relativeScroll);
+  scrollCntrlB.updateAtts(relativeScroll);
 
   if (windowScrollPosition > 1000) {
     let op: number = (2000 - windowScrollPosition) * .001;
@@ -267,7 +267,7 @@ function addComponents(): void {
   const screenCovered = () => {
     // eslint-disable-next-line no-console
     console.log("bingo");
-    $(".navba").hide();
+    $(".navbar").hide();
   };
   const screenUncovered = () => {
     $(".navbar").show();

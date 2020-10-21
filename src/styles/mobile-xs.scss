@@ -76,7 +76,6 @@
     intro,
     #holder,
     #fullCover {
-        color: $primary;
         padding: 0;
         background-color: black !important;
     }
@@ -89,8 +88,18 @@
 
     header {
 
-        height: 120px;
+        height: 100px;
 
+    }
+
+    .card {
+        color: $component-txt;
+        background-color: $component-bk;
+        border: 1px solid grey;
+    }
+
+    .card-title {
+        color: $component-title;
     }
 
     .video-player {
@@ -112,8 +121,8 @@
 
     #descHold {
         display: flexbox;
-        background: #333;
-        color: white;
+        background: $component-bk;
+        color: $component-txt;
         font-weight: bold;
         padding: 4px 8px;
         margin-left: 18%;
@@ -124,6 +133,9 @@
         border: 1px solid grey;
         border-radius: 20px;
         width: 300px;
+    }
+    #descHold h5 {
+        color: $component-title;
     }
 
     #vid-holder {
@@ -160,8 +172,9 @@
         display: flex;
         position: fixed;
         top: 0;
-        padding: 10px;
+        padding: 0px 5px;
         z-index: 200;
+        background-color: #282834;
     }
 
     .navbar-brand {
@@ -173,6 +186,10 @@
         width: 70px;
         margin: 10%;
         padding-right: 20%;
+    }
+
+    .head-space {
+        height: 130px;
     }
 
     intro {
@@ -189,10 +206,10 @@
         background: -ms-linear-gradient(left, rgba(20, 19, 20, 0) 0%, rgba(20, 19, 20, 1) 5%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 91%, rgba(20, 19, 20, 0) 100%);
         background: linear-gradient(to right, rgba(20, 19, 20, 0) 0%, rgba(20, 19, 20, 1) 5%, rgba(20, 19, 20, 1) 13%, rgba(74, 71, 74, 1) 46%, rgba(74, 71, 74, 1) 69%, rgba(20, 19, 20, 1) 91%, rgba(20, 19, 20, 0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#141314', endColorstr='#141314', GradientType=1);
-        color: #ebdab6;
+        color: $component-title;
         position: relative;
         display: block;
-        height: 500vh;
+        height: 700vh;
         //width: 100%;
         width: 350px;
         /*width: 1200px;*/
@@ -283,15 +300,6 @@
         background-color: rgb(0, 0, 0);
     }
 
-    /*
-#resume-top {
-    background-attachment: fixed fixed;
-    background-image: url ("../img/nyc_river.jpg"), url("../img/nyc_river.jpg"), url("../img/nyc\ long_bu\ clouds\ river.png");
-    background-repeat: no-repeat;
-    background-size: 4000px;
-    background-position: 350px 0px, 0px 0px, 0px 0px;
-}
-*/
     #resume-top {
         background-attachment: fixed;
         background-image: url("../img/nyc_bk.jpg");
@@ -333,39 +341,6 @@
     }
 
     #g1l1,
-    #g2l1 {
-        font-size: 2em;
-        font-family: thinFont !important;
-        font-weight: lighter;
-        //top:9vh;
-    }
-
-    #g1l2 {
-        font-family: displayFont !important;
-        // top:20vh;
-    }
-
-    #g1l3 {
-        font-family: headingFont;
-        //top:30vh;
-    }
-
-    #g1l4 {
-        //top: 40vh;
-        font-family: regFont;
-    }
-
-    #g1l5 {
-        // top: 55vh;
-        font-family: thinFont !important;
-    }
-
-    #g2l2 {
-        font-family: displayFont !important;
-
-    }
-
-    #g1l1,
     #g1l2,
     #g1l3,
     #g1l4,
@@ -377,25 +352,19 @@
     #g2l5,
     #g2l6 {
         position: fixed;
-        display: none;
         opacity: 0;
         width: 80%;
         left: 10%;
         padding-top: 15vh;
-
-
     }
-
-
 
     #g2 {
         z-index: 120;
-        position: absolute;
+        position: fixed;
         width: 50%;
         margin-left: 25%;
         text-align: center;
-        opacity: 0;
-        display: none;
+        opacity: 1;
     }
 
     #fullCover {
