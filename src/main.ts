@@ -115,8 +115,8 @@ $(document).ready(function () {
   cntrlGroupBb = new CntrlGroup({ start: 8, rest: 32, leave: 82, gone: 89 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 19, final: 17, end: 7 }]);
   cntrlGroupBc = new CntrlGroup({ start: 16, rest: 40, leave: 84, gone: 91 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 28, final: 26, end: 14 }]);
   cntrlGroupBd = new CntrlGroup({ start: 24, rest: 48, leave: 86, gone: 93 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 37, final: 35, end: 21 }]);
-  cntrlGroupBe = new CntrlGroup({ start: 42, rest: 67, leave: 88, gone: 95 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 48, final: 46, end: 28 }]);
-  cntrlGroupBf = new CntrlGroup({ start: 50, rest: 74, leave: 90, gone: 97 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 57, final: 55, end: 35 }]);
+  cntrlGroupBe = new CntrlGroup({ start: 42, rest: 67, leave: 88, gone: 95 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 49, final: 47, end: 28 }]);
+  cntrlGroupBf = new CntrlGroup({ start: 50, rest: 74, leave: 90, gone: 97 }, [{ attrDelta: "opacity", initial: 0, final: 1, end: 0 }, { attrDelta: "top", initial: 59, final: 57, end: 35 }]);
   let actSetAa: ActSet = new ActSet(g1l1, cntrlGroupAa);
   let actSetAb: ActSet = new ActSet(g1l2, cntrlGroupAb);
   let actSetAc: ActSet = new ActSet(g1l3, cntrlGroupAc);
