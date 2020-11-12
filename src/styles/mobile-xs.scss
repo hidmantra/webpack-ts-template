@@ -195,6 +195,10 @@
         height: 130px;
     }
 
+    #youtube-port {
+        width: 100%;
+    }
+
     intro {
         opacity: .7;
     }
@@ -228,7 +232,7 @@
         background-size: 60%;
         background-attachment: fixed;
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: repeat-y;
         width: 100%;
         height: 100%;
     }

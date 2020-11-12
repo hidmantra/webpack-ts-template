@@ -201,7 +201,7 @@ window.addEventListener("scroll", () => {
   scrollCntrlB.updateAtts(relativeScroll);
 
   if (windowScrollPosition > 1000) {
-    let op: number = (2000 - windowScrollPosition) * .001;
+    let op: number = (10000 - windowScrollPosition) * .001;
     console.log("op: " + op);
 
     $(logoIntroAnchor).css("opacity", op);

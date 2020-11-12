@@ -181,7 +181,7 @@ export class CntrlActList {
             const buildVal: number = (((cFinal - cInitial) * startRate) * relLoc) + cInitial;
             const dieVal: number = (((cEnd - cFinal) * leaveRate) * (relLoc-cLeave)) + cFinal;
 
-
+            cTarget.css("display", "block");
             if (relLoc < this.aList[i].acts.cRange.start) {
               if (cAttr == "opacity") {
                 cTarget.css("opacity", 0);
@@ -236,6 +236,12 @@ export class CntrlActList {
           }//t
       }//i
     }//if
+    else{
+      for (var i: number = 0; i < this.aList.length; i++) {
+        const cTarget: JQuery = this.aList[i].targEl;
+          cTarget.css("display", "none");
+      }
+    }
   }
 
 
