@@ -1,9 +1,19 @@
-import * as $ from 'jquery';
-let curLeft:number;
-let curTop:number;
+/**
+ * dUtils.ts
+ * @author Deriv Diggs
+ * 
+ * various utilities
+ */
 
+
+/**
+ * @function findPos gives the top left corner of an object relative to its parent
+ * @param {any} obj 
+ * @returns {Array} [curLeft, curTop]
+ */
 export function findPos(obj:any) {
-  var curLeft = curTop = 0;
+  let curTop:number;
+  let curLeft = curTop = 0;
   if (obj.offsetParent) {
     do {
 			curLeft += obj.offsetLeft;
@@ -13,13 +23,31 @@ export function findPos(obj:any) {
   }
 }
 
+
+    /**
+     * This is a utility function for turning html elements (and children)
+     * into a string
+     * 
+     * @param who the HTMLElement to parse
+     * @param deep how deep to traverse element
+     */
+    export function getHtml(who: HTMLElement, deep: number) {
+      if (!who || !who.tagName) return '';
+      var txt, ax, el = document.createElement("div");
+      el.appendChild(who.cloneNode(false));
+      txt = el.innerHTML;
+      if (deep) {
+          ax = txt.indexOf('>') + 1;
+          txt = txt.substring(0, ax) + who.innerHTML + txt.substring(ax);
+      }
+      el = null;
+      return txt;
+  }
+
 export interface ImPos {
   x: number;
   y: number;
 }
-export class PositionUtils {
-}
-
 
 export class MPos implements ImPos {
   x: number;
@@ -117,7 +145,6 @@ export class ActSet {
     this.targEl = targEl;
   }
 }
-// TypeError: this.aList[i].acts.aRangeArr[t] is undefined
 /**
  * @class CntrlActList
  * @classdesc The CntrlActList or ControllActionList is a similar to a stack of animations,
@@ -147,7 +174,6 @@ export class CntrlActList {
     this.actRange = actRange;
     this.actStart = actStart;
     this.actDone = actStart + actRange;
-    //this.updateAtts(curLoc);
   }
 
   /**
@@ -157,9 +183,7 @@ export class CntrlActList {
   updateAtts(loc: number) {
     this.curLoc = loc;
     let relLoc: number = (100 / this.actRange) * (loc - this.actStart);
-    //console.log("relLoc: " + relLoc);
 
-   // console.log("alist length: " + this.aList.length);
     /**
      * test if this control action list should activate
      */
@@ -233,9 +257,9 @@ export class CntrlActList {
                 cTarget.css("top", String(cEnd) + "vh");
               }
             }
-          }//t
-      }//i
-    }//if
+          }
+      }
+    }
     else{
       for (var i: number = 0; i < this.aList.length; i++) {
         const cTarget: JQuery = this.aList[i].targEl;
@@ -243,7 +267,4 @@ export class CntrlActList {
       }
     }
   }
-
-
-
 }

@@ -1,13 +1,17 @@
 import * as $ from "jquery";
-import { JsonObject, JsonMember, TypedJSON } from "../../../node_modules/typedjson-npm/js/typed-json";
+import { TypedJSON } from "../../../node_modules/typedjson-npm/js/typed-json";
 import { GSM_vo } from "./GSM_vo";
 import { Job_vo } from "./Job_vo";
-import { ThumbHolder } from "./ThumbHolder";
 import { EventEmitter } from "events";
-import { createPopper } from "../../../node_modules/@popperjs/core/dist/esm/popper";
 
-
+/**
+ * @class GalleryStripModal creates a grid of cards that have a thumbnail image, text, and a link that shows a fullsize image or video.
+ * 
+ * @author Deriv Diggs
+ * 
+ */
 export class GalleryStripModal {
+    /* temp hardcoded data to emulate data from DB in JSON */
     private tmpJson = {
 
         "componentTitle": "Multimedia",
@@ -209,38 +213,23 @@ export class GalleryStripModal {
 
         ]
     }
-
-    //
     private _gsm_vo: GSM_vo = new GSM_vo();
     private _thumbWidth: number;
     private _targetComponent: JQuery;
     public _tester: EventEmitter;
-    //private _coverUp:HTMLElement = document.createElement("div");
-    public _coverUp: HTMLElement //= new HTMLElement();
+    public _coverUp: HTMLElement;
     public isScreenCovered: boolean = false;
-    /**
-     * An array of Job_vos sorted in order of each position property
-     */
     private _sortedTmpJobVO: Array<Job_vo> = new Array<Job_vo>();
     private readonly onCoverUp = new LiteEvent<void>();
     private readonly onCoverDown = new LiteEvent<void>();
 
-
     constructor() {
-        console.log('GSM class built');
         this._coverUp = document.createElement("div");
         this._tester = new EventEmitter();
-        console.log("1 isScreenCovered: " + this.isScreenCovered);
-
         this.isScreenCovered = false;
-
-        console.log("2 isScreenCovered: " + this.isScreenCovered);
-
-        //this._coverUp = new HTMLElement();
     }
 
     public get CoverUp() { return this.onCoverUp.expose(); }
-
     public get CoverDown() { return this.onCoverDown.expose(); }
 
     /**
@@ -301,31 +290,7 @@ export class GalleryStripModal {
             $(holderElement).append(gridRow);
         }
         $('img').css('padding', '20px');
-
     }
-
-
-    /**
-     * This is a utility function for turning html elements (and children)
-     * into a string
-     * 
-     * @param who the HTMLElement to parse
-     * @param deep how deep to traverse element
-     */
-    private getHtml(who: HTMLElement, deep: number) {
-        if (!who || !who.tagName) return '';
-        var txt, ax, el = document.createElement("div");
-        el.appendChild(who.cloneNode(false));
-        txt = el.innerHTML;
-        if (deep) {
-            ax = txt.indexOf('>') + 1;
-            txt = txt.substring(0, ax) + who.innerHTML + txt.substring(ax);
-        }
-
-        el = null;
-        return txt;
-    }
-
 
     /**
      * Called when an image is clicked on
@@ -341,8 +306,6 @@ export class GalleryStripModal {
             classRef.onCoverUp.trigger();
         }
         let tmpJobVo: Job_vo = e.detail.dt.vo as Job_vo;
-
-        let tw: number = 10;
         this._coverUp = document.createElement("div");
         this._coverUp.className = "cover-up"
         this._coverUp.style.position = "fixed";
@@ -366,7 +329,6 @@ export class GalleryStripModal {
         videoPlayer.innerHTML = htmlText;
         $('#vid-holder').append(videoPlayer);
         $(".cover-up").click(function () {
-
             let foo: string = "foomit";
             //that._tester.emit('foo', foo);
             console.log("Handler for .click() called.");
@@ -379,6 +341,7 @@ export class GalleryStripModal {
         });
     }
 }
+
 interface ILiteEvent<T> {
     on(handler: { (data?: T): void }): void;
     off(handler: { (data?: T): void }): void;
